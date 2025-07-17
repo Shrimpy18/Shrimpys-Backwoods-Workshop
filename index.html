@@ -23,25 +23,16 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       padding: 1rem 2rem;
     }
-    .logo-container {
-      text-align: center;
-    }
-    .logo-container img {
-      max-width: 120px;
-      height: auto;
-      margin: 0 auto;
-      display: block;
-    }
-    .logo-container h1 {
-      margin: 0.5rem 0 0.2rem;
+    .site-title {
       color: #5a3e1b;
       font-size: 2rem;
+      margin: 0.5rem 0;
     }
-    .logo-container p {
-      margin: 0;
+    .site-subtitle {
       color: #5a3e1b;
       font-weight: 500;
       font-size: 1rem;
+      margin: 0;
     }
     nav.top-nav {
       margin-top: 1rem;
@@ -88,6 +79,16 @@
     .links a:hover {
       background-color: #7b5a2a;
     }
+    .logo-below {
+      margin-top: 2rem;
+    }
+    .logo-below img {
+      max-width: 300px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
     footer {
       text-align: center;
       padding: 1rem;
@@ -98,11 +99,8 @@
 </head>
 <body>
   <header>
-    <div class="logo-container">
-      <img src="logo.png" alt="Shrimpy's Logo" />
-      <h1>Shrimpy's Backwoods Workshop</h1>
-      <p>Custom Woodwork, Engraving & 3D Printing</p>
-    </div>
+    <h1 class="site-title">Shrimpy's Backwoods Workshop</h1>
+    <p class="site-subtitle">Custom Woodwork, Engraving & 3D Printing</p>
     <nav class="top-nav">
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
@@ -120,11 +118,13 @@
       <a href="shop.html">Shop Now</a>
       <a href="contact.html">Get in Touch</a>
     </div>
+    <div class="logo-below">
+      <img src="logo.png" alt="Shrimpy's Logo" />
+    </div>
   </section>
 
   <footer>
     <p>&copy; 2025 Shrimpy's Backwoods Workshop. All rights reserved.</p>
   </footer>
 </body>
-</html>
 </html>
