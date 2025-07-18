@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact - Shrimpy's Backwoods Workshop</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: 
+        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+        url('A_high-resolution_digital_landscape_photograph_cap.png') 
+        no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      padding-top: 150px;
+      text-align: center;
+    }
+
+    header {
+      background: rgba(255, 255, 255, 0.9);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 1rem 2rem;
+    }
+
+    .site-title {
+      color: #5a3e1b;
+      font-size: 2rem;
+      margin: 0.5rem 0;
+    }
+
+    .site-subtitle {
+      color: #5a3e1b;
+      font-weight: 500;
+      font-size: 1rem;
+      margin: 0;
+    }
+
+    nav.top-nav {
+      margin-top: 1rem;
+      text-align: center;
+    }
+
+    nav.top-nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      color: #5a3e1b;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav.top-nav a:hover {
+      color: #a97c50;
+    }
+
+    section {
+      background: rgba(255, 255, 255, 0.85);
+      margin: 4rem auto 2rem;
+      max-width: 600px;
+      padding: 2rem 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      color: #333;
+    }
+
+    section h2 {
+      color: #5a3e1b;
+      margin-bottom: 1rem;
+      font-family: 'Georgia', serif;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    input, textarea {
+      padding: 0.75rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      resize: vertical;
+    }
+
+    button {
+      background-color: #a97c50;
+      color: white;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #7b5a2a;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #5a3e1b;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 class="site-title">Shrimpy's Backwoods Workshop</h1>
+    <p class="site-subtitle">Grain. Grit. Craftsmanship.</p>
+    <nav class="top-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="shop.html">Shop</a>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Contact Us</h2>
+    <form action="https://formspree.io/f/your-form-id" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Shrimpy's Backwoods Workshop. All rights reserved.</p>
+  </footer>
+</body>
+</html>
