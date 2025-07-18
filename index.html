@@ -5,114 +5,120 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Welcome - Shrimpy's Backwoods Workshop</title>
   <style>
+  /* 👇 Scroll fix for anchor links with fixed header */
+  html {
+    scroll-padding-top: 150px; /* Adjusted to match your header height */
+    scroll-behavior: smooth;
+  }
+
   body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  background: 
-    linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
-    url('A_high-resolution_digital_landscape_photograph_cap.png') 
-    no-repeat center center fixed;
-  background-size: cover;
-  color: #fff;
-  padding-top: 150px;
-  text-align: center;
-}
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background: 
+      linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
+      url('A_high-resolution_digital_landscape_photograph_cap.png') 
+      no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    padding-top: 150px;
+    text-align: center;
+  }
 
-    header {
-      background: rgba(255, 255, 255, 0.9);
-      position: fixed;
-      width: 100%;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      padding: 1rem 2rem;
-    }
+  header {
+    background: rgba(255, 255, 255, 0.9);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 1rem 2rem;
+  }
 
-    .site-title {
-      color: #5a3e1b;
-      font-size: 2rem;
-      margin: 0.5rem 0;
-    }
+  .site-title {
+    color: #5a3e1b;
+    font-size: 2rem;
+    margin: 0.5rem 0;
+  }
 
-    .site-subtitle {
-      color: #5a3e1b;
-      font-weight: 500;
-      font-size: 1rem;
-      margin: 0;
-    }
+  .site-subtitle {
+    color: #5a3e1b;
+    font-weight: 500;
+    font-size: 1rem;
+    margin: 0;
+  }
 
-    nav.top-nav {
-      margin-top: 1rem;
-      text-align: center;
-    }
+  nav.top-nav {
+    margin-top: 1rem;
+    text-align: center;
+  }
 
-    nav.top-nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #5a3e1b;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
+  nav.top-nav a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #5a3e1b;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
 
-    nav.top-nav a:hover {
-      color: #a97c50;
-    }
+  nav.top-nav a:hover {
+    color: #a97c50;
+  }
 
-    section {
-      background: rgba(255, 255, 255, 0.85);
-      margin: 4rem auto 2rem;
-      max-width: 600px;
-      padding: 2rem 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      color: #333;
-    }
+  section {
+    background: rgba(255, 255, 255, 0.85);
+    margin: 4rem auto 2rem;
+    max-width: 600px;
+    padding: 2rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    color: #333;
+  }
 
-    section h2 {
-      color: #5a3e1b;
-      margin-bottom: 1rem;
-      font-family: 'Georgia', serif;
-    }
+  section h2 {
+    color: #5a3e1b;
+    margin-bottom: 1rem;
+    font-family: 'Georgia', serif;
+  }
 
-    section p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
+  section p {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+  }
 
-    .links a {
-      display: inline-block;
-      margin: 0 1rem;
-      padding: 0.5rem 1rem;
-      background-color: #a97c50;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
+  .links a {
+    display: inline-block;
+    margin: 0 1rem;
+    padding: 0.5rem 1rem;
+    background-color: #a97c50;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+  }
 
-    .links a:hover {
-      background-color: #7b5a2a;
-    }
+  .links a:hover {
+    background-color: #7b5a2a;
+  }
 
-    .logo-below {
-      margin-top: 2rem;
-    }
+  .logo-below {
+    margin-top: 2rem;
+  }
 
-    .logo-below img {
-      max-width: 900px;
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
+  .logo-below img {
+    max-width: 900px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
 
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #5a3e1b;
-    }
+  footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    color: #5a3e1b;
+  }
   </style>
 </head>
 <body>
