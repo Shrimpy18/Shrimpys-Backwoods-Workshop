@@ -5,43 +5,42 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Welcome - Shrimpy's Backwoods Workshop</title>
   <style>
-  /* 👇 Scroll fix for anchor links with fixed header */
+  /* Scroll fix for anchor links with fixed header */
   html {
     scroll-padding-top: 150px; /* Adjusted to match your header height */
     scroll-behavior: smooth;
-  }
-
-  /* Added min-height to prevent cutting off nav/footer */
-  html, body {
-    min-height: 100vh;
+    height: 100%;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
   }
 
   body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: 
-      linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), 
-      url('A_high-resolution_digital_landscape_photograph_cap.png') 
+    margin: 0;
+    padding-top: 150px;
+    color: #fff;
+    background:
+      linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      url('A_high-resolution_digital_landscape_photograph_cap.png')
       no-repeat center center fixed;
     background-size: cover;
-    color: #fff;
-    padding-top: 150px;
-    text-align: center;
+
+    /* Flexbox layout */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
 
-  section {
-    background: rgba(255, 255, 255, 0.85);
-    margin: 4rem auto 2rem;
+  main {
+    flex: 1 0 auto; /* grow and take available space */
     max-width: 600px;
+    margin: 4rem auto 2rem;
     padding: 2rem 2rem;
+    background: rgba(255, 255, 255, 0.85);
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     color: #333;
-
-    /* Prevents content from being too short */
-    min-height: calc(100vh - 150px - 50px);
+    text-align: center;
   }
 
   header {
@@ -84,13 +83,13 @@
     color: #a97c50;
   }
 
-  section h2 {
+  main h2 {
     color: #5a3e1b;
     margin-bottom: 1rem;
     font-family: 'Georgia', serif;
   }
 
-  section p {
+  main p {
     font-size: 1.1rem;
     margin-bottom: 2rem;
   }
@@ -124,6 +123,7 @@
   }
 
   footer {
+    flex-shrink: 0; /* keeps footer at bottom */
     text-align: center;
     padding: 1rem;
     font-size: 0.9rem;
@@ -144,7 +144,7 @@
   </nav>
 </header>
 
-  <section>
+  <main>
     <h2>Welcome to Shrimpy's Backwoods Workshop</h2>
     <p>Shrimpy’s Backwoods Workshop is your trusted destination for handcrafted custom woodwork, precision laser engraving, and innovative 3D printing. Nestled away in the backwoods, we combine traditional craftsmanship with modern technology to create unique, personalized furniture, decor, gifts, and accessories. Every piece is built with care and attention to detail, designed to bring warmth, character, and functionality to your home or business. Whether you're looking for a one-of-a-kind wood creation, finely engraved keepsakes, or custom 3D printed items, Shrimpy’s Backwoods Workshop delivers quality, creativity, and a touch of rustic charm.</p>
     <div class="links">
@@ -155,7 +155,7 @@
     <div class="logo-below">
       <img src="logo.png" alt="Shrimpy's Logo" />
     </div>
-  </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 Shrimpy's Backwoods Workshop. All rights reserved.</p>
