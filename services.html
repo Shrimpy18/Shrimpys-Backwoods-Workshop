@@ -4,46 +4,135 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Services - Shrimpy's Backwoods Workshop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
   <style>
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    html {
+      scroll-padding-top: 70px; /* height of fixed header */
+      scroll-behavior: smooth;
       margin: 0;
+      padding: 0;
+      overflow-x: hidden; /* prevent horizontal scroll */
+    }
+    body {
+      font-family: 'Merriweather', serif;
+      margin: 0;
+      padding-top: 70px;
       background: url('https://images.unsplash.com/photo-1509228627152-6c6aab3d67b6?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
       background-size: cover;
       color: #333;
-      padding-top: 70px;
+      overflow-x: hidden;
     }
     header {
       background: rgba(255, 255, 255, 0.9);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 2rem;
       position: fixed;
-      width: 100%;
+      width: 100vw;
       top: 0;
       z-index: 1000;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 1rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      overflow-x: hidden;
+      flex-wrap: nowrap;
     }
     header h1 {
       margin: 0;
       font-size: 1.5rem;
       color: #5a3e1b;
+      white-space: nowrap;
+    }
+    nav.top-nav {
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      max-width: 600px;
+      flex-shrink: 0;
     }
     nav.top-nav a {
-      margin-left: 1.5rem;
+      margin-left: 0.75rem;
       text-decoration: none;
       color: #5a3e1b;
       font-weight: 600;
       transition: color 0.3s ease;
+      display: inline-block;
     }
     nav.top-nav a:hover {
       color: #a97c50;
     }
+    nav.top-nav a.active {
+      color: #a97c50;
+      text-decoration: underline;
+    }
     main {
       background: rgba(255, 255, 255, 0.85);
-      margin: 4rem auto 2rem;
+      margin: 2rem auto 3rem;
       max-width: 900px;
-      padding: 2rem 2rem;
+      padding: 2rem;
       border-radius: 8px;
-      box-shadow:  ​:contentReference[oaicite:0]{index=0}​
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      box-sizing: border-box;
+      text-align: left;
+    }
+    main h2 {
+      color: #5a3e1b;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #a97c50;
+      padding-bottom: 0.5rem;
+    }
+    .service {
+      margin-bottom: 2rem;
+    }
+    .service h3 {
+      color: #7b5a2a;
+      margin-bottom: 0.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #5a3e1b;
+      box-sizing: border-box;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Shrimpy's Backwoods Workshop</h1>
+    <nav class="top-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Our Services</h2>
+
+    <div class="service">
+      <h3>Custom Woodworking</h3>
+      <p>From classic Adirondack chairs to unique furniture and décor, each piece is crafted with care using quality pine and other fine woods. Whether it’s a bespoke gift or a functional addition to your home, we bring your vision to life with traditional woodworking techniques.</p>
+    </div>
+
+    <div class="service">
+      <h3>Laser Marking & Cutting</h3>
+      <p>Precision laser engraving and cutting services allow us to add intricate designs, personalized messages, logos, and patterns to wood, leather, and other materials. Perfect for custom signage, gifts, and branding projects.</p>
+    </div>
+
+    <div class="service">
+      <h3>3D Printing</h3>
+      <p>Our innovative 3D printing capabilities let you create custom accessories, prototypes, and decorative items with fine detail and accuracy. Combine technology and craftsmanship for truly one-of-a-kind pieces.</p>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Shrimpy's Backwoods Workshop. All rights reserved.</p>
+  </footer>
+</body>
+</html>
