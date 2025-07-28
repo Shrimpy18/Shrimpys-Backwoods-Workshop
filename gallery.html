@@ -4,39 +4,62 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gallery - Shrimpy's Backwoods Workshop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
   <style>
-    /* Same CSS as about.html */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    html {
+      scroll-padding-top: 70px; /* height of fixed header */
+      scroll-behavior: smooth;
       margin: 0;
+      padding: 0;
+      overflow-x: hidden; /* prevent horizontal scroll */
+    }
+    body {
+      font-family: 'Merriweather', serif;
+      margin: 0;
+      padding-top: 70px; /* space for fixed header */
       background: url('https://images.unsplash.com/photo-1509228627152-6c6aab3d67b6?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
       background-size: cover;
       color: #333;
-      padding-top: 70px;
+      overflow-x: hidden; /* prevent horizontal scroll */
     }
     header {
       background: rgba(255, 255, 255, 0.9);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
+      padding: 1rem 1rem;
       position: fixed;
-      width: 100%;
+      width: 100vw;
       top: 0;
       z-index: 1000;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-sizing: border-box;
+      overflow-x: hidden;
+      flex-wrap: nowrap;
     }
     header h1 {
       margin: 0;
       font-size: 1.5rem;
       color: #5a3e1b;
+      font-family: 'Merriweather', serif;
+      white-space: nowrap;
+    }
+    nav.top-nav {
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      width: auto;
+      max-width: 600px;
+      flex-shrink: 0;
     }
     nav.top-nav a {
-      margin-left: 1.5rem;
+      margin-left: 0.75rem;
       text-decoration: none;
       color: #5a3e1b;
       font-weight: 600;
       transition: color 0.3s ease;
+      font-family: 'Merriweather', serif;
+      display: inline-block;
     }
     nav.top-nav a:hover {
       color: #a97c50;
@@ -49,22 +72,29 @@
       background: rgba(255, 255, 255, 0.85);
       margin: 2rem auto;
       max-width: 900px;
-      padding: 1.5rem 2rem;
+      padding: 2rem;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      font-family: 'Merriweather', serif;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      box-sizing: border-box;
+      color: #333;
     }
     section h2 {
       color: #5a3e1b;
       border-bottom: 2px solid #a97c50;
       padding-bottom: 0.5rem;
       margin-bottom: 1rem;
-      font-family: 'Georgia', serif;
+      font-family: 'Merriweather', serif;
     }
     footer {
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
       color: #5a3e1b;
+      font-family: 'Merriweather', serif;
+      box-sizing: border-box;
     }
   </style>
 </head>
