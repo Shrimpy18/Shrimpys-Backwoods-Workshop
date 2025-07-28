@@ -7,11 +7,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
   <style>
     html {
-      scroll-padding-top: 70px; /* height of fixed header */
+      scroll-padding-top: 70px;
       scroll-behavior: smooth;
       margin: 0;
       padding: 0;
-      overflow-x: hidden; /* prevent horizontal scroll */
+      overflow-x: hidden;
     }
     body {
       font-family: 'Merriweather', serif;
@@ -90,36 +90,32 @@
       color: #7b5a2a;
       margin-bottom: 0.5rem;
     }
-    /* Form styling for the upload */
-    form.upload-form {
+    form {
       margin-top: 1rem;
-      display: flex;
-      flex-direction: column;
-      max-width: 400px;
+      background: #fff;
+      padding: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
     }
-    form.upload-form label {
-      font-weight: 600;
-      color: #5a3e1b;
-      margin-bottom: 0.5rem;
-    }
-    form.upload-form input[type="file"] {
+    input, textarea, button {
+      width: 100%;
+      font-family: 'Merriweather', serif;
+      font-size: 1rem;
+      margin-bottom: 1rem;
       padding: 0.5rem;
       border: 1px solid #ccc;
       border-radius: 4px;
+      box-sizing: border-box;
     }
-    form.upload-form button {
-      margin-top: 0.75rem;
-      background-color: #a97c50;
-      color: #fff;
-      padding: 0.5rem 1rem;
+    button {
+      background-color: #5a3e1b;
+      color: white;
       border: none;
-      border-radius: 5px;
-      font-weight: 600;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
-    form.upload-form button:hover {
-      background-color: #7b5a2a;
+    button:hover {
+      background-color: #a97c50;
     }
     footer {
       text-align: center;
@@ -134,42 +130,5 @@
   <header>
     <h1>Shrimpy's Backwoods Workshop</h1>
     <nav class="top-nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="services.html" class="active">Services</a>
-      <a href="gallery.html">Gallery</a>
-      <a href="shop.html">Shop</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+      <a href="index.html">Ho
 
-  <main>
-    <h2>Our Services</h2>
-
-    <div class="service">
-      <h3>Custom Woodworking</h3>
-      <p>From classic Adirondack chairs to unique furniture and décor, each piece is crafted with care using quality pine and other fine woods. Whether it’s a bespoke gift or a functional addition to your home, we bring your vision to life with traditional woodworking techniques.</p>
-    </div>
-
-    <div class="service">
-      <h3>Laser Marking & Cutting</h3>
-      <p>Precision laser engraving and cutting services allow us to add intricate designs, personalized messages, logos, and patterns to wood, leather, and other materials. Perfect for custom signage, gifts, and branding projects.</p>
-    </div>
-
-    <div class="service">
-      <h3>3D Printing</h3>
-      <p>Our innovative 3D printing capabilities let you create custom accessories, prototypes, and decorative items with fine detail and accuracy. Combine technology and craftsmanship for truly one-of-a-kind pieces.</p>
-      
-      <form class="upload-form" action="https://formspree.io/f/xqalbdva" method="POST" enctype="multipart/form-data">
-        <label for="stl-upload">Upload your .stl file here!</label>
-        <input type="file" id="stl-upload" name="stl-file" accept=".stl" required />
-        <button type="submit">Submit File</button>
-      </form>
-    </div>
-  </main>
-
-  <footer>
-    <p>&copy; 2025 Shrimpy's Backwoods Workshop. All rights reserved.</p>
-  </footer>
-</body>
-</html>
