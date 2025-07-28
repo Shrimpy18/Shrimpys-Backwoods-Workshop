@@ -90,6 +90,37 @@
       color: #7b5a2a;
       margin-bottom: 0.5rem;
     }
+    /* Form styling for the upload */
+    form.upload-form {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: column;
+      max-width: 400px;
+    }
+    form.upload-form label {
+      font-weight: 600;
+      color: #5a3e1b;
+      margin-bottom: 0.5rem;
+    }
+    form.upload-form input[type="file"] {
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    form.upload-form button {
+      margin-top: 0.75rem;
+      background-color: #a97c50;
+      color: #fff;
+      padding: 0.5rem 1rem;
+      border: none;
+      border-radius: 5px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    form.upload-form button:hover {
+      background-color: #7b5a2a;
+    }
     footer {
       text-align: center;
       padding: 1rem;
@@ -128,6 +159,12 @@
     <div class="service">
       <h3>3D Printing</h3>
       <p>Our innovative 3D printing capabilities let you create custom accessories, prototypes, and decorative items with fine detail and accuracy. Combine technology and craftsmanship for truly one-of-a-kind pieces.</p>
+      
+      <form class="upload-form" action="https://formspree.io/f/xqalbdva" method="POST" enctype="multipart/form-data">
+        <label for="stl-upload">Upload your .stl file here!</label>
+        <input type="file" id="stl-upload" name="stl-file" accept=".stl" required />
+        <button type="submit">Submit File</button>
+      </form>
     </div>
   </main>
 
