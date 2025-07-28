@@ -76,12 +76,17 @@
     flex: 1 0 auto;
     max-width: 600px;
     margin: 0 auto;
-    padding: 120px 2rem 2rem; /* top padding matches header height */
+    padding: 2rem;
     background: rgba(255, 255, 255, 0.85);
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     color: #333;
     text-align: center;
+  }
+
+  /* Spacer div to offset fixed header */
+  .header-spacer {
+    height: 100px;
   }
 
   /* Anchor offset fix for in-page links */
@@ -155,6 +160,7 @@
   </header>
 
   <main>
+    <div class="header-spacer"></div>
     <h2>Welcome to Shrimpy's Backwoods Workshop</h2>
     <p>Shrimpy’s Backwoods Workshop is your trusted destination for handcrafted custom woodwork, precision laser engraving, and innovative 3D printing. Nestled away in the backwoods, we combine traditional craftsmanship with modern technology to create unique, personalized furniture, decor, gifts, and accessories. Every piece is built with care and attention to detail, designed to bring warmth, character, and functionality to your home or business. Whether you're looking for a one-of-a-kind wood creation, finely engraved keepsakes, or custom 3D printed items, Shrimpy’s Backwoods Workshop delivers quality, creativity, and a touch of rustic charm.</p>
     <div class="links">
@@ -172,3 +178,4 @@
   </footer>
 </body>
 </html>
+
