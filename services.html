@@ -114,6 +114,13 @@
     button:hover {
       background-color: #a97c50;
     }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
     footer {
       text-align: center;
       padding: 1rem;
@@ -153,15 +160,10 @@
       <h3>3D Printing</h3>
       <p>Our innovative 3D printing capabilities let you create custom accessories, prototypes, and decorative items with fine detail and accuracy. Combine technology and craftsmanship for truly one-of-a-kind pieces.</p>
 
-      <form action="https://formspree.io/f/xqalbdva" method="POST">
-        <label for="email">Your Email:</label>
-        <input type="email" name="email" required placeholder="you@example.com" />
+      <p>Upload your .STL file for fast and affordable 3D prints using the form below:</p>
 
-        <label for="notes">Notes:</label>
-        <textarea name="notes" rows="4" placeholder="Any specific requests or details"></textarea>
-
-        <button type="submit">Submit Request</button>
-      </form>
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScI67_OyxcdLlo5DbcVlesVMLdbpNl0uGvtOhnQw0uipREBpw/viewform?embedded=true" 
+        title="3D Printing Request Form"></iframe>
     </div>
   </main>
 
@@ -170,4 +172,6 @@
   </footer>
 </body>
 </html>
+
+
 
