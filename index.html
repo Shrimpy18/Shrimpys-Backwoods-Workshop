@@ -6,7 +6,6 @@
   <title>Welcome - Shrimpy's Backwoods Workshop</title>
   <style>
   html {
-    scroll-padding-top: 150px;
     scroll-behavior: smooth;
     height: 100%;
     margin: 0;
@@ -29,32 +28,24 @@
   }
 
   header {
-    background: rgba(255, 255, 255, 0.9);
+    height: 100px;
+    padding: 0 2rem;
+    line-height: 100px;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    background: rgba(255, 255, 255, 0.9);
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    padding: 1rem 2rem;
-    height: 150px;
-  }
-
-  main {
-    flex: 1 0 auto;
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 180px 2rem 2rem; /* top padding adjusted */
-    background: rgba(255, 255, 255, 0.85);
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    color: #333;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .site-title {
     color: #5a3e1b;
     font-size: 2rem;
-    margin: 0.5rem 0;
+    margin: 0;
   }
 
   .site-subtitle {
@@ -65,7 +56,7 @@
   }
 
   nav.top-nav {
-    margin-top: 1rem;
+    margin-top: 0.25rem;
     text-align: center;
   }
 
@@ -79,6 +70,27 @@
 
   nav.top-nav a:hover {
     color: #a97c50;
+  }
+
+  main {
+    flex: 1 0 auto;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 120px 2rem 2rem; /* top padding matches header height */
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    color: #333;
+    text-align: center;
+  }
+
+  /* Anchor offset fix for in-page links */
+  :target::before {
+    content: "";
+    display: block;
+    height: 100px; /* same as header height */
+    margin-top: -100px; /* negative margin of same height */
+    visibility: hidden;
   }
 
   main h2 {
