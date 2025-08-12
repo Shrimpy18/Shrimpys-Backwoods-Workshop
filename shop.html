@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shop - Shrimpy's Backwoods Workshop</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
+  <!-- PayPal SDK -->
+  <script src="https://www.paypal.com/sdk/js?client-id=YOUR_CLIENT_ID&currency=USD"></script>
   <style>
     html {
       scroll-padding-top: 70px; /* height of fixed header */
@@ -96,6 +98,10 @@
       font-family: 'Merriweather', serif;
       box-sizing: border-box;
     }
+    /* Optional: Style PayPal button container margin */
+    #paypal-button-container {
+      margin-top: 2rem;
+    }
   </style>
 </head>
 <body>
@@ -113,10 +119,34 @@
   <section>
     <h2>Shop</h2>
     <p>Browse our handcrafted custom woodwork, precision laser engraving, and 3D printed items coming soon!</p>
+
+    <!-- PayPal Button Container -->
+    <div id="paypal-button-container"></div>
   </section>
 
   <footer>
     <p>&copy; 2025 Shrimpy's Backwoods Workshop. All rights reserved.</p>
   </footer>
+
+  <!-- PayPal Buttons script -->
+  <script>
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: '10.00'  // Change this to your product price or dynamically update
+            }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          alert('Transaction completed by ' + details.payer.name.given_name + '!');
+          // You can redirect or update UI here if needed
+        });
+      }
+    }).render('#paypal-button-container');
+  </script>
 </body>
 </html>
