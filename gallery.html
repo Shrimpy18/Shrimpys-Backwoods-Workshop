@@ -100,9 +100,12 @@
       text-align: center;
     }
     .swiper-slide img {
-      width: 100%;
+      width: 75%;       /* shrink image to 75% of container width */
+      max-width: 400px; /* cap maximum size */
       height: auto;
       border-radius: 6px;
+      display: block;
+      margin: 0 auto;   /* center the image */
     }
     .description {
       text-align: center;
@@ -234,5 +237,7 @@
   </script>
 </body>
 </html>
+
+
 
 
