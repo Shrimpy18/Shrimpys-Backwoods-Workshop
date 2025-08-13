@@ -71,7 +71,7 @@
     section {
       background: rgba(255, 255, 255, 0.85);
       margin: 2rem auto;
-      max-width: 900px;
+      max-width: 1100px;
       padding: 2rem;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -87,6 +87,34 @@
       padding-bottom: 0.5rem;
       margin-bottom: 1rem;
       font-family: 'Merriweather', serif;
+    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .gallery figure {
+      margin: 0;
+      text-align: center;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .gallery h3 {
+      margin: 5px 0 10px 0;
+      font-size: 1.1em;
+      color: #5a3e1b;
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 6px;
+    }
+    .gallery p {
+      margin: 8px 0 0 0;
+      font-size: 0.9em;
+      color: #555;
     }
     footer {
       text-align: center;
@@ -112,7 +140,79 @@
 
   <section>
     <h2>Gallery</h2>
-    <p>Coming soon: see our latest builds and custom projects!</p>
+    <div class="gallery">
+      <figure>
+        <h3>Bench</h3>
+        <img src="images/bench.jpg" alt="Bench">
+        <p>Handcrafted wooden bench with smooth finish.</p>
+      </figure>
+
+      <figure>
+        <h3>Bird House</h3>
+        <img src="images/bird%20house_iso.jpg" alt="Bird House - Iso View">
+        <p>Rustic bird house - iso angle.</p>
+      </figure>
+
+      <figure>
+        <h3>Bird House</h3>
+        <img src="images/birdhouse_left.jpg" alt="Bird House - Left View">
+        <p>Left side view showing detail.</p>
+      </figure>
+
+      <figure>
+        <h3>Bird House</h3>
+        <img src="images/birdhouse_right.jpg" alt="Bird House - Right View">
+        <p>Right side view for perspective.</p>
+      </figure>
+
+      <figure>
+        <h3>Wooden Box</h3>
+        <img src="images/box_iso.jpg" alt="Wooden Box - Iso View">
+        <p>Decorative storage box - iso angle.</p>
+      </figure>
+
+      <figure>
+        <h3>Wooden Box</h3>
+        <img src="images/box_top.jpg" alt="Wooden Box - Top View">
+        <p>Top view showing lid detail.</p>
+      </figure>
+
+      <figure>
+        <h3>Adirondack Chair</h3>
+        <img src="images/chair_back.jpg" alt="Chair - Back View">
+        <p>Classic back view.</p>
+      </figure>
+
+      <figure>
+        <h3>Adirondack Chair</h3>
+        <img src="images/chair_back_down.jpg" alt="Chair - Back Down View">
+        <p>Back folded down.</p>
+      </figure>
+
+      <figure>
+        <h3>Adirondack Chair</h3>
+        <img src="images/chair_foot.jpg" alt="Chair - Footrest View">
+        <p>Extended footrest.</p>
+      </figure>
+
+      <figure>
+        <h3>Adirondack Chair</h3>
+        <img src="images/chair_front.jpg" alt="Chair - Front View">
+        <p>Front profile view.</p>
+      </figure>
+
+      <figure>
+        <h3>Rocker Chair</h3>
+        <img src="images/rocker_front.jpg" alt="Rocker Chair - Front View">
+        <p>Front view of the rocker.</p>
+      </figure>
+
+      <figure>
+        <h3>Rocker Chair</h3>
+        <img src="images/rocker_iso.jpg" alt="Rocker Chair - Iso View">
+        <p>Iso angle view.</p>
+      </figure>
+    </div>
   </section>
 
   <footer>
