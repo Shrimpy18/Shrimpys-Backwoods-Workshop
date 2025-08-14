@@ -19,14 +19,28 @@
     padding-top: 150px; /* reserve space for fixed header */
     color: #fff;
     background:
-      linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)),
-      url('lakeside-serenity.jpg')
-      no-repeat center center fixed;
-    background-size: cover;
+      linear-gradient(rgba(0,0,0,0.25), rgba(0,0,0,0.25)),
+      url('lakeside-serenity.jpg') no-repeat center top fixed;
+    background-size: contain;
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    overflow-x: hidden; /* prevent horizontal scroll */
+    overflow-x: hidden;
+  }
+
+  /* For very large screens, scale background width */
+  @media (min-width: 1920px) {
+    body {
+      background-size: 1920px auto;
+    }
+  }
+
+  /* Adjust for smaller screens */
+  @media (max-width: 768px) {
+    body {
+      background-size: cover;
+      background-position: center top;
+    }
   }
 
   header {
@@ -171,6 +185,7 @@
   </footer>
 </body>
 </html>
+
 
 
 
