@@ -14,19 +14,14 @@
       scroll-behavior: smooth;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #fff;
-    }
 
-    /* Fullscreen background image */
-    .bg-img {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;        /* maintain aspect ratio */
-      object-position: center;  /* adjust focus if needed */
-      z-index: -1;              /* behind content */
-      filter: brightness(0.7);  /* optional: darken slightly for text readability */
+      /* Background image - Option 1 (contain) */
+      background-image: url("lakeside-serenity.jpg");
+      background-size: contain;       /* Show the whole image */
+      background-repeat: no-repeat;   /* Don’t tile the image */
+      background-position: center;    /* Keep it centered */
+      background-attachment: fixed;   /* Optional: keeps image fixed while scrolling */
+      background-color: #000;         /* Fallback color for empty space */
     }
 
     /* Header */
@@ -158,9 +153,6 @@
   </style>
 </head>
 <body>
-  <!-- Fullscreen background -->
-  <img src="lakeside-serenity.jpg" alt="Lakeside Serenity" class="bg-img" />
-
   <header>
     <h1 class="site-title">Shrimpy's Backwoods Workshop</h1>
     <p class="site-subtitle">Grain. Grit. Craftsmanship.</p>
@@ -191,9 +183,3 @@
   </footer>
 </body>
 </html>
-
-
-
-
-
-
