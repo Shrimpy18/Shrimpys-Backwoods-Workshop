@@ -15,13 +15,12 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #fff;
 
-      /* Background image - Option 1 (contain) */
+      /* Background image - Option 2 (cover) */
       background-image: url("lakeside-serenity.jpg");
-      background-size: contain;       /* Show the whole image */
-      background-repeat: no-repeat;   /* Don’t tile the image */
-      background-position: center;    /* Keep it centered */
-      background-attachment: fixed;   /* Optional: keeps image fixed while scrolling */
-      background-color: #000;         /* Fallback color for empty space */
+      background-size: cover;        /* Fill screen, crop if needed */
+      background-position: center;   /* Keep image centered */
+      background-attachment: fixed;  /* Optional: parallax-like effect */
+      background-repeat: no-repeat;
     }
 
     /* Header */
@@ -80,7 +79,7 @@
     main {
       flex: 1 0 auto;
       max-width: 600px;
-      margin: 4rem auto 2rem;
+      margin: 10rem auto 2rem; /* pushed down so header doesn't overlap */
       padding: 2rem 2rem;
       background: rgba(255, 255, 255, 0.85);
       border-radius: 8px;
@@ -140,7 +139,7 @@
     /* Responsive adjustments */
     @media (max-width: 768px) {
       main {
-        margin: 6rem 1rem 2rem;
+        margin: 12rem 1rem 2rem; /* extra space for smaller header wrapping */
         padding: 1.5rem 1rem;
       }
       .site-title {
@@ -183,3 +182,4 @@
   </footer>
 </body>
 </html>
+
