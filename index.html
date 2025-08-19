@@ -15,12 +15,12 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #fff;
 
-      /* Background image - Option 2 (cover) */
+      /* Background image setup */
       background-image: url("lakeside-serenity.jpg");
-      background-size: cover;        /* Fill screen, crop if needed */
-      background-position: center;   /* Keep image centered */
-      background-attachment: fixed;  /* Optional: parallax-like effect */
+      background-size: cover;          /* fill screen */
       background-repeat: no-repeat;
+      background-position: top center; /* keep top visible */
+      background-attachment: fixed;    /* optional parallax effect */
     }
 
     /* Header */
@@ -79,7 +79,7 @@
     main {
       flex: 1 0 auto;
       max-width: 600px;
-      margin: 10rem auto 2rem; /* pushed down so header doesn't overlap */
+      margin: 8rem auto 2rem; /* moved down to clear header */
       padding: 2rem 2rem;
       background: rgba(255, 255, 255, 0.85);
       border-radius: 8px;
@@ -139,7 +139,7 @@
     /* Responsive adjustments */
     @media (max-width: 768px) {
       main {
-        margin: 12rem 1rem 2rem; /* extra space for smaller header wrapping */
+        margin: 10rem 1rem 2rem; /* push down more on mobile */
         padding: 1.5rem 1rem;
       }
       .site-title {
@@ -152,6 +152,7 @@
   </style>
 </head>
 <body>
+
   <header>
     <h1 class="site-title">Shrimpy's Backwoods Workshop</h1>
     <p class="site-subtitle">Grain. Grit. Craftsmanship.</p>
@@ -182,4 +183,3 @@
   </footer>
 </body>
 </html>
-
