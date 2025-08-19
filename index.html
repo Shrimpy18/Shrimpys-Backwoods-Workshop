@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Welcome - Shrimpy's Backwoods Workshop</title>
   <style>
-    /* Reset */
     html, body {
       margin: 0;
       padding: 0;
@@ -15,15 +14,14 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #fff;
 
-      /* Background image setup */
+      /* Background image: cabin at bottom, more sky on top */
       background-image: url("lakeside-serenity.jpg");
-      background-size: cover;        /* fill screen */
+      background-size: cover;              /* fill screen */
       background-repeat: no-repeat;
-      background-position: center;   /* crop evenly top/bottom */
-      background-attachment: fixed;  /* optional parallax effect */
+      background-position: center 20%;     /* shift image up */
+      background-attachment: fixed;        /* optional parallax effect */
     }
 
-    /* Header */
     header {
       background: rgba(255, 255, 255, 0.9);
       position: fixed;
@@ -75,11 +73,10 @@
       color: #a97c50;
     }
 
-    /* Main content */
     main {
       flex: 1 0 auto;
       max-width: 600px;
-      margin: 8rem auto 2rem; /* clear header */
+      margin: 8rem auto 2rem;
       padding: 2rem 2rem;
       background: rgba(255, 255, 255, 0.85);
       border-radius: 8px;
@@ -127,7 +124,6 @@
       margin: 0 auto;
     }
 
-    /* Footer */
     footer {
       flex-shrink: 0;
       text-align: center;
@@ -136,7 +132,6 @@
       color: #5a3e1b;
     }
 
-    /* Responsive adjustments */
     @media (max-width: 768px) {
       main {
         margin: 10rem 1rem 2rem;
@@ -183,5 +178,3 @@
   </footer>
 </body>
 </html>
-
-
