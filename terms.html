@@ -22,14 +22,32 @@
       text-align: center;
       border-radius: 8px;
       margin-bottom: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
     }
     header h1 {
       margin: 0;
       color: #5a3e1b;
+      font-size: 1.5rem;
     }
-    a {
+    nav.top-nav {
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      margin-top: 0.5rem;
+    }
+    nav.top-nav a {
+      margin-left: 0.75rem;
+      text-decoration: none;
       color: #5a3e1b;
-      text-decoration: underline;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      display: inline-block;
+    }
+    nav.top-nav a:hover {
+      color: #a97c50;
     }
     h2 {
       color: #5a3e1b;
@@ -40,6 +58,12 @@
     p {
       margin-bottom: 1rem;
     }
+    section {
+      background: rgba(255, 255, 255, 0.85);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
     footer {
       text-align: center;
       padding: 1rem;
@@ -47,17 +71,18 @@
       color: #5a3e1b;
       margin-top: 2rem;
     }
-    section {
-      background: rgba(255, 255, 255, 0.85);
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
   </style>
 </head>
 <body>
   <header>
     <h1>Shrimpy's Backwoods Workshop</h1>
+    <nav class="top-nav">
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
 
   <section>
@@ -85,3 +110,5 @@
   </footer>
 </body>
 </html>
+
+
