@@ -14,12 +14,13 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #fff;
 
-      /* Background image: cabin at bottom, more sky on top */
+      /* Background image fix: full image visible */
       background-image: url("lakeside-serenity.jpg");
-      background-size: cover;              /* fill screen */
+      background-size: contain;              /* entire image fits in viewport */
       background-repeat: no-repeat;
-      background-position: center 20%;     /* shift image up */
-      background-attachment: fixed;        /* optional parallax effect */
+      background-position: center bottom;    /* cabin stays at bottom */
+      background-attachment: fixed;
+      background-color: #000;                /* fallback color for letterboxing */
     }
 
     header {
