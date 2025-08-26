@@ -5,26 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shop - Shrimpy's Backwoods Workshop</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
-  <!-- PayPal SDK with your actual client ID and hosted-buttons component -->
+  <!-- PayPal SDK -->
   <script 
     src="https://www.paypal.com/sdk/js?client-id=BAAyrSaIOWI7n_0ASFBfFM8R0PIhPdVZgIudq92PipDGedwDTPf8VlX2Kq1QLKOPhX6fQBeY56g4Z4xoJY&components=hosted-buttons&enable-funding=venmo&currency=USD">
   </script>
   <style>
     html {
-      scroll-padding-top: 70px; /* height of fixed header */
+      scroll-padding-top: 70px;
       scroll-behavior: smooth;
       margin: 0;
       padding: 0;
-      overflow-x: hidden; /* prevent horizontal scroll */
+      overflow-x: hidden;
     }
     body {
       font-family: 'Merriweather', serif;
       margin: 0;
-      padding-top: 70px; /* space for fixed header */
+      padding-top: 70px;
       background: url('https://images.unsplash.com/photo-1509228627152-6c6aab3d67b6?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
       background-size: cover;
       color: #333;
-      overflow-x: hidden; /* prevent horizontal scroll */
+      overflow-x: hidden;
     }
     header {
       background: rgba(255, 255, 255, 0.9);
@@ -100,9 +100,20 @@
       font-family: 'Merriweather', serif;
       box-sizing: border-box;
     }
-    /* Optional: Style PayPal button container margin */
+    /* Terms checkbox styling */
+    .terms-container {
+      margin-top: 1.5rem;
+      font-family: 'Merriweather', serif;
+      font-size: 1rem;
+    }
+    .terms-container input {
+      margin-right: 0.5rem;
+      transform: scale(1.2);
+      vertical-align: middle;
+    }
+    /* PayPal button spacing */
     #paypal-container-RY8CX3ZFXUV8C {
-      margin-top: 2rem;
+      margin-top: 1.5rem;
     }
   </style>
 </head>
@@ -122,12 +133,34 @@
     <h2>Shop</h2>
     <p>Browse our handcrafted custom woodwork, precision laser engraving, and 3D printed items coming soon!</p>
 
-    <!-- PayPal Hosted Button -->
-    <div id="paypal-container-RY8CX3ZFXUV8C"></div>
+    <!-- Terms Checkbox -->
+    <label class="terms-container">
+      <input type="checkbox" id="termsCheckbox" />
+      I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a>
+    </label>
+
+    <!-- PayPal Hosted Button (hidden initially) -->
+    <div id="paypal-container-RY8CX3ZFXUV8C" style="display:none;"></div>
+
     <script>
-      paypal.HostedButtons({
-        hostedButtonId: "RY8CX3ZFXUV8C",
-      }).render("#paypal-container-RY8CX3ZFXUV8C");
+      const checkbox = document.getElementById('termsCheckbox');
+      const paypalContainer = document.getElementById('paypal-container-RY8CX3ZFXUV8C');
+      let buttonRendered = false;
+
+      checkbox.addEventListener('change', function() {
+        if (checkbox.checked) {
+          paypalContainer.style.display = 'block';
+
+          if (!buttonRendered) {
+            paypal.HostedButtons({
+              hostedButtonId: "RY8CX3ZFXUV8C"
+            }).render("#paypal-container-RY8CX3ZFXUV8C");
+            buttonRendered = true;
+          }
+        } else {
+          paypalContainer.style.display = 'none';
+        }
+      });
     </script>
   </section>
 
