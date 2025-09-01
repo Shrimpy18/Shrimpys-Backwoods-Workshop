@@ -87,37 +87,27 @@
       padding-bottom: 0.5rem;
     }
 
-    .gallery-container {
+    .project {
+      margin-bottom: 3rem;
+    }
+
+    .project h3 {
+      color: #7b5a2a;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    .project-images {
       display: flex;
-      overflow-x: auto;
+      flex-wrap: wrap;
       gap: 1rem;
-      padding: 1rem 0;
-      -webkit-overflow-scrolling: touch;
     }
 
-    .gallery-item {
-      flex: 0 0 auto; /* keep width fixed */
-      width: 250px;   /* smaller view */
-      text-align: center;
-      border-radius: 8px;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: auto;
+    .project-images img {
+      width: 30%;
+      max-width: 300px;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    }
-
-    .gallery-item h3 {
-      margin: 0.5rem 0 0;
-      color: #7b5a2a;
-      font-size: 1rem;
-    }
-
-    .gallery-item p {
-      margin: 0.2rem 0 1rem;
-      font-size: 0.9rem;
     }
 
     footer {
@@ -126,6 +116,18 @@
       font-size: 0.9rem;
       color: #5a3e1b;
       box-sizing: border-box;
+    }
+
+    @media (max-width: 768px) {
+      .project-images img {
+        width: 45%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .project-images img {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -145,56 +147,53 @@
   <main>
     <h2>Gallery</h2>
 
-    <div class="gallery-container">
-      <div class="gallery-item">
+    <!-- Bench Project -->
+    <div class="project">
+      <h3>Rustic Wooden Bench</h3>
+      <div class="project-images">
         <img src="images/bench.jpg" alt="Rustic Wooden Bench">
-        <h3>Rustic Wooden Bench</h3>
-      </div>
-      <div class="gallery-item">
-        <img src="images/bird house_iso.jpg" alt="Triple-Decker Lighthouse Birdhouse ISO">
-        <h3>Birdhouse ISO</h3>
-      </div>
-      <div class="gallery-item">
-        <img src="images/birdhouse_left.jpg" alt="Birdhouse Left View">
-        <h3>Birdhouse Left</h3>
-      </div>
-      <div class="gallery-item">
-        <img src="images/birdhouse_right.jpg" alt="Birdhouse Right View">
-        <h3>Birdhouse Right</h3>
-      </div>
-      <div class="gallery-item">
-        <img src="images/box_iso.jpg" alt="Wooden Box ISO">
-        <h3>Box ISO</h3>
-      </div>
-      <div class="gallery-item">
-        <img src="images/box_top.jpg" alt="Wooden Box Top View">
-        <h3>Box Top</h3>
-      </div>
-      <div class="gallery-item">
-        <img src="images/chair_back.jpg" alt="Chair Back">
-        <h3>Chair Back</h3>
-      </div>
-      <div class="gallery-item">
-        <img src="images/chair_back_down.jpg" alt="Chair Back Down">
-        <h3>Chair Back Down</h3>
-      </div>
-      <div class="gallery-item">
-        <img src="images/chair_foot.jpg" alt="Chair Foot">
-        <h3>Chair Foot</h3>
-      </div>
-      <div class="gallery-item">
-        <img src="images/chair_front.jpg" alt="Chair Front">
-        <h3>Chair Front</h3>
-      </div>
-      <div class="gallery-item">
-        <img src="images/rocker_front.jpg" alt="Rocking Chair Front">
-        <h3>Rocker Front</h3>
-      </div>
-      <div class="gallery-item">
-        <img src="images/rocker_iso.jpg" alt="Rocking Chair ISO">
-        <h3>Rocker ISO</h3>
       </div>
     </div>
+
+    <!-- Birdhouse Project -->
+    <div class="project">
+      <h3>Birdhouses</h3>
+      <div class="project-images">
+        <img src="images/bird house_iso.jpg" alt="Birdhouse ISO">
+        <img src="images/birdhouse_left.jpg" alt="Birdhouse Left">
+        <img src="images/birdhouse_right.jpg" alt="Birdhouse Right">
+      </div>
+    </div>
+
+    <!-- Box Project -->
+    <div class="project">
+      <h3>Wooden Boxes</h3>
+      <div class="project-images">
+        <img src="images/box_iso.jpg" alt="Box ISO">
+        <img src="images/box_top.jpg" alt="Box Top">
+      </div>
+    </div>
+
+    <!-- Chair Project -->
+    <div class="project">
+      <h3>Chairs</h3>
+      <div class="project-images">
+        <img src="images/chair_back.jpg" alt="Chair Back">
+        <img src="images/chair_back_down.jpg" alt="Chair Back Down">
+        <img src="images/chair_foot.jpg" alt="Chair Foot">
+        <img src="images/chair_front.jpg" alt="Chair Front">
+      </div>
+    </div>
+
+    <!-- Rocker Project -->
+    <div class="project">
+      <h3>Rocking Chairs</h3>
+      <div class="project-images">
+        <img src="images/rocker_front.jpg" alt="Rocker Front">
+        <img src="images/rocker_iso.jpg" alt="Rocker ISO">
+      </div>
+    </div>
+
   </main>
 
   <footer>
@@ -202,8 +201,3 @@
   </footer>
 </body>
 </html>
-
-
-
-
-
