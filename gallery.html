@@ -21,7 +21,6 @@
       background: url('background.png') no-repeat center center fixed;
       background-size: cover;
       color: #333;
-      overflow-x: hidden;
     }
 
     header {
@@ -29,7 +28,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 1rem;
+      padding: 1rem;
       position: fixed;
       width: 100vw;
       top: 0;
@@ -78,8 +77,6 @@
       padding: 2rem;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      font-size: 1.1rem;
-      line-height: 1.6;
       box-sizing: border-box;
     }
 
@@ -90,13 +87,23 @@
       padding-bottom: 0.5rem;
     }
 
+    .gallery-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding: 1rem 0;
+      -webkit-overflow-scrolling: touch;
+    }
+
     .gallery-item {
-      margin-bottom: 2rem;
+      flex: 0 0 auto; /* keep width fixed */
+      width: 250px;   /* smaller view */
       text-align: center;
+      border-radius: 8px;
     }
 
     .gallery-item img {
-      max-width: 100%;
+      width: 100%;
       height: auto;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
@@ -105,10 +112,12 @@
     .gallery-item h3 {
       margin: 0.5rem 0 0;
       color: #7b5a2a;
+      font-size: 1rem;
     }
 
     .gallery-item p {
       margin: 0.2rem 0 1rem;
+      font-size: 0.9rem;
     }
 
     footer {
@@ -136,76 +145,55 @@
   <main>
     <h2>Gallery</h2>
 
-    <div class="gallery-item">
-      <img src="images/bench.jpg" alt="Rustic Wooden Bench">
-      <h3>Rustic Wooden Bench</h3>
-      <p>Perfect for porches or gardens.</p>
-    </div>
-
-    <div class="gallery-item">
-      <img src="images/bird house_iso.jpg" alt="Triple-Decker Lighthouse Birdhouse ISO">
-      <h3>Triple-Decker Lighthouse Birdhouse</h3>
-      <p>Handcrafted with care, perfect for your garden.</p>
-    </div>
-
-    <div class="gallery-item">
-      <img src="images/birdhouse_left.jpg" alt="Birdhouse Left View">
-      <h3>Birdhouse Left</h3>
-      <p>Detailed view from the left side.</p>
-    </div>
-
-    <div class="gallery-item">
-      <img src="images/birdhouse_right.jpg" alt="Birdhouse Right View">
-      <h3>Birdhouse Right</h3>
-      <p>Detailed view from the right side.</p>
-    </div>
-
-    <div class="gallery-item">
-      <img src="images/box_iso.jpg" alt="Wooden Box ISO">
-      <h3>Custom Wooden Box</h3>
-      <p>Personalized storage solution for keepsakes.</p>
-    </div>
-
-    <div class="gallery-item">
-      <img src="images/box_top.jpg" alt="Wooden Box Top View">
-      <h3>Box Top View</h3>
-      <p>Detailed view of the top.</p>
-    </div>
-
-    <div class="gallery-item">
-      <img src="images/chair_back.jpg" alt="Chair Back">
-      <h3>Chair Back</h3>
-      <p>View of the chair back design.</p>
-    </div>
-
-    <div class="gallery-item">
-      <img src="images/chair_back_down.jpg" alt="Chair Back Down">
-      <h3>Chair Back Down</h3>
-      <p>Lower section of the chair back.</p>
-    </div>
-
-    <div class="gallery-item">
-      <img src="images/chair_foot.jpg" alt="Chair Foot">
-      <h3>Chair Foot</h3>
-      <p>Detail of the chair foot.</p>
-    </div>
-
-    <div class="gallery-item">
-      <img src="images/chair_front.jpg" alt="Chair Front">
-      <h3>Chair Front</h3>
-      <p>Front view of the chair.</p>
-    </div>
-
-    <div class="gallery-item">
-      <img src="images/rocker_front.jpg" alt="Rocking Chair Front">
-      <h3>Rocking Chair Front</h3>
-      <p>Front view of the handcrafted rocker.</p>
-    </div>
-
-    <div class="gallery-item">
-      <img src="images/rocker_iso.jpg" alt="Rocking Chair ISO">
-      <h3>Rocking Chair ISO</h3>
-      <p>Isometric view of the rocking chair.</p>
+    <div class="gallery-container">
+      <div class="gallery-item">
+        <img src="images/bench.jpg" alt="Rustic Wooden Bench">
+        <h3>Rustic Wooden Bench</h3>
+      </div>
+      <div class="gallery-item">
+        <img src="images/bird house_iso.jpg" alt="Triple-Decker Lighthouse Birdhouse ISO">
+        <h3>Birdhouse ISO</h3>
+      </div>
+      <div class="gallery-item">
+        <img src="images/birdhouse_left.jpg" alt="Birdhouse Left View">
+        <h3>Birdhouse Left</h3>
+      </div>
+      <div class="gallery-item">
+        <img src="images/birdhouse_right.jpg" alt="Birdhouse Right View">
+        <h3>Birdhouse Right</h3>
+      </div>
+      <div class="gallery-item">
+        <img src="images/box_iso.jpg" alt="Wooden Box ISO">
+        <h3>Box ISO</h3>
+      </div>
+      <div class="gallery-item">
+        <img src="images/box_top.jpg" alt="Wooden Box Top View">
+        <h3>Box Top</h3>
+      </div>
+      <div class="gallery-item">
+        <img src="images/chair_back.jpg" alt="Chair Back">
+        <h3>Chair Back</h3>
+      </div>
+      <div class="gallery-item">
+        <img src="images/chair_back_down.jpg" alt="Chair Back Down">
+        <h3>Chair Back Down</h3>
+      </div>
+      <div class="gallery-item">
+        <img src="images/chair_foot.jpg" alt="Chair Foot">
+        <h3>Chair Foot</h3>
+      </div>
+      <div class="gallery-item">
+        <img src="images/chair_front.jpg" alt="Chair Front">
+        <h3>Chair Front</h3>
+      </div>
+      <div class="gallery-item">
+        <img src="images/rocker_front.jpg" alt="Rocking Chair Front">
+        <h3>Rocker Front</h3>
+      </div>
+      <div class="gallery-item">
+        <img src="images/rocker_iso.jpg" alt="Rocking Chair ISO">
+        <h3>Rocker ISO</h3>
+      </div>
     </div>
   </main>
 
@@ -214,6 +202,8 @@
   </footer>
 </body>
 </html>
+
+
 
 
 
