@@ -5,49 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Welcome - Shrimpy's Backwoods Workshop</title>
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
       min-height: 100vh;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      scroll-behavior: smooth;
 
-      /* High-res background */
+      /* Full-resolution background from Unsplash */
       background: url("https://images.unsplash.com/photo-1509228627152-6c6aab3d67b6?ixlib=rb-4.0.3&auto=format&fit=crop&w=3840&q=100") 
                   no-repeat center center;
       background-size: cover;
     }
 
     header {
-      background: rgba(255,255,255,0.9);
+      background: rgba(255, 255, 255, 0.9);
       position: fixed;
-      width: 100%;
       top: 0;
       left: 0;
+      width: 100%;
       z-index: 1000;
       padding: 1rem;
-      text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-align: center;
     }
 
     header h1 {
-      margin: 0;
+      margin: 0.2rem 0;
       color: #5a3e1b;
+      font-size: 2rem;
     }
 
-    nav a {
+    nav.top-nav a {
       margin: 0 0.5rem;
       text-decoration: none;
       color: #5a3e1b;
-      font-weight: bold;
+      font-weight: 600;
+      transition: color 0.3s ease;
+      display: inline-block;
     }
 
-    nav a:hover {
+    nav.top-nav a:hover {
       color: #a97c50;
     }
 
     main {
       margin: 6rem auto 2rem;
       max-width: 800px;
-      background: rgba(255,255,255,0.85);
+      background: rgba(255, 255, 255, 0.85);
       padding: 2rem;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -55,17 +61,67 @@
       color: #333;
     }
 
+    main h2 {
+      color: #5a3e1b;
+      font-family: 'Georgia', serif;
+      margin-bottom: 1rem;
+    }
+
+    main p {
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 0 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #a97c50;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .links a:hover {
+      background-color: #7b5a2a;
+    }
+
+    .logo-below {
+      margin-top: 2rem;
+    }
+
+    .logo-below img {
+      max-width: 900px;
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
       color: #5a3e1b;
+    }
+
+    @media (max-width: 768px) {
+      main {
+        margin: 10rem 1rem 2rem;
+        padding: 1.5rem;
+      }
+      header h1 {
+        font-size: 1.6rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
     <h1>Shrimpy's Backwoods Workshop</h1>
-    <nav>
+    <nav class="top-nav">
+      <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="gallery.html">Gallery</a>
@@ -75,15 +131,24 @@
   </header>
 
   <main>
-    <h2>Welcome</h2>
-    <p>Your trusted destination for handcrafted woodwork, laser engraving, and 3D printing.</p>
+    <h2>Welcome to Shrimpy's Backwoods Workshop</h2>
+    <p>Shrimpy’s Backwoods Workshop is your trusted destination for handcrafted custom woodwork, precision laser engraving, and innovative 3D printing. Nestled away in the backwoods, we combine traditional craftsmanship with modern technology to create unique, personalized furniture, decor, gifts, and accessories. Every piece is built with care and attention to detail, designed to bring warmth, character, and functionality to your home or business. Whether you're looking for a one-of-a-kind wood creation, finely engraved keepsakes, or custom 3D printed items, Shrimpy’s Backwoods Workshop delivers quality, creativity, and a touch of rustic charm.</p>
+    <div class="links">
+      <a href="about.html">About Us</a>
+      <a href="shop.html">Shop Now</a>
+      <a href="contact.html">Get in Touch</a>
+    </div>
+    <div class="logo-below">
+      <img src="logo.png" alt="Shrimpy's Logo" />
+    </div>
   </main>
 
   <footer>
-    &copy; 2025 Shrimpy's Backwoods Workshop
+    <p>&copy; 2025 Shrimpy's Backwoods Workshop. All rights reserved.</p>
   </footer>
 </body>
 </html>
+
 
 
 
