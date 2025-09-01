@@ -7,7 +7,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
   <style>
     html {
-      scroll-padding-top: 150px; /* fixed header height */
+      scroll-padding-top: 150px;
       scroll-behavior: smooth;
       margin: 0;
       padding: 0;
@@ -118,7 +118,7 @@
     </nav>
   </header>
 
-  <!-- Carousel Project Template -->
+  <!-- Birdhouse -->
   <section class="project">
     <h2>Birdhouse</h2>
     <div class="carousel-container" id="carousel-birdhouse">
@@ -129,6 +129,7 @@
     <p class="description">A handcrafted birdhouse with precision details, perfect for outdoor décor and wildlife enthusiasts.</p>
   </section>
 
+  <!-- Wooden Box -->
   <section class="project">
     <h2>Wooden Box</h2>
     <div class="carousel-container" id="carousel-box">
@@ -139,16 +140,18 @@
     <p class="description">Custom wooden boxes made with quality pine, ideal for gifts or storage with a rustic touch.</p>
   </section>
 
+  <!-- Adirondack Lounge Chair -->
   <section class="project">
-    <h2>Adirondack Chair</h2>
+    <h2>Adirondack Lounge Chair</h2>
     <div class="carousel-container" id="carousel-chair">
       <button class="carousel-button prev" onclick="prevSlide('chair')">&#10094;</button>
-      <img src="images/chair_back.jpg" alt="Chair" id="chair-image" />
+      <img src="images/chair_front.jpg" alt="Adirondack Lounge Chair" id="chair-image" />
       <button class="carousel-button next" onclick="nextSlide('chair')">&#10095;</button>
     </div>
-    <p class="description">Classic adult-sized Adirondack chairs, handcrafted for comfort and outdoor elegance.</p>
+    <p class="description">Classic adult-sized Adirondack lounge chairs, handcrafted for comfort and outdoor elegance.</p>
   </section>
 
+  <!-- Rocking Chair -->
   <section class="project">
     <h2>Rocking Chair</h2>
     <div class="carousel-container" id="carousel-rocker">
@@ -159,6 +162,7 @@
     <p class="description">A beautifully finished wooden rocking chair, perfect for relaxing on the porch or in the living room.</p>
   </section>
 
+  <!-- Bench -->
   <section class="project">
     <h2>Bench</h2>
     <div class="carousel-container" id="carousel-bench">
@@ -175,9 +179,9 @@
 
   <script>
     const slides = {
-      birdhouse: ["images/birdhouse_left.jpg","images/birdhouse_right.jpg","images/bird_house_iso.jpg"],
+      birdhouse: ["images/birdhouse_left.jpg","images/birdhouse_right.jpg","images/birdhouse_iso.jpg"],
       box: ["images/box_iso.jpg","images/box_top.jpg"],
-      chair: ["images/chair_back.jpg","images/chair_back_down.jpg","images/chair_foot.jpg","images/chair_front.jpg"],
+      chair: ["images/chair_front.jpg","images/chair_foot.jpg","images/chair_back_down.jpg","images/chair_back.jpg"],
       rocker: ["images/rocker_front.jpg","images/rocker_iso.jpg"],
       bench: ["images/bench.jpg"]
     };
@@ -202,3 +206,5 @@
   </script>
 </body>
 </html>
+
+
