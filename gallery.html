@@ -190,27 +190,19 @@
       bench: ["images/bench.jpg"]
     };
 
-    const indices = {
-      birdhouse: 0,
-      box: 0,
-      chair: 0,
-      rocker: 0,
-      bench: 0
-    };
+    const indices = { birdhouse:0, box:0, chair:0, rocker:0, bench:0 };
 
     function nextSlide(project) {
-      indices[project] = (indices[project] + 1) % slides[project].length;
-      document.getElementById(project + "-image").src = slides[project][indices[project]];
+      indices[project] = (indices[project]+1) % slides[project].length;
+      document.getElementById(project+"-image").src = slides[project][indices[project]];
     }
 
     function prevSlide(project) {
-      indices[project] = (indices[project] - 1 + slides[project].length) % slides[project].length;
-      document.getElementById(project + "-image").src = slides[project][indices[project]];
+      indices[project] = (indices[project]-1+slides[project].length) % slides[project].length;
+      document.getElementById(project+"-image").src = slides[project][indices[project]];
     }
   </script>
 </body>
 </html>
-
-
 
 
