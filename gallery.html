@@ -68,18 +68,30 @@
       box-sizing: border-box;
       text-align: center;
     }
-    .images-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 1rem;
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
     }
-    .images-container img {
-      width: 200px;
+    .carousel-container img {
+      width: 100%;
       height: auto;
       border-radius: 5px;
     }
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      font-size: 1.5rem;
+      padding: 0.3rem 0.6rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .carousel-button.prev { left: 5px; }
+    .carousel-button.next { right: 5px; }
     .description {
       font-size: 1rem;
       color: #5a3e1b;
@@ -106,54 +118,53 @@
     </nav>
   </header>
 
-  <!-- Birdhouse Project -->
+  <!-- Carousel Project Template -->
   <section class="project">
     <h2>Birdhouse</h2>
-    <div class="images-container">
-      <img src="images/birdhouse_left.jpg" alt="Birdhouse Left" />
-      <img src="images/birdhouse_right.jpg" alt="Birdhouse Right" />
-      <img src="images/bird_house_iso.jpg" alt="Birdhouse Isometric" />
+    <div class="carousel-container" id="carousel-birdhouse">
+      <button class="carousel-button prev" onclick="prevSlide('birdhouse')">&#10094;</button>
+      <img src="images/birdhouse_left.jpg" alt="Birdhouse" id="birdhouse-image" />
+      <button class="carousel-button next" onclick="nextSlide('birdhouse')">&#10095;</button>
     </div>
     <p class="description">A handcrafted birdhouse with precision details, perfect for outdoor décor and wildlife enthusiasts.</p>
   </section>
 
-  <!-- Wooden Box Project -->
   <section class="project">
     <h2>Wooden Box</h2>
-    <div class="images-container">
-      <img src="images/box_iso.jpg" alt="Box Isometric" />
-      <img src="images/box_top.jpg" alt="Box Top View" />
+    <div class="carousel-container" id="carousel-box">
+      <button class="carousel-button prev" onclick="prevSlide('box')">&#10094;</button>
+      <img src="images/box_iso.jpg" alt="Box" id="box-image" />
+      <button class="carousel-button next" onclick="nextSlide('box')">&#10095;</button>
     </div>
     <p class="description">Custom wooden boxes made with quality pine, ideal for gifts or storage with a rustic touch.</p>
   </section>
 
-  <!-- Adirondack Chair Project -->
   <section class="project">
     <h2>Adirondack Chair</h2>
-    <div class="images-container">
-      <img src="images/chair_back.jpg" alt="Chair Back" />
-      <img src="images/chair_back_down.jpg" alt="Chair Back Down" />
-      <img src="images/chair_foot.jpg" alt="Chair Foot" />
-      <img src="images/chair_front.jpg" alt="Chair Front" />
+    <div class="carousel-container" id="carousel-chair">
+      <button class="carousel-button prev" onclick="prevSlide('chair')">&#10094;</button>
+      <img src="images/chair_back.jpg" alt="Chair" id="chair-image" />
+      <button class="carousel-button next" onclick="nextSlide('chair')">&#10095;</button>
     </div>
     <p class="description">Classic adult-sized Adirondack chairs, handcrafted for comfort and outdoor elegance.</p>
   </section>
 
-  <!-- Rocking Chair Project -->
   <section class="project">
     <h2>Rocking Chair</h2>
-    <div class="images-container">
-      <img src="images/rocker_front.jpg" alt="Rocking Chair Front" />
-      <img src="images/rocker_iso.jpg" alt="Rocking Chair Isometric" />
+    <div class="carousel-container" id="carousel-rocker">
+      <button class="carousel-button prev" onclick="prevSlide('rocker')">&#10094;</button>
+      <img src="images/rocker_front.jpg" alt="Rocking Chair" id="rocker-image" />
+      <button class="carousel-button next" onclick="nextSlide('rocker')">&#10095;</button>
     </div>
     <p class="description">A beautifully finished wooden rocking chair, perfect for relaxing on the porch or in the living room.</p>
   </section>
 
-  <!-- Bench Project -->
   <section class="project">
     <h2>Bench</h2>
-    <div class="images-container">
-      <img src="images/bench.jpg" alt="Bench" />
+    <div class="carousel-container" id="carousel-bench">
+      <button class="carousel-button prev" onclick="prevSlide('bench')">&#10094;</button>
+      <img src="images/bench.jpg" alt="Bench" id="bench-image" />
+      <button class="carousel-button next" onclick="nextSlide('bench')">&#10095;</button>
     </div>
     <p class="description">Sturdy and stylish benches made from quality pine, designed to complement any outdoor or indoor space.</p>
   </section>
@@ -161,5 +172,33 @@
   <footer>
     <p>&copy; 2025 Shrimpy's Backwoods Workshop. All rights reserved.</p>
   </footer>
+
+  <script>
+    const slides = {
+      birdhouse: ["images/birdhouse_left.jpg","images/birdhouse_right.jpg","images/bird_house_iso.jpg"],
+      box: ["images/box_iso.jpg","images/box_top.jpg"],
+      chair: ["images/chair_back.jpg","images/chair_back_down.jpg","images/chair_foot.jpg","images/chair_front.jpg"],
+      rocker: ["images/rocker_front.jpg","images/rocker_iso.jpg"],
+      bench: ["images/bench.jpg"]
+    };
+
+    const indices = {
+      birdhouse: 0,
+      box: 0,
+      chair: 0,
+      rocker: 0,
+      bench: 0
+    };
+
+    function nextSlide(project) {
+      indices[project] = (indices[project] + 1) % slides[project].length;
+      document.getElementById(project + "-image").src = slides[project][indices[project]];
+    }
+
+    function prevSlide(project) {
+      indices[project] = (indices[project] - 1 + slides[project].length) % slides[project].length;
+      document.getElementById(project + "-image").src = slides[project][indices[project]];
+    }
+  </script>
 </body>
 </html>
