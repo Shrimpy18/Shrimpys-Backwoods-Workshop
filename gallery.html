@@ -1,158 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gallery - Shrimpy's Backwoods Workshop</title>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
   <style>
-    html { scroll-padding-top: 70px; scroll-behavior: smooth; margin:0; padding:0; }
+    html {
+      scroll-padding-top: 150px; /* fixed header height */
+      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
     body {
       font-family: 'Merriweather', serif;
-      margin:0; padding-top:70px;
+      margin: 0;
+      padding-top: 150px;
       background: url('background.png') no-repeat center center fixed;
       background-size: cover;
-      color:#333;
+      color: #333;
     }
     header {
-      background: rgba(255,255,255,0.9);
-      display:flex; justify-content:space-between; align-items:center;
-      padding:1rem; position:fixed; width:100vw; top:0; z-index:1000;
-      box-shadow:0 2px 5px rgba(0,0,0,0.1); box-sizing:border-box;
+      background: rgba(255, 255, 255, 0.9);
+      position: fixed;
+      width: 100vw;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-sizing: border-box;
     }
-    header h1 { margin:0; font-size:1.5rem; color:#5a3e1b; white-space:nowrap; }
-    nav.top-nav { overflow-x:auto; white-space:nowrap; -webkit-overflow-scrolling:touch; max-width:600px; flex-shrink:0; }
-    nav.top-nav a { margin-left:0.75rem; text-decoration:none; color:#5a3e1b; font-weight:600; transition:color 0.3s ease; display:inline-block; }
-    nav.top-nav a:hover { color:#a97c50; }
-    nav.top-nav a.active { color:#a97c50; text-decoration:underline; }
-    main {
-      background: rgba(255,255,255,0.85);
-      margin:2rem auto 3rem; max-width:1000px;
-      padding:2rem; border-radius:8px; box-shadow:0 4px 10px rgba(0,0,0,0.1); box-sizing:border-box;
+    .site-title {
+      font-size: 2rem;
+      margin: 0.5rem 0;
+      color: #5a3e1b;
     }
-    h2 { color:#5a3e1b; margin-bottom:1rem; border-bottom:2px solid #a97c50; padding-bottom:0.5rem; }
-    .project { margin-bottom:3rem; text-align:center; }
-    .project h3 { color:#7b5a2a; margin-bottom:0.3rem; font-size:1.2rem; }
-    .project p.description { font-size:0.95rem; margin-bottom:0.7rem; color:#5a3e1b; }
-    .carousel-container { position:relative; max-width:500px; margin:0 auto; }
-    .carousel-container img {
-      width:100%; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1);
-      display:block;
+    nav.top-nav {
+      margin-top: 0.5rem;
+      text-align: center;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+      max-width: 600px;
     }
-    .arrow {
-      position:absolute; top:50%; transform:translateY(-50%);
-      font-size:2rem; color:#fff; background:rgba(0,0,0,0.4);
-      border:none; padding:0.2rem 0.5rem; cursor:pointer; border-radius:4px;
-      user-select:none;
+    nav.top-nav a {
+      margin: 0 0.5rem;
+      text-decoration: none;
+      color: #5a3e1b;
+      font-weight: 600;
+      transition: color 0.3s ease;
     }
-    .arrow.left { left:5px; }
-    .arrow.right { right:5px; }
+    nav.top-nav a:hover {
+      color: #a97c50;
+    }
+    section.project {
+      background: rgba(255, 255, 255, 0.85);
+      margin: 2rem auto;
+      max-width: 900px;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-sizing: border-box;
+      text-align: center;
+    }
+    .images-container {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .images-container img {
+      width: 200px;
+      height: auto;
+      border-radius: 5px;
+    }
+    .description {
+      font-size: 1rem;
+      color: #5a3e1b;
+      margin-top: 0.5rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #5a3e1b;
+    }
   </style>
 </head>
 <body>
-<header>
-  <h1>Shrimpy's Backwoods Workshop</h1>
-  <nav class="top-nav">
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="gallery.html" class="active">Gallery</a>
-    <a href="shop.html">Shop</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
-<main>
-  <h2>Gallery</h2>
+  <header>
+    <h1 class="site-title">Shrimpy's Backwoods Workshop</h1>
+    <nav class="top-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
 
   <!-- Birdhouse Project -->
-  <div class="project">
-    <h3>Birdhouses</h3>
-    <p class="description">Custom triple-decker lighthouse birdhouses, perfect for your backyard or as unique gifts.</p>
-    <div class="carousel-container" data-images='["images/bird house_iso.jpg","images/birdhouse_left.jpg","images/birdhouse_right.jpg"]'>
-      <button class="arrow left">&#10094;</button>
-      <img src="images/bird house_iso.jpg" alt="Birdhouse ISO">
-      <button class="arrow right">&#10095;</button>
+  <section class="project">
+    <h2>Birdhouse</h2>
+    <div class="images-container">
+      <img src="images/birdhouse_left.jpg" alt="Birdhouse Left" />
+      <img src="images/birdhouse_right.jpg" alt="Birdhouse Right" />
+      <img src="images/bird_house_iso.jpg" alt="Birdhouse Isometric" />
     </div>
-  </div>
+    <p class="description">A handcrafted birdhouse with precision details, perfect for outdoor décor and wildlife enthusiasts.</p>
+  </section>
 
-  <!-- Boxes Project -->
-  <div class="project">
-    <h3>Wooden Boxes</h3>
-    <p class="description">Handcrafted wooden boxes with intricate joinery, perfect for keepsakes or decorative storage.</p>
-    <div class="carousel-container" data-images='["images/box_iso.jpg","images/box_top.jpg"]'>
-      <button class="arrow left">&#10094;</button>
-      <img src="images/box_iso.jpg" alt="Box ISO">
-      <button class="arrow right">&#10095;</button>
+  <!-- Wooden Box Project -->
+  <section class="project">
+    <h2>Wooden Box</h2>
+    <div class="images-container">
+      <img src="images/box_iso.jpg" alt="Box Isometric" />
+      <img src="images/box_top.jpg" alt="Box Top View" />
     </div>
-  </div>
+    <p class="description">Custom wooden boxes made with quality pine, ideal for gifts or storage with a rustic touch.</p>
+  </section>
 
-  <!-- Chairs Project -->
-  <div class="project">
-    <h3>Chairs</h3>
-    <p class="description">Classic Adirondack chairs and other seating, crafted with precision and comfort in mind.</p>
-    <div class="carousel-container" data-images='["images/chair_back.jpg","images/chair_back_down.jpg","images/chair_foot.jpg","images/chair_front.jpg"]'>
-      <button class="arrow left">&#10094;</button>
-      <img src="images/chair_back.jpg" alt="Chair Back">
-      <button class="arrow right">&#10095;</button>
+  <!-- Adirondack Chair Project -->
+  <section class="project">
+    <h2>Adirondack Chair</h2>
+    <div class="images-container">
+      <img src="images/chair_back.jpg" alt="Chair Back" />
+      <img src="images/chair_back_down.jpg" alt="Chair Back Down" />
+      <img src="images/chair_foot.jpg" alt="Chair Foot" />
+      <img src="images/chair_front.jpg" alt="Chair Front" />
     </div>
-  </div>
+    <p class="description">Classic adult-sized Adirondack chairs, handcrafted for comfort and outdoor elegance.</p>
+  </section>
 
-  <!-- Rocking Chairs Project -->
-  <div class="project">
-    <h3>Rocking Chairs</h3>
-    <p class="description">Handmade rocking chairs with smooth curves and rustic charm for relaxing comfort.</p>
-    <div class="carousel-container" data-images='["images/rocker_front.jpg","images/rocker_iso.jpg"]'>
-      <button class="arrow left">&#10094;</button>
-      <img src="images/rocker_front.jpg" alt="Rocker Front">
-      <button class="arrow right">&#10095;</button>
+  <!-- Rocking Chair Project -->
+  <section class="project">
+    <h2>Rocking Chair</h2>
+    <div class="images-container">
+      <img src="images/rocker_front.jpg" alt="Rocking Chair Front" />
+      <img src="images/rocker_iso.jpg" alt="Rocking Chair Isometric" />
     </div>
-  </div>
+    <p class="description">A beautifully finished wooden rocking chair, perfect for relaxing on the porch or in the living room.</p>
+  </section>
 
   <!-- Bench Project -->
-  <div class="project">
-    <h3>Rustic Wooden Bench</h3>
-    <p class="description">Solid pine benches, perfect for porches, gardens, or indoor seating.</p>
-    <div class="carousel-container" data-images='["images/bench.jpg"]'>
-      <button class="arrow left">&#10094;</button>
-      <img src="images/bench.jpg" alt="Rustic Wooden Bench">
-      <button class="arrow right">&#10095;</button>
+  <section class="project">
+    <h2>Bench</h2>
+    <div class="images-container">
+      <img src="images/bench.jpg" alt="Bench" />
     </div>
-  </div>
+    <p class="description">Sturdy and stylish benches made from quality pine, designed to complement any outdoor or indoor space.</p>
+  </section>
 
-</main>
-
-<footer>
-  <p>&copy; 2025 Shrimpy's Backwoods Workshop. All rights reserved.</p>
-</footer>
-
-<script>
-  // Carousel logic
-  document.querySelectorAll('.carousel-container').forEach(container => {
-    const img = container.querySelector('img');
-    const images = JSON.parse(container.getAttribute('data-images'));
-    let index = 0;
-
-    const updateImage = () => {
-      img.src = images[index];
-      img.alt = images[index].split('/').pop();
-    }
-
-    container.querySelector('.left').addEventListener('click', () => {
-      index = (index - 1 + images.length) % images.length;
-      updateImage();
-    });
-
-    container.querySelector('.right').addEventListener('click', () => {
-      index = (index + 1) % images.length;
-      updateImage();
-    });
-  });
-</script>
+  <footer>
+    <p>&copy; 2025 Shrimpy's Backwoods Workshop. All rights reserved.</p>
+  </footer>
 </body>
 </html>
-
-
-
-
-
