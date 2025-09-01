@@ -32,7 +32,8 @@
     }
     h2 { color:#5a3e1b; margin-bottom:1rem; border-bottom:2px solid #a97c50; padding-bottom:0.5rem; }
     .project { margin-bottom:3rem; text-align:center; }
-    .project h3 { color:#7b5a2a; margin-bottom:0.5rem; font-size:1.2rem; }
+    .project h3 { color:#7b5a2a; margin-bottom:0.3rem; font-size:1.2rem; }
+    .project p.description { font-size:0.95rem; margin-bottom:0.7rem; color:#5a3e1b; }
     .carousel-container { position:relative; max-width:500px; margin:0 auto; }
     .carousel-container img {
       width:100%; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1);
@@ -64,19 +65,10 @@
 <main>
   <h2>Gallery</h2>
 
-  <!-- Bench Project -->
-  <div class="project">
-    <h3>Rustic Wooden Bench</h3>
-    <div class="carousel-container" data-images='["images/bench.jpg"]'>
-      <button class="arrow left">&#10094;</button>
-      <img src="images/bench.jpg" alt="Rustic Wooden Bench">
-      <button class="arrow right">&#10095;</button>
-    </div>
-  </div>
-
   <!-- Birdhouse Project -->
   <div class="project">
     <h3>Birdhouses</h3>
+    <p class="description">Custom triple-decker lighthouse birdhouses, perfect for your backyard or as unique gifts.</p>
     <div class="carousel-container" data-images='["images/bird house_iso.jpg","images/birdhouse_left.jpg","images/birdhouse_right.jpg"]'>
       <button class="arrow left">&#10094;</button>
       <img src="images/bird house_iso.jpg" alt="Birdhouse ISO">
@@ -87,6 +79,7 @@
   <!-- Boxes Project -->
   <div class="project">
     <h3>Wooden Boxes</h3>
+    <p class="description">Handcrafted wooden boxes with intricate joinery, perfect for keepsakes or decorative storage.</p>
     <div class="carousel-container" data-images='["images/box_iso.jpg","images/box_top.jpg"]'>
       <button class="arrow left">&#10094;</button>
       <img src="images/box_iso.jpg" alt="Box ISO">
@@ -97,6 +90,7 @@
   <!-- Chairs Project -->
   <div class="project">
     <h3>Chairs</h3>
+    <p class="description">Classic Adirondack chairs and other seating, crafted with precision and comfort in mind.</p>
     <div class="carousel-container" data-images='["images/chair_back.jpg","images/chair_back_down.jpg","images/chair_foot.jpg","images/chair_front.jpg"]'>
       <button class="arrow left">&#10094;</button>
       <img src="images/chair_back.jpg" alt="Chair Back">
@@ -107,9 +101,21 @@
   <!-- Rocking Chairs Project -->
   <div class="project">
     <h3>Rocking Chairs</h3>
+    <p class="description">Handmade rocking chairs with smooth curves and rustic charm for relaxing comfort.</p>
     <div class="carousel-container" data-images='["images/rocker_front.jpg","images/rocker_iso.jpg"]'>
       <button class="arrow left">&#10094;</button>
       <img src="images/rocker_front.jpg" alt="Rocker Front">
+      <button class="arrow right">&#10095;</button>
+    </div>
+  </div>
+
+  <!-- Bench Project -->
+  <div class="project">
+    <h3>Rustic Wooden Bench</h3>
+    <p class="description">Solid pine benches, perfect for porches, gardens, or indoor seating.</p>
+    <div class="carousel-container" data-images='["images/bench.jpg"]'>
+      <button class="arrow left">&#10094;</button>
+      <img src="images/bench.jpg" alt="Rustic Wooden Bench">
       <button class="arrow right">&#10095;</button>
     </div>
   </div>
@@ -145,5 +151,8 @@
 </script>
 </body>
 </html>
+
+
+
 
 
