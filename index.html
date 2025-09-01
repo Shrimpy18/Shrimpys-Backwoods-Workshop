@@ -1,25 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Welcome - Shrimpy's Backwoods Workshop</title>
   <style>
     html, body {
       margin: 0;
       padding: 0;
       height: 100%;
-      scroll-padding-top: 150px;
-      scroll-behavior: smooth;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: #fff;
 
-      /* Single wood background */
+      /* Wood background image */
       background-image: url("background.png");
-      background-size: cover;       /* fill entire screen */
-      background-repeat: no-repeat; /* no tiling */
-      background-position: center;  /* centered */
-      background-attachment: fixed; /* optional parallax effect */
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-attachment: fixed;
     }
 
     header {
@@ -28,19 +26,15 @@
       width: 100vw;
       top: 0;
       z-index: 1000;
+      padding: 1rem;
+      text-align: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      padding: 1rem 1rem;
-      box-sizing: border-box;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      overflow-x: hidden;
     }
 
     .site-title {
       color: #5a3e1b;
       font-size: 2rem;
-      margin: 0.5rem 0 0 0;
+      margin: 0.5rem 0 0;
     }
 
     .site-subtitle {
@@ -50,108 +44,36 @@
       margin: 0;
     }
 
-    nav.top-nav {
-      margin-top: 1rem;
-      text-align: center;
-      overflow-x: auto;
-      white-space: nowrap;
-      -webkit-overflow-scrolling: touch;
-      width: 100%;
-      max-width: 600px;
-    }
-
-    nav.top-nav a {
+    nav a {
       margin: 0 0.5rem;
       text-decoration: none;
       color: #5a3e1b;
       font-weight: 600;
-      transition: color 0.3s ease;
-      display: inline-block;
-    }
-
-    nav.top-nav a:hover {
-      color: #a97c50;
     }
 
     main {
-      flex: 1 0 auto;
       max-width: 600px;
       margin: 8rem auto 2rem;
-      padding: 2rem 2rem;
-      background: rgba(255, 255, 255, 0.85);
+      padding: 2rem;
+      background: rgba(255,255,255,0.85);
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       color: #333;
       text-align: center;
     }
 
-    main h2 {
-      color: #5a3e1b;
-      margin-bottom: 1rem;
-      font-family: 'Georgia', serif;
-    }
-
-    main p {
-      font-size: 1.1rem;
-      margin-bottom: 2rem;
-    }
-
-    .links a {
-      display: inline-block;
-      margin: 0 1rem;
-      padding: 0.5rem 1rem;
-      background-color: #a97c50;
-      color: white;
-      border-radius: 5px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
-
-    .links a:hover {
-      background-color: #7b5a2a;
-    }
-
-    .logo-below {
-      margin-top: 2rem;
-    }
-
-    .logo-below img {
-      max-width: 900px;
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto;
-    }
-
     footer {
-      flex-shrink: 0;
       text-align: center;
       padding: 1rem;
-      font-size: 0.9rem;
       color: #5a3e1b;
-    }
-
-    @media (max-width: 768px) {
-      main {
-        margin: 10rem 1rem 2rem;
-        padding: 1.5rem 1rem;
-      }
-      .site-title {
-        font-size: 1.6rem;
-      }
-      .site-subtitle {
-        font-size: 0.9rem;
-      }
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1 class="site-title">Shrimpy's Backwoods Workshop</h1>
     <p class="site-subtitle">Grain. Grit. Craftsmanship.</p>
-    <nav class="top-nav">
+    <nav>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="gallery.html">Gallery</a>
@@ -162,20 +84,13 @@
 
   <main>
     <h2>Welcome to Shrimpy's Backwoods Workshop</h2>
-    <p>Shrimpy’s Backwoods Workshop is your trusted destination for handcrafted custom woodwork, precision laser engraving, and innovative 3D printing. Nestled away in the backwoods, we combine traditional craftsmanship with modern technology to create unique, personalized furniture, decor, gifts, and accessories. Every piece is built with care and attention to detail, designed to bring warmth, character, and functionality to your home or business. Whether you're looking for a one-of-a-kind wood creation, finely engraved keepsakes, or custom 3D printed items, Shrimpy’s Backwoods Workshop delivers quality, creativity, and a touch of rustic charm.</p>
-    <div class="links">
-      <a href="about.html">About Us</a>
-      <a href="shop.html">Shop Now</a>
-      <a href="contact.html">Get in Touch</a>
-    </div>
-    <div class="logo-below">
-      <img src="logo.png" alt="Shrimpy's Logo" />
-    </div>
+    <p>Your trusted destination for handcrafted custom woodwork, precision laser engraving, and innovative 3D printing.</p>
   </main>
 
   <footer>
-    <p>&copy; 2025 Shrimpy's Backwoods Workshop. All rights reserved.</p>
+    &copy; 2025 Shrimpy's Backwoods Workshop. All rights reserved.
   </footer>
 </body>
 </html>
+
 
