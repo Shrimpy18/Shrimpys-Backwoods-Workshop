@@ -5,10 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gallery - Shrimpy's Backwoods Workshop</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
-  
-  <!-- Swiper CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
   <style>
     html {
       scroll-padding-top: 70px;
@@ -17,15 +13,17 @@
       padding: 0;
       overflow-x: hidden;
     }
+
     body {
       font-family: 'Merriweather', serif;
       margin: 0;
       padding-top: 70px;
-      background: url('https://images.unsplash.com/photo-1509228627152-6c6aab3d67b6?auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+      background: url('background.png') no-repeat center center fixed;
       background-size: cover;
       color: #333;
       overflow-x: hidden;
     }
+
     header {
       background: rgba(255, 255, 255, 0.9);
       display: flex;
@@ -39,15 +37,15 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       box-sizing: border-box;
       overflow-x: hidden;
-      flex-wrap: nowrap;
     }
+
     header h1 {
       margin: 0;
       font-size: 1.5rem;
       color: #5a3e1b;
-      font-family: 'Merriweather', serif;
       white-space: nowrap;
     }
+
     nav.top-nav {
       overflow-x: auto;
       white-space: nowrap;
@@ -55,69 +53,71 @@
       max-width: 600px;
       flex-shrink: 0;
     }
+
     nav.top-nav a {
       margin-left: 0.75rem;
       text-decoration: none;
       color: #5a3e1b;
       font-weight: 600;
       transition: color 0.3s ease;
+      display: inline-block;
     }
+
     nav.top-nav a:hover {
       color: #a97c50;
     }
+
     nav.top-nav a.active {
       color: #a97c50;
       text-decoration: underline;
     }
-    section {
+
+    main {
       background: rgba(255, 255, 255, 0.85);
-      margin: 2rem auto;
-      max-width: 1100px;
+      margin: 2rem auto 3rem;
+      max-width: 1000px;
       padding: 2rem;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      font-size: 1.1rem;
+      line-height: 1.6;
+      box-sizing: border-box;
     }
-    section h2 {
+
+    h2 {
       color: #5a3e1b;
+      margin-bottom: 1rem;
       border-bottom: 2px solid #a97c50;
       padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
     }
-    .product {
-      margin-bottom: 3rem;
-    }
-    .product h3 {
+
+    .gallery-item {
+      margin-bottom: 2rem;
       text-align: center;
-      font-size: 1.4em;
-      color: #5a3e1b;
-      margin-bottom: 1rem;
     }
-    .swiper {
-      width: 100%;
+
+    .gallery-item img {
+      max-width: 100%;
       height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    .swiper-slide {
-      text-align: center;
+
+    .gallery-item h3 {
+      margin: 0.5rem 0 0;
+      color: #7b5a2a;
     }
-    .swiper-slide img {
-      width: 75%;       /* shrink image to 75% of container width */
-      max-width: 400px; /* cap maximum size */
-      height: auto;
-      border-radius: 6px;
-      display: block;
-      margin: 0 auto;   /* center the image */
+
+    .gallery-item p {
+      margin: 0.2rem 0 1rem;
     }
-    .description {
-      text-align: center;
-      font-size: 0.95em;
-      color: #555;
-      margin-top: 8px;
-    }
+
     footer {
       text-align: center;
       padding: 1rem;
       font-size: 0.9rem;
       color: #5a3e1b;
+      box-sizing: border-box;
     }
   </style>
 </head>
@@ -134,107 +134,43 @@
     </nav>
   </header>
 
-  <section>
+  <main>
     <h2>Gallery</h2>
 
-    <!-- Light House Bird House -->
-    <div class="product">
-      <h3>Light House Bird House</h3>
-      <div class="swiper birdhouse-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="images/bird%20house_iso.jpg" alt="Light House Bird House - Iso View"></div>
-          <div class="swiper-slide"><img src="images/birdhouse_left.jpg" alt="Light House Bird House - Left View"></div>
-          <div class="swiper-slide"><img src="images/birdhouse_right.jpg" alt="Light House Bird House - Right View"></div>
-        </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-pagination"></div>
-      </div>
-      <p class="description">Triple decker lighthouse birdhouse.</p>
+    <div class="gallery-item">
+      <img src="birdhouse1.jpg" alt="Birdhouse 1">
+      <h3>Triple-Decker Lighthouse Birdhouse</h3>
+      <p>Handcrafted with care, perfect for your garden.</p>
     </div>
 
-    <!-- American Flag Box -->
-    <div class="product">
-      <h3>American Flag Box</h3>
-      <div class="swiper box-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="images/box_iso.jpg" alt="American Flag Box - Iso View"></div>
-          <div class="swiper-slide"><img src="images/box_top.jpg" alt="American Flag Box - Top View"></div>
-        </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-pagination"></div>
-      </div>
-      <p class="description">Decorative storage box with custom lid.</p>
+    <div class="gallery-item">
+      <img src="box1.jpg" alt="Wooden Box 1">
+      <h3>Custom Wooden Box</h3>
+      <p>Personalized storage solution for keepsakes.</p>
     </div>
 
-    <!-- Premium Adirondack Chair -->
-    <div class="product">
-      <h3>Premium Adirondack Chair</h3>
-      <div class="swiper chair-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="images/chair_front.jpg" alt="Premium Adirondack Chair - Front View"></div>
-          <div class="swiper-slide"><img src="images/chair_foot.jpg" alt="Premium Adirondack Chair - Footrest View"></div>
-          <div class="swiper-slide"><img src="images/chair_back_down.jpg" alt="Premium Adirondack Chair - Back Down View"></div>
-          <div class="swiper-slide"><img src="images/chair_back.jpg" alt="Premium Adirondack Chair - Back View"></div>
-        </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-pagination"></div>
-      </div>
-      <p class="description">Classic Adirondack chair design with adjustable back and footrest. *Painting not included.</p>
+    <div class="gallery-item">
+      <img src="adirondack1.jpg" alt="Adirondack Chair">
+      <h3>Classic Adirondack Chair</h3>
+      <p>Comfortable and stylish, built to last.</p>
     </div>
 
-    <!-- Adirondack Rocking Chair -->
-    <div class="product">
-      <h3>Adirondack Rocking Chair</h3>
-      <div class="swiper rocker-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="images/rocker_front.jpg" alt="Adirondack Rocking Chair - Front View"></div>
-          <div class="swiper-slide"><img src="images/rocker_iso.jpg" alt="Adirondack Rocking Chair - Iso View"></div>
-        </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
-        <div class="swiper-pagination"></div>
-      </div>
-      <p class="description">Comfortable rocking chair for relaxation.</p>
+    <div class="gallery-item">
+      <img src="rocking1.jpg" alt="Rocking Chair">
+      <h3>Handcrafted Rocking Chair</h3>
+      <p>Traditional design with modern finish.</p>
     </div>
 
-    <!-- Bench -->
-    <div class="product">
-      <h3>Bench</h3>
-      <div class="swiper bench-swiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide"><img src="images/bench.jpg" alt="Bench"></div>
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
-      <p class="description">Handcrafted wooden bench with under seat storage space.</p>
+    <div class="gallery-item">
+      <img src="bench1.jpg" alt="Bench">
+      <h3>Rustic Wooden Bench</h3>
+      <p>Perfect for porches or gardens.</p>
     </div>
-
-  </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 Shrimpy's Backwoods Workshop. All rights reserved.</p>
   </footer>
-
-  <!-- Swiper JS -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    const swipers = document.querySelectorAll('.swiper');
-    swipers.forEach(swiperEl => {
-      new Swiper(swiperEl, {
-        loop: true,
-        navigation: {
-          nextEl: swiperEl.querySelector('.swiper-button-next'),
-          prevEl: swiperEl.querySelector('.swiper-button-prev'),
-        },
-        pagination: {
-          el: swiperEl.querySelector('.swiper-pagination'),
-          clickable: true,
-        },
-      });
-    });
-  </script>
 </body>
 </html>
+
