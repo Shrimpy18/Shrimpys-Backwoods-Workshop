@@ -75,15 +75,13 @@
     .carousel-container {
       position: relative;
       width: 100%;
-      max-width: 600px;
+      max-width: 500px;
       margin: 0 auto;
     }
     .carousel-container img {
-      width: 90%; /* slightly smaller */
+      width: 100%;
       height: auto;
       border-radius: 5px;
-      display: block;
-      margin: 0 auto;
     }
     .carousel-button {
       position: absolute;
@@ -115,12 +113,12 @@
       gap: 1rem;
       margin-bottom: 0.5rem;
     }
-    .footer-social a img {
+    .footer-social a svg, .footer-social a img {
       width: 40px;
       height: 40px;
       transition: transform 0.2s;
     }
-    .footer-social a img:hover {
+    .footer-social a svg:hover, .footer-social a img:hover {
       transform: scale(1.2);
     }
   </style>
@@ -138,7 +136,7 @@
     </nav>
   </header>
 
-  <!-- Birdhouse -->
+  <!-- Lighthouse Birdhouse -->
   <section class="project">
     <h2>Lighthouse Birdhouse</h2>
     <div class="carousel-container" id="carousel-birdhouse">
@@ -149,7 +147,7 @@
     <p class="description">A handcrafted birdhouse with precision details, perfect for outdoor décor and wildlife enthusiasts.</p>
   </section>
 
-  <!-- Wooden Box -->
+  <!-- Custom Box -->
   <section class="project">
     <h2>Custom Box</h2>
     <div class="carousel-container" id="carousel-box">
@@ -165,10 +163,10 @@
     <h2>Adirondack Chair</h2>
     <div class="carousel-container" id="carousel-chair">
       <button class="carousel-button prev" onclick="prevSlide('chair')">&#10094;</button>
-      <img src="images/chair_front.jpg" alt="Adirondack Lounge Chair" id="chair-image" />
+      <img src="images/chair_front.jpg" alt="Adirondack Chair" id="chair-image" />
       <button class="carousel-button next" onclick="nextSlide('chair')">&#10095;</button>
     </div>
-    <p class="description">Classic Adirondack lounge chairs, handcrafted for comfort and outdoor elegance. <em>*Painting not included*</em></p>
+    <p class="description">Classic Adirondack lounge chairs, handcrafted for comfort and outdoor elegance. *Painting not included*</p>
   </section>
 
   <!-- Rocking Chair -->
@@ -182,7 +180,7 @@
     <p class="description">A beautiful wooden rocking chair, perfect for relaxing on the porch.</p>
   </section>
 
-  <!-- Bench -->
+  <!-- Classic Bench -->
   <section class="project">
     <h2>Classic Bench</h2>
     <div class="carousel-container" id="carousel-bench">
@@ -196,7 +194,9 @@
   <footer>
     <div class="footer-social">
       <a href="https://www.facebook.com/profile.php?id=61580204308708" target="_blank" aria-label="Facebook">
-        <img src="images/facebook-logo.png" alt="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#3b5998" viewBox="0 0 24 24">
+          <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5a3.5 3.5 0 0 1 3.5-3.5h2v3h-2c-.3 0-.5.2-.5.5V12H17l-.5 3h-2v7A10 10 0 0 0 22 12z"/>
+        </svg>
       </a>
       <a href="https://www.etsy.com/your/shops/me/tools/listings?ref=seller-platform-mcnav" target="_blank" aria-label="Etsy">
         <img src="images/etsy-logo.png" alt="Etsy">
@@ -228,6 +228,5 @@
   </script>
 </body>
 </html>
-
 
 
