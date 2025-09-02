@@ -96,11 +96,11 @@
       border: none;
       border-radius: 8px;
       display: block;
-      min-height: 300px; /* default minimum height */
+      margin: 0;
     }
     .feedback-btn {
       display: inline-block;
-      margin: 5px 0 0 0; /* minimal space above button */
+      margin: 5px 0 0 0;
       padding: 0.6rem 1.2rem;
       font-size: 1rem;
       background-color: #a97c50;
@@ -161,7 +161,7 @@
 
       <!-- Google Form for Custom Woodworking -->
       <div class="form-container">
-        <iframe id="woodworking-form" src="https://docs.google.com/forms/d/e/1FAIpQLScpO3g-MfJXu0iZJKXN6NJMfLV5P56qpe6gl24uukde7Rvj1Q/viewform?embedded=true"></iframe>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScpO3g-MfJXu0iZJKXN6NJMfLV5P56qpe6gl24uukde7Rvj1Q/viewform?embedded=true" height="800"></iframe>
         <a href="contact.html" class="feedback-btn">Help & Feedback</a>
       </div>
     </div>
@@ -177,7 +177,7 @@
 
       <p>Upload your .STL file for fast and affordable 3D prints using the form below:</p>
       <div class="form-container">
-        <iframe id="printing-form" src="https://docs.google.com/forms/d/e/1FAIpQLScI67_OyxcdLlo5DbcVlesVMLdbpNl0uGvtOhnQw0uipREBpw/viewform?embedded=true"></iframe>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScI67_OyxcdLlo5DbcVlesVMLdbpNl0uGvtOhnQw0uipREBpw/viewform?embedded=true" height="900"></iframe>
         <a href="contact.html" class="feedback-btn">Help & Feedback</a>
       </div>
 
@@ -191,27 +191,8 @@
   <footer>
     <p>&copy; 2025 Shrimpy's Backwoods Workshop. All rights reserved.</p>
   </footer>
-
-  <script>
-    // Auto-resize Google Forms iframe to fit content
-    function resizeIframe(iframe) {
-      iframe.onload = function() {
-        try {
-          const iframeBody = iframe.contentWindow.document.body;
-          iframe.style.height = iframeBody.scrollHeight + 20 + 'px';
-        } catch (e) {
-          // Cross-origin iframes may throw errors; fallback to default height
-          iframe.style.height = '600px';
-        }
-      }
-    }
-
-    const woodworkingForm = document.getElementById('woodworking-form');
-    const printingForm = document.getElementById('printing-form');
-    resizeIframe(woodworkingForm);
-    resizeIframe(printingForm);
-  </script>
 </body>
 </html>
+
 
 
