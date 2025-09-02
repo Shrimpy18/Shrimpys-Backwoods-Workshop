@@ -75,11 +75,11 @@
     .carousel-container {
       position: relative;
       width: 100%;
-      max-width: 600px;
+      max-width: 500px; /* smaller images */
       margin: 0 auto;
     }
     .carousel-container img {
-      width: 90%; /* slightly smaller images */
+      width: 100%;
       height: auto;
       border-radius: 5px;
     }
@@ -113,14 +113,12 @@
       gap: 1rem;
       margin-bottom: 0.5rem;
     }
-    .footer-social a svg,
-    .footer-social a img {
+    .footer-social a svg {
       width: 40px;
       height: 40px;
       transition: transform 0.2s;
     }
-    .footer-social a svg:hover,
-    .footer-social a img:hover {
+    .footer-social a svg:hover {
       transform: scale(1.2);
     }
   </style>
@@ -138,18 +136,60 @@
     </nav>
   </header>
 
-  <!-- Example project sections (keep your carousel structure as is) -->
+  <!-- Lighthouse Birdhouse -->
   <section class="project">
     <h2>Lighthouse Birdhouse</h2>
     <div class="carousel-container" id="carousel-birdhouse">
       <button class="carousel-button prev" onclick="prevSlide('birdhouse')">&#10094;</button>
-      <img src="images/bird house_iso.jpg" alt="Birdhouse" id="birdhouse-image" />
+      <img src="images/bird house_iso.jpg" alt="Lighthouse Birdhouse" id="birdhouse-image" />
       <button class="carousel-button next" onclick="nextSlide('birdhouse')">&#10095;</button>
     </div>
-    <p class="description">A handcrafted birdhouse with precision details, perfect for outdoor décor and wildlife enthusiasts.</p>
+    <p class="description">A handcrafted lighthouse birdhouse with precision details, perfect for outdoor décor and wildlife enthusiasts.</p>
   </section>
 
-  <!-- Add other projects here... -->
+  <!-- Custom Box -->
+  <section class="project">
+    <h2>Custom Box</h2>
+    <div class="carousel-container" id="carousel-box">
+      <button class="carousel-button prev" onclick="prevSlide('box')">&#10094;</button>
+      <img src="images/box_iso.jpg" alt="Custom Box" id="box-image" />
+      <button class="carousel-button next" onclick="nextSlide('box')">&#10095;</button>
+    </div>
+    <p class="description">Custom wooden boxes made with quality pine, ideal for gifts or storage with a rustic touch.</p>
+  </section>
+
+  <!-- Adirondack Chair -->
+  <section class="project">
+    <h2>Adirondack Lounge Chair</h2>
+    <div class="carousel-container" id="carousel-chair">
+      <button class="carousel-button prev" onclick="prevSlide('chair')">&#10094;</button>
+      <img src="images/chair_front.jpg" alt="Adirondack Chair" id="chair-image" />
+      <button class="carousel-button next" onclick="nextSlide('chair')">&#10095;</button>
+    </div>
+    <p class="description">Classic Adirondack lounge chairs, handcrafted for comfort and outdoor elegance. *Painting not included*</p>
+  </section>
+
+  <!-- Rocking Chair -->
+  <section class="project">
+    <h2>Rocking Chair</h2>
+    <div class="carousel-container" id="carousel-rocker">
+      <button class="carousel-button prev" onclick="prevSlide('rocker')">&#10094;</button>
+      <img src="images/rocker_front.jpg" alt="Rocking Chair" id="rocker-image" />
+      <button class="carousel-button next" onclick="nextSlide('rocker')">&#10095;</button>
+    </div>
+    <p class="description">A beautiful wooden rocking chair, perfect for relaxing on the porch.</p>
+  </section>
+
+  <!-- Classic Bench -->
+  <section class="project">
+    <h2>Classic Bench</h2>
+    <div class="carousel-container" id="carousel-bench">
+      <button class="carousel-button prev" onclick="prevSlide('bench')">&#10094;</button>
+      <img src="images/bench.jpg" alt="Classic Bench" id="bench-image" />
+      <button class="carousel-button next" onclick="nextSlide('bench')">&#10095;</button>
+    </div>
+    <p class="description">Sturdy and stylish benches made from quality pine, designed to complement any outdoor or indoor space.</p>
+  </section>
 
   <footer>
     <div class="footer-social">
@@ -159,7 +199,9 @@
         </svg>
       </a>
       <a href="https://www.etsy.com/your/shops/me/tools/listings?ref=seller-platform-mcnav" target="_blank" aria-label="Etsy">
-        <img src="images/etsy-logo.png" alt="Etsy Shop"/>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#d5641c">
+          <path d="M12 0C5.372 0 0 5.373 0 12c0 6.627 5.372 12 12 12s12-5.373 12-12C24 5.373 18.628 0 12 0zm2.398 16.833c0 .71-.58 1.29-1.29 1.29H11.49a1.29 1.29 0 0 1-1.29-1.29V7.168h1.618v9.665h1.58V7.168h1.618v9.665z"/>
+        </svg>
       </a>
     </div>
     <p>&copy; 2025 Shrimpy's Backwoods Workshop. All rights reserved.</p>
@@ -167,14 +209,20 @@
 
   <script>
     const slides = {
-      birdhouse: ["images/bird house_iso.jpg","images/birdhouse_left.jpg","images/birdhouse_right.jpg"]
-      // add other slides arrays here...
+      birdhouse: ["images/bird house_iso.jpg","images/birdhouse_left.jpg","images/birdhouse_right.jpg"],
+      box: ["images/box_iso.jpg","images/box_top.jpg"],
+      chair: ["images/chair_front.jpg","images/chair_foot.jpg","images/chair_back_down.jpg","images/chair_back.jpg"],
+      rocker: ["images/rocker_front.jpg","images/rocker_iso.jpg"],
+      bench: ["images/bench.jpg"]
     };
-    const indices = { birdhouse:0 };
+
+    const indices = { birdhouse:0, box:0, chair:0, rocker:0, bench:0 };
+
     function nextSlide(project) {
       indices[project] = (indices[project]+1) % slides[project].length;
       document.getElementById(project+"-image").src = slides[project][indices[project]];
     }
+
     function prevSlide(project) {
       indices[project] = (indices[project]-1+slides[project].length) % slides[project].length;
       document.getElementById(project+"-image").src = slides[project][indices[project]];
@@ -182,5 +230,7 @@
   </script>
 </body>
 </html>
+
+
 
 
