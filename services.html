@@ -87,12 +87,32 @@
       color: #7b5a2a;
       margin-bottom: 0.5rem;
     }
-    iframe {
+    .form-container {
+      margin-top: 0.5rem;
+      margin-bottom: 1rem;
+    }
+    .form-container iframe {
       width: 100%;
       border: none;
       border-radius: 8px;
       display: block;
-      margin: 0.5rem 0; /* reduced vertical spacing */
+      min-height: 300px; /* default minimum height */
+    }
+    .feedback-btn {
+      display: inline-block;
+      margin: 5px 0 0 0; /* minimal space above button */
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      background-color: #a97c50;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+    .feedback-btn:hover {
+      background-color: #7b5a2a;
     }
     h4 {
       margin-top: 0.7rem;
@@ -109,22 +129,6 @@
     }
     a.external-link:hover {
       color: #a97c50;
-    }
-    .feedback-btn {
-      display: inline-block;
-      margin: 10px 0 0 0; /* small space above button */
-      padding: 0.6rem 1.2rem;
-      font-size: 1rem;
-      background-color: #a97c50;
-      color: #fff;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      text-decoration: none;
-    }
-    .feedback-btn:hover {
-      background-color: #7b5a2a;
     }
     footer {
       text-align: center;
@@ -156,7 +160,10 @@
       <p>From classic Adirondack chairs to unique furniture and décor, each piece is crafted with care using quality pine and other fine woods. Whether it’s a bespoke gift or a functional addition to your home, we bring your vision to life with traditional woodworking techniques.</p>
 
       <!-- Google Form for Custom Woodworking -->
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScpO3g-MfJXu0iZJKXN6NJMfLV5P56qpe6gl24uukde7Rvj1Q/viewform?embedded=true" width="640" height="448" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+      <div class="form-container">
+        <iframe id="woodworking-form" src="https://docs.google.com/forms/d/e/1FAIpQLScpO3g-MfJXu0iZJKXN6NJMfLV5P56qpe6gl24uukde7Rvj1Q/viewform?embedded=true"></iframe>
+        <a href="contact.html" class="feedback-btn">Help & Feedback</a>
+      </div>
     </div>
 
     <div class="service">
@@ -169,11 +176,10 @@
       <p>Our innovative 3D printing capabilities let you create custom accessories, prototypes, and decorative items with fine detail and accuracy. Combine technology and craftsmanship for truly one-of-a-kind pieces.</p>
 
       <p>Upload your .STL file for fast and affordable 3D prints using the form below:</p>
-      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScI67_OyxcdLlo5DbcVlesVMLdbpNl0uGvtOhnQw0uipREBpw/viewform?embedded=true" 
-        title="3D Printing Request Form" height="448"></iframe>
-
-      <!-- Help & Feedback Button -->
-      <a href="contact.html" class="feedback-btn">Help & Feedback</a>
+      <div class="form-container">
+        <iframe id="printing-form" src="https://docs.google.com/forms/d/e/1FAIpQLScI67_OyxcdLlo5DbcVlesVMLdbpNl0uGvtOhnQw0uipREBpw/viewform?embedded=true"></iframe>
+        <a href="contact.html" class="feedback-btn">Help & Feedback</a>
+      </div>
 
       <h4>Don't have an .STL file?</h4>
       <p class="note-text">
@@ -185,6 +191,27 @@
   <footer>
     <p>&copy; 2025 Shrimpy's Backwoods Workshop. All rights reserved.</p>
   </footer>
+
+  <script>
+    // Auto-resize Google Forms iframe to fit content
+    function resizeIframe(iframe) {
+      iframe.onload = function() {
+        try {
+          const iframeBody = iframe.contentWindow.document.body;
+          iframe.style.height = iframeBody.scrollHeight + 20 + 'px';
+        } catch (e) {
+          // Cross-origin iframes may throw errors; fallback to default height
+          iframe.style.height = '600px';
+        }
+      }
+    }
+
+    const woodworkingForm = document.getElementById('woodworking-form');
+    const printingForm = document.getElementById('printing-form');
+    resizeIframe(woodworkingForm);
+    resizeIframe(printingForm);
+  </script>
 </body>
 </html>
+
 
