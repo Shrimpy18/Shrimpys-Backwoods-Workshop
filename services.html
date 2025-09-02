@@ -92,7 +92,7 @@
       border: none;
       border-radius: 8px;
       display: block;
-      margin: 0.5rem 0 0.5rem 0; /* reduces extra vertical spacing */
+      margin: 0.5rem 0; /* reduced vertical spacing */
     }
     h4 {
       margin-top: 0.7rem;
@@ -109,6 +109,22 @@
     }
     a.external-link:hover {
       color: #a97c50;
+    }
+    .feedback-btn {
+      display: inline-block;
+      margin: 10px 0 0 0; /* small space above button */
+      padding: 0.6rem 1.2rem;
+      font-size: 1rem;
+      background-color: #a97c50;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+    }
+    .feedback-btn:hover {
+      background-color: #7b5a2a;
     }
     footer {
       text-align: center;
@@ -156,6 +172,9 @@
       <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScI67_OyxcdLlo5DbcVlesVMLdbpNl0uGvtOhnQw0uipREBpw/viewform?embedded=true" 
         title="3D Printing Request Form" height="448"></iframe>
 
+      <!-- Help & Feedback Button -->
+      <a href="contact.html" class="feedback-btn">Help & Feedback</a>
+
       <h4>Don't have an .STL file?</h4>
       <p class="note-text">
         Check <a href="https://www.thingiverse.com/" target="_blank" rel="noopener noreferrer" class="external-link">Thingiverse</a> for free .stl downloads!
@@ -168,3 +187,4 @@
   </footer>
 </body>
 </html>
+
