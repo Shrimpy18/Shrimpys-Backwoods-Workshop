@@ -5,10 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shop - Shrimpy's Backwoods Workshop</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
-  <!-- PayPal SDK -->
+
+  <!-- PayPal SDK (Part 1, only once per page) -->
   <script 
     src="https://www.paypal.com/sdk/js?client-id=BAAyrSaIOWI7n_0ASFBfFM8R0PIhPdVZgIudq92PipDGedwDTPf8VlX2Kq1QLKOPhX6fQBeY56g4Z4xoJY&components=hosted-buttons&enable-funding=venmo&currency=USD">
   </script>
+
   <style>
     html {
       scroll-padding-top: 70px;
@@ -100,8 +102,9 @@
       transform: scale(1.2);
       vertical-align: middle;
     }
-    #paypal-container-RY8CX3ZFXUV8C {
+    #paypal-container-P5PBHAK9BME8Q {
       margin-top: 1.5rem;
+      display: none; /* hidden until terms are checked */
     }
     footer {
       text-align: center;
@@ -149,11 +152,11 @@
       I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a>
     </label>
 
-    <div id="paypal-container-RY8CX3ZFXUV8C" style="display:none;"></div>
-
+    <!-- PayPal Button (Part 2, hidden until checkbox is checked) -->
+    <div id="paypal-container-P5PBHAK9BME8Q"></div>
     <script>
       const checkbox = document.getElementById('termsCheckbox');
-      const paypalContainer = document.getElementById('paypal-container-RY8CX3ZFXUV8C');
+      const paypalContainer = document.getElementById('paypal-container-P5PBHAK9BME8Q');
       let buttonRendered = false;
 
       checkbox.addEventListener('change', function() {
@@ -162,8 +165,8 @@
 
           if (!buttonRendered) {
             paypal.HostedButtons({
-              hostedButtonId: "RY8CX3ZFXUV8C"
-            }).render("#paypal-container-RY8CX3ZFXUV8C");
+              hostedButtonId: "P5PBHAK9BME8Q",
+            }).render("#paypal-container-P5PBHAK9BME8Q");
             buttonRendered = true;
           }
         } else {
@@ -188,5 +191,7 @@
   </footer>
 </body>
 </html>
+
+
 
 
