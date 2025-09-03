@@ -102,7 +102,8 @@
       transform: scale(1.2);
       vertical-align: middle;
     }
-    #paypal-container-P5PBHAK9BME8Q {
+    #paypal-container-P5PBHAK9BME8Q,
+    #paypal-container-MUXEFNGCQ3U2Q {
       margin-top: 1.5rem;
       display: none; /* hidden until terms are checked */
     }
@@ -152,26 +153,39 @@
       I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a>
     </label>
 
-    <!-- PayPal Button (Part 2, hidden until checkbox is checked) -->
+    <!-- PayPal Button 1 -->
     <div id="paypal-container-P5PBHAK9BME8Q"></div>
+
+    <!-- PayPal Button 2 -->
+    <div id="paypal-container-MUXEFNGCQ3U2Q"></div>
 
     <script>
       const checkbox = document.getElementById('termsCheckbox');
-      const paypalContainer = document.getElementById('paypal-container-P5PBHAK9BME8Q');
-      let buttonRendered = false;
+      const paypalContainer1 = document.getElementById('paypal-container-P5PBHAK9BME8Q');
+      const paypalContainer2 = document.getElementById('paypal-container-MUXEFNGCQ3U2Q');
+      let button1Rendered = false;
+      let button2Rendered = false;
 
       checkbox.addEventListener('change', function() {
         if (checkbox.checked) {
-          paypalContainer.style.display = 'block';
+          paypalContainer1.style.display = 'block';
+          paypalContainer2.style.display = 'block';
 
-          if (!buttonRendered) {
+          if (!button1Rendered) {
             paypal.HostedButtons({
               hostedButtonId: "P5PBHAK9BME8Q",
             }).render("#paypal-container-P5PBHAK9BME8Q");
-            buttonRendered = true;
+            button1Rendered = true;
+          }
+          if (!button2Rendered) {
+            paypal.HostedButtons({
+              hostedButtonId: "MUXEFNGCQ3U2Q",
+            }).render("#paypal-container-MUXEFNGCQ3U2Q");
+            button2Rendered = true;
           }
         } else {
-          paypalContainer.style.display = 'none';
+          paypalContainer1.style.display = 'none';
+          paypalContainer2.style.display = 'none';
         }
       });
     </script>
@@ -192,3 +206,5 @@
   </footer>
 </body>
 </html>
+
+
