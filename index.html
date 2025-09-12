@@ -27,47 +27,73 @@
       top: 0;
       z-index: 1000;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      padding: 1rem 1rem;
+      padding: 0.5rem 1rem;
       display: flex;
-      flex-direction: column;
+      justify-content: space-between;
       align-items: center;
-      overflow-x: hidden;
+      box-sizing: border-box;
     }
 
     .site-title {
       color: #5a3e1b;
-      font-size: 2rem;
-      margin: 0.5rem 0 0 0;
+      font-size: 1.6rem;
+      margin: 0;
     }
 
     .site-subtitle {
       color: #5a3e1b;
       font-weight: 500;
-      font-size: 1rem;
+      font-size: 0.9rem;
       margin: 0;
     }
 
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      color: #5a3e1b;
+      cursor: pointer;
+    }
+
     nav.top-nav {
-      margin-top: 1rem;
-      text-align: center;
-      overflow-x: auto;
-      white-space: nowrap;
-      -webkit-overflow-scrolling: touch;
-      width: 100%;
-      max-width: 600px;
+      display: flex;
+      gap: 0.75rem;
     }
 
     nav.top-nav a {
-      margin: 0 0.5rem;
       text-decoration: none;
       color: #5a3e1b;
       font-weight: 600;
       transition: color 0.3s ease;
-      display: inline-block;
     }
 
     nav.top-nav a:hover {
       color: #a97c50;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      nav.top-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: rgba(255, 255, 255, 0.95);
+        width: 100%;
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      }
+      nav.top-nav.show {
+        display: flex;
+      }
+      nav.top-nav a {
+        padding: 0.5rem 0;
+      }
     }
 
     main {
@@ -145,26 +171,16 @@
     .footer-social a svg:hover {
       transform: scale(1.2);
     }
-
-    @media (max-width: 768px) {
-      main {
-        margin: 10rem 1rem 2rem;
-        padding: 1.5rem 1rem;
-      }
-      .site-title {
-        font-size: 1.6rem;
-      }
-      .site-subtitle {
-        font-size: 0.9rem;
-      }
-    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1 class="site-title">Shrimpy's Backwoods Workshop</h1>
-    <p class="site-subtitle">Grain. Grit. Craftsmanship.</p>
+    <div>
+      <h1 class="site-title">Shrimpy's Backwoods Workshop</h1>
+      <p class="site-subtitle">Grain. Grit. Craftsmanship.</p>
+    </div>
+    <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
     <nav class="top-nav">
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
@@ -201,9 +217,15 @@
     <p>&copy; 2025 Shrimpy's Backwoods Workshop. All rights reserved.</p>
   </footer>
 
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector("nav.top-nav");
+      toggle.addEventListener("click", () => {
+        nav.classList.toggle("show");
+      });
+    });
+  </script>
 </body>
 </html>
-
-
-
 
