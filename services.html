@@ -24,16 +24,15 @@
     header {
       background: rgba(255, 255, 255, 0.9);
       position: fixed;
-      width: 100vw;
+      width: 100%;
       top: 0;
       z-index: 1000;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      padding: 1rem 1rem;
+      padding: 1rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       box-sizing: border-box;
-      overflow-x: hidden;
     }
     header h1 {
       margin: 0;
@@ -42,19 +41,14 @@
       white-space: nowrap;
     }
     nav.top-nav {
-      overflow-x: auto;
-      white-space: nowrap;
-      -webkit-overflow-scrolling: touch;
-      max-width: 600px;
-      flex-shrink: 0;
+      display: flex;
+      gap: 0.75rem;
     }
     nav.top-nav a {
-      margin-left: 0.75rem;
       text-decoration: none;
       color: #5a3e1b;
       font-weight: 600;
       transition: color 0.3s ease;
-      display: inline-block;
     }
     nav.top-nav a:hover {
       color: #a97c50;
@@ -62,6 +56,39 @@
     nav.top-nav a.active {
       color: #a97c50;
       text-decoration: underline;
+    }
+    /* Mobile menu */
+    .menu-toggle {
+      display: none;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #5a3e1b;
+    }
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      nav.top-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        text-align: center;
+      }
+      nav.top-nav.show {
+        display: flex;
+      }
+      nav.top-nav a {
+        padding: 0.75rem 0;
+        display: block;
+      }
     }
     main {
       background: rgba(255, 255, 255, 0.85);
@@ -96,7 +123,6 @@
       border: none;
       border-radius: 8px;
       display: block;
-      margin: 0;
     }
     /* Specific iframe heights */
     #woodworking-form {
@@ -149,6 +175,7 @@
 <body>
   <header>
     <h1>Shrimpy's Backwoods Workshop</h1>
+    <button class="menu-toggle" onclick="document.querySelector('nav.top-nav').classList.toggle('show')">&#9776;</button>
     <nav class="top-nav">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
