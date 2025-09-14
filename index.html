@@ -34,16 +34,11 @@
       box-sizing: border-box;
     }
 
-    .logo {
-      width: 80px;
-      height: auto;
-      margin-bottom: 0.5rem;
-    }
-
     .site-title {
       font-size: 2rem;
       margin: 0.25rem 0;
       color: #5a3e1b;
+      text-align: center;
     }
 
     .site-subtitle {
@@ -51,6 +46,7 @@
       color: #5a3e1b;
       font-weight: 500;
       margin: 0.25rem 0;
+      text-align: center;
     }
 
     nav.top-nav {
@@ -75,15 +71,30 @@
     nav.top-nav a.active { color: #a97c50; text-decoration: underline; }
 
     main {
-      background: rgba(255, 255, 255, 0.85);
       max-width: 900px;
-      margin: 8rem auto 3rem;
+      margin: 10rem auto 3rem;
       padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    .hero-logo {
+      width: 300px;
+      max-width: 80%;
+      height: auto;
+      margin: 2rem auto;
+      display: block;
+    }
+
+    main h2 {
+      font-size: 1.8rem;
+      color: #5a3e1b;
+      margin-bottom: 1rem;
+    }
+
+    main p {
       font-size: 1.1rem;
       line-height: 1.6;
-      text-align: center;
+      color: #333;
     }
 
     footer {
@@ -114,15 +125,13 @@
       header { padding: 1rem; }
       .site-title { font-size: 1.6rem; }
       .site-subtitle { font-size: 0.9rem; }
-      nav.top-nav a { display: inline-block; width: auto; }
-      main { margin: 10rem 1rem 2rem; padding: 1.5rem; }
+      main { margin: 12rem 1rem 2rem; padding: 1.5rem; }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <img src="images/logo.png" alt="Shrimpy's Logo" class="logo">
     <h1 class="site-title">Shrimpy's Backwoods Workshop</h1>
     <p class="site-subtitle">Grain. Grit. Craftsmanship.</p>
     <nav class="top-nav">
@@ -136,9 +145,10 @@
   </header>
 
   <main>
-    <h2>Welcome!</h2>
-    <p>Find handcrafted woodworking, laser marking, and 3D printing pieces made with care and precision. Browse our gallery, shop our pieces, or reach out to discuss a custom project!</p>
-    <p>Our mission is simple: bring your creative ideas to life with quality craftsmanship and attention to detail.</p>
+    <img src="images/logo.png" alt="Shrimpy's Logo" class="hero-logo">
+    <h2>Welcome to Shrimpy's Backwoods Workshop!</h2>
+    <p>Find handcrafted woodworking, laser marking, and 3D printing pieces made with care and precision.</p>
+    <p>Browse our gallery, shop our pieces, or reach out to discuss a custom project. Our mission is simple: bring your creative ideas to life with quality craftsmanship and attention to detail.</p>
   </main>
 
   <footer>
@@ -157,5 +167,6 @@
 
 </body>
 </html>
+
 
 
