@@ -11,7 +11,7 @@
     html, body {
       margin: 0;
       padding: 0;
-      scroll-padding-top: 70px;
+      scroll-padding-top: 150px;
       scroll-behavior: smooth;
       font-family: 'Merriweather', serif;
       color: #333;
@@ -21,55 +21,53 @@
     }
 
     header {
-      background: rgba(255, 255, 255, 0.95);
+      background: rgba(255, 255, 255, 0.9);
       position: fixed;
+      width: 100vw;
       top: 0;
-      width: 100%;
       z-index: 1000;
-      padding: 0.5rem 1rem;
+      padding: 1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-sizing: border-box;
     }
 
-    .logo-title {
-      display: flex;
-      align-items: center;
-      gap: 0.8rem;
-    }
-
-    .logo-title img {
-      height: 50px;
-      width: auto;
+    .logo {
+      width: 80px;
+      height: auto;
+      margin-bottom: 0.5rem;
     }
 
     .site-title {
       font-size: 2rem;
+      margin: 0.25rem 0;
       color: #5a3e1b;
-      margin: 0;
     }
 
     .site-subtitle {
       font-size: 1rem;
       color: #5a3e1b;
       font-weight: 500;
-      margin: 0;
+      margin: 0.25rem 0;
     }
 
     nav.top-nav {
-      margin-top: 1rem;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 0.5rem;
+      margin-top: 0.5rem;
+      text-align: center;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+      width: 100%;
+      max-width: 600px;
     }
 
     nav.top-nav a {
+      margin: 0 0.5rem;
       text-decoration: none;
       color: #5a3e1b;
       font-weight: 600;
-      padding: 0.5rem 0.75rem;
       transition: color 0.3s ease;
     }
 
@@ -77,14 +75,15 @@
     nav.top-nav a.active { color: #a97c50; text-decoration: underline; }
 
     main {
-      margin: 8rem auto 3rem;
-      max-width: 900px;
       background: rgba(255, 255, 255, 0.85);
+      max-width: 900px;
+      margin: 8rem auto 3rem;
       padding: 2rem;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       font-size: 1.1rem;
       line-height: 1.6;
+      text-align: center;
     }
 
     footer {
@@ -92,7 +91,6 @@
       padding: 1rem;
       font-size: 0.9rem;
       color: #5a3e1b;
-      margin-top: 2rem;
     }
 
     .footer-social {
@@ -113,24 +111,19 @@
     }
 
     @media (max-width: 768px) {
-      header { padding: 0.5rem 1rem; }
+      header { padding: 1rem; }
       .site-title { font-size: 1.6rem; }
       .site-subtitle { font-size: 0.9rem; }
-      nav.top-nav { flex-direction: column; align-items: center; }
-      nav.top-nav a { width: 100%; text-align: center; }
+      nav.top-nav a { display: inline-block; width: auto; }
       main { margin: 10rem 1rem 2rem; padding: 1.5rem; }
-      .logo-title img { height: 40px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header -->
   <header>
-    <div class="logo-title">
-      <img src="images/logo.png" alt="Shrimpy's Backwoods Workshop Logo">
-      <h1 class="site-title">Shrimpy's Backwoods Workshop</h1>
-    </div>
+    <img src="images/logo.png" alt="Shrimpy's Logo" class="logo">
+    <h1 class="site-title">Shrimpy's Backwoods Workshop</h1>
     <p class="site-subtitle">Grain. Grit. Craftsmanship.</p>
     <nav class="top-nav">
       <a href="index.html" class="active">Home</a>
