@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Contact - Shrimpy's Backwoods Workshop</title>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     html {
-      scroll-padding-top: 70px;
+      scroll-padding-top: 150px;
       scroll-behavior: smooth;
       margin: 0;
       padding: 0;
@@ -16,65 +16,68 @@
     body {
       font-family: 'Merriweather', serif;
       margin: 0;
-      padding-top: 70px;
+      padding-top: 150px;
       background:
-        linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-        url('background.png')
-        no-repeat center center fixed;
+        linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+        url('background.png') no-repeat center center fixed;
       background-size: cover;
       color: #333;
-      overflow-x: hidden;
       text-align: center;
     }
 
+    /* HEADER updated to match Services page */
     header {
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.95);
       position: fixed;
-      width: 100vw;
       top: 0;
+      width: 100%;
       z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      padding: 1rem 1rem;
+      padding: 0.5rem 1rem;
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       box-sizing: border-box;
-      overflow-x: hidden;
-      flex-wrap: nowrap;
+      text-align: center;
     }
-
     .site-title {
+      font-size: 2rem;
+      font-weight: 700;
       color: #5a3e1b;
-      font-size: 1.5rem;
+      margin: 0.5rem 0 0 0;
+      text-align: center;
+    }
+    .site-subtitle {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #5a3e1b;
       margin: 0;
-      white-space: nowrap;
+      text-align: center;
     }
-
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      color: #5a3e1b;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
     nav.top-nav {
-      overflow-x: auto;
-      white-space: nowrap;
-      -webkit-overflow-scrolling: touch;
-      max-width: 600px;
-      flex-shrink: 0;
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
     }
-
     nav.top-nav a {
-      margin-left: 0.75rem;
       text-decoration: none;
       color: #5a3e1b;
       font-weight: 600;
       transition: color 0.3s ease;
-      display: inline-block;
     }
-
-    nav.top-nav a:hover {
-      color: #a97c50;
-    }
-
-    nav.top-nav a.active {
-      color: #a97c50;
-      text-decoration: underline;
-    }
+    nav.top-nav a:hover { color: #a97c50; }
+    nav.top-nav a.active { color: #a97c50; text-decoration: underline; }
 
     section {
       background: rgba(255, 255, 255, 0.85);
@@ -97,7 +100,6 @@
       padding-bottom: 0.5rem;
     }
 
-    /* Google Form iframe with fixed height */
     .form-container {
       width: 100%;
       height: 775px;
@@ -105,7 +107,6 @@
       border-radius: 8px;
       margin: 0 auto;
     }
-
     .form-container iframe {
       width: 100%;
       height: 100%;
@@ -126,24 +127,41 @@
       gap: 1rem;
       margin-bottom: 0.5rem;
     }
-
     .footer-social a img,
     .footer-social a svg {
       width: 40px;
       height: 40px;
       transition: transform 0.2s;
     }
-
     .footer-social a img:hover,
-    .footer-social a svg:hover {
-      transform: scale(1.2);
-    }
+    .footer-social a svg:hover { transform: scale(1.2); }
 
+    @media (max-width: 768px) {
+      .site-title { font-size: 1.6rem; }
+      .site-subtitle { font-size: 0.9rem; }
+      .menu-toggle { display: block; }
+      nav.top-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        text-align: center;
+      }
+      nav.top-nav.show { display: flex; }
+      nav.top-nav a { padding: 0.75rem 0; display: block; }
+    }
   </style>
 </head>
 <body>
   <header>
     <h1 class="site-title">Shrimpy's Backwoods Workshop</h1>
+    <p class="site-subtitle">Grain. Grit. Craftsmanship.</p>
+    <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
     <nav class="top-nav">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -176,9 +194,13 @@
     </div>
     <p>&copy; 2025 Shrimpy's Backwoods Workshop. All rights reserved.</p>
   </footer>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector("nav.top-nav");
+      toggle.addEventListener("click", () => { nav.classList.toggle("show"); });
+    });
+  </script>
 </body>
 </html>
-
-
-
-
