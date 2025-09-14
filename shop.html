@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Shop - Shrimpy's Backwoods Workshop</title>
-  <link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
 
   <!-- PayPal SDK (Part 1, only once per page) -->
   <script 
@@ -13,7 +13,7 @@
 
   <style>
     html {
-      scroll-padding-top: 70px;
+      scroll-padding-top: 150px;
       scroll-behavior: smooth;
       margin: 0;
       padding: 0;
@@ -22,56 +22,67 @@
     body {
       font-family: 'Merriweather', serif;
       margin: 0;
-      padding-top: 70px;
+      padding-top: 150px;
       background: url('background.png') no-repeat center center fixed;
       background-size: cover;
       color: #333;
-      overflow-x: hidden;
     }
+
+    /* HEADER updated to match Services page */
     header {
-      background: rgba(255, 255, 255, 0.9);
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 1rem;
+      background: rgba(255, 255, 255, 0.95);
       position: fixed;
-      width: 100vw;
       top: 0;
+      width: 100%;
       z-index: 1000;
+      padding: 0.5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       box-sizing: border-box;
-      overflow-x: hidden;
-      flex-wrap: nowrap;
+      text-align: center;
     }
-    header h1 {
-      margin: 0;
-      font-size: 1.5rem;
+    .site-title {
+      font-size: 2rem;
+      font-weight: 700;
       color: #5a3e1b;
-      font-family: 'Merriweather', serif;
-      white-space: nowrap;
+      margin: 0.5rem 0 0 0;
+      text-align: center;
+    }
+    .site-subtitle {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #5a3e1b;
+      margin: 0;
+      text-align: center;
+    }
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      color: #5a3e1b;
+      cursor: pointer;
+      margin-top: 0.5rem;
     }
     nav.top-nav {
-      overflow-x: auto;
-      white-space: nowrap;
-      -webkit-overflow-scrolling: touch;
-      max-width: 600px;
-      flex-shrink: 0;
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
     }
     nav.top-nav a {
-      margin-left: 0.75rem;
       text-decoration: none;
       color: #5a3e1b;
       font-weight: 600;
       transition: color 0.3s ease;
-      display: inline-block;
     }
-    nav.top-nav a:hover {
-      color: #a97c50;
-    }
-    nav.top-nav a.active {
-      color: #a97c50;
-      text-decoration: underline;
-    }
+    nav.top-nav a:hover { color: #a97c50; }
+    nav.top-nav a.active { color: #a97c50; text-decoration: underline; }
+
+    /* Section & PayPal styling unchanged */
     section {
       background: rgba(255, 255, 255, 0.85);
       margin: 2rem auto;
@@ -105,8 +116,9 @@
     #paypal-container-P5PBHAK9BME8Q,
     #paypal-container-MUXEFNGCQ3U2Q {
       margin-top: 1.5rem;
-      display: none; /* hidden until terms are checked */
+      display: none; 
     }
+
     footer {
       text-align: center;
       padding: 1rem;
@@ -126,14 +138,34 @@
       height: 40px;
       transition: transform 0.2s;
     }
-    .footer-social a:hover img, .footer-social a:hover svg {
-      transform: scale(1.2);
+    .footer-social a:hover img, .footer-social a:hover svg { transform: scale(1.2); }
+
+    @media (max-width: 768px) {
+      .site-title { font-size: 1.6rem; }
+      .site-subtitle { font-size: 0.9rem; }
+      .menu-toggle { display: block; }
+      nav.top-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        text-align: center;
+      }
+      nav.top-nav.show { display: flex; }
+      nav.top-nav a { padding: 0.75rem 0; display: block; }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Shrimpy's Backwoods Workshop</h1>
+    <h1 class="site-title">Shrimpy's Backwoods Workshop</h1>
+    <p class="site-subtitle">Grain. Grit. Craftsmanship.</p>
+    <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
     <nav class="top-nav">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -153,10 +185,7 @@
       I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a>
     </label>
 
-    <!-- PayPal Button 1 -->
     <div id="paypal-container-P5PBHAK9BME8Q"></div>
-
-    <!-- PayPal Button 2 -->
     <div id="paypal-container-MUXEFNGCQ3U2Q"></div>
 
     <script>
@@ -170,23 +199,24 @@
         if (checkbox.checked) {
           paypalContainer1.style.display = 'block';
           paypalContainer2.style.display = 'block';
-
           if (!button1Rendered) {
-            paypal.HostedButtons({
-              hostedButtonId: "P5PBHAK9BME8Q",
-            }).render("#paypal-container-P5PBHAK9BME8Q");
+            paypal.HostedButtons({ hostedButtonId: "P5PBHAK9BME8Q" }).render("#paypal-container-P5PBHAK9BME8Q");
             button1Rendered = true;
           }
           if (!button2Rendered) {
-            paypal.HostedButtons({
-              hostedButtonId: "MUXEFNGCQ3U2Q",
-            }).render("#paypal-container-MUXEFNGCQ3U2Q");
+            paypal.HostedButtons({ hostedButtonId: "MUXEFNGCQ3U2Q" }).render("#paypal-container-MUXEFNGCQ3U2Q");
             button2Rendered = true;
           }
         } else {
           paypalContainer1.style.display = 'none';
           paypalContainer2.style.display = 'none';
         }
+      });
+
+      document.addEventListener("DOMContentLoaded", function() {
+        const toggle = document.querySelector(".menu-toggle");
+        const nav = document.querySelector("nav.top-nav");
+        toggle.addEventListener("click", () => { nav.classList.toggle("show"); });
       });
     </script>
   </section>
