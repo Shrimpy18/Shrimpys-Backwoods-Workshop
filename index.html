@@ -13,10 +13,10 @@
       margin: 0;
       padding: 0;
       height: 100%;
-      scroll-padding-top: 150px;
+      scroll-padding-top: 70px;
       scroll-behavior: smooth;
       font-family: 'Merriweather', serif;
-      color: #fff;
+      color: #333;
       background-image: url("background.png");
       background-size: cover;
       background-repeat: no-repeat;
@@ -24,67 +24,60 @@
       background-attachment: fixed;
     }
 
+    /* Updated Header: Matches Services page */
     header {
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255, 255, 255, 0.95);
       position: fixed;
-      width: 100vw;
       top: 0;
+      width: 100%;
       z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      padding: 0.75rem 1rem;
+      padding: 0.5rem 1rem;
       display: flex;
       flex-direction: column;
       align-items: center;
-      box-sizing: border-box;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
     .site-title {
+      font-size: 2rem;
       color: #5a3e1b;
-      font-size: 1.8rem;
-      margin: 0;
+      margin: 0.5rem 0 0 0;
       text-align: center;
     }
 
     .site-subtitle {
       font-size: 1rem;
-      margin: 0.25rem 0 0;
-      color: #7b5a2a;
-      font-style: italic;
+      color: #5a3e1b;
+      font-weight: 500;
+      margin: 0;
       text-align: center;
     }
 
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      background: none;
-      border: none;
-      color: #5a3e1b;
-      cursor: pointer;
-      margin-top: 0.5rem;
-    }
-
     nav.top-nav {
+      margin-top: 1rem;
       display: flex;
-      gap: 0.75rem;
-      margin-top: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
     }
 
     nav.top-nav a {
       text-decoration: none;
       color: #5a3e1b;
       font-weight: 600;
+      padding: 0.5rem 0.75rem;
       transition: color 0.3s ease;
     }
 
-    nav.top-nav a:hover {
-      color: #a97c50;
-    }
+    nav.top-nav a:hover { color: #a97c50; }
+    nav.top-nav a.active { color: #a97c50; text-decoration: underline; }
 
+    /* Main content */
     main {
       flex: 1 0 auto;
-      max-width: 600px;
+      max-width: 900px;
       margin: 10rem auto 2rem;
-      padding: 2rem 2rem;
+      padding: 2rem;
       background: rgba(255, 255, 255, 0.85);
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -146,55 +139,24 @@
       margin-bottom: 0.5rem;
     }
 
-    .footer-social a svg {
+    .footer-social a svg,
+    .footer-social a img {
       width: 40px;
       height: 40px;
       transition: transform 0.2s;
     }
 
-    .footer-social a svg:hover {
+    .footer-social a:hover svg,
+    .footer-social a:hover img {
       transform: scale(1.2);
     }
 
     @media (max-width: 768px) {
-      .site-title {
-        font-size: 1.4rem;
-      }
-
-      .site-subtitle {
-        font-size: 0.9rem;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-
-      nav.top-nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;   /* directly under header */
-        left: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.95);
-        padding: 1rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        text-align: center;
-      }
-
-      nav.top-nav.show {
-        display: flex;
-      }
-
-      nav.top-nav a {
-        padding: 0.75rem 0;
-        display: block;
-      }
-
-      main {
-        margin: 12rem 1rem 2rem;
-        padding: 1.5rem 1rem;
-      }
+      .site-title { font-size: 1.6rem; }
+      .site-subtitle { font-size: 0.9rem; }
+      nav.top-nav { flex-direction: column; align-items: center; }
+      nav.top-nav a { width: 100%; text-align: center; }
+      main { margin: 12rem 1rem 2rem; padding: 1.5rem; }
     }
   </style>
 </head>
@@ -203,8 +165,8 @@
   <header>
     <h1 class="site-title">Shrimpy's Backwoods Workshop</h1>
     <p class="site-subtitle">Grain. Grit. Craftsmanship.</p>
-    <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
     <nav class="top-nav">
+      <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="services.html">Services</a>
       <a href="gallery.html">Gallery</a>
@@ -240,16 +202,10 @@
     <p>&copy; 2025 Shrimpy's Backwoods Workshop. All rights reserved.</p>
   </footer>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function() {
-      const toggle = document.querySelector(".menu-toggle");
-      const nav = document.querySelector("nav.top-nav");
-      toggle.addEventListener("click", () => {
-        nav.classList.toggle("show");
-      });
-    });
-  </script>
 </body>
 </html>
+
+
+
 
 
