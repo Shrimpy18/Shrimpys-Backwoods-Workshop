@@ -33,10 +33,21 @@
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
 
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .logo-title img {
+      height: 50px;
+      width: auto;
+    }
+
     .site-title {
       font-size: 2rem;
       color: #5a3e1b;
-      margin: 0.5rem 0 0 0;
+      margin: 0;
     }
 
     .site-subtitle {
@@ -108,14 +119,18 @@
       nav.top-nav { flex-direction: column; align-items: center; }
       nav.top-nav a { width: 100%; text-align: center; }
       main { margin: 10rem 1rem 2rem; padding: 1.5rem; }
+      .logo-title img { height: 40px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Unified Header -->
+  <!-- Header -->
   <header>
-    <h1 class="site-title">Shrimpy's Backwoods Workshop</h1>
+    <div class="logo-title">
+      <img src="images/logo.png" alt="Shrimpy's Backwoods Workshop Logo">
+      <h1 class="site-title">Shrimpy's Backwoods Workshop</h1>
+    </div>
     <p class="site-subtitle">Grain. Grit. Craftsmanship.</p>
     <nav class="top-nav">
       <a href="index.html" class="active">Home</a>
@@ -130,6 +145,7 @@
   <main>
     <h2>Welcome!</h2>
     <p>Find handcrafted woodworking, laser marking, and 3D printing pieces made with care and precision. Browse our gallery, shop our pieces, or reach out to discuss a custom project!</p>
+    <p>Our mission is simple: bring your creative ideas to life with quality craftsmanship and attention to detail.</p>
   </main>
 
   <footer>
@@ -140,7 +156,7 @@
         </svg>
       </a>
       <a href="https://www.etsy.com/your/shops/me/tools/listings?ref=seller-platform-mcnav" target="_blank" aria-label="Etsy">
-        <img src="images/etsy-logo.png" alt="Etsy" />
+        <img src="images/etsy-logo.png" alt="Etsy Shop" />
       </a>
     </div>
     <p>&copy; 2025 Shrimpy's Backwoods Workshop. All rights reserved.</p>
@@ -148,3 +164,5 @@
 
 </body>
 </html>
+
+
