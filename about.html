@@ -17,7 +17,7 @@
     body {
       font-family: 'Merriweather', serif;
       margin: 0;
-      padding-top: 70px; /* space for fixed header */
+      padding-top: 90px; /* extra space for header + slogan */
       background: url('background.png') no-repeat center center fixed;
       background-size: cover;
       color: #333;
@@ -27,15 +27,16 @@
     header {
       background: rgba(255, 255, 255, 0.9);
       display: flex;
-      justify-content: space-between;
+      flex-direction: column;
       align-items: center;
-      padding: 0.75rem 1rem;
+      padding: 0.5rem 1rem;
       position: fixed;
       width: 100vw;
       top: 0;
       z-index: 1000;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
       box-sizing: border-box;
+      text-align: center;
     }
 
     header h1 {
@@ -43,7 +44,14 @@
       font-size: 1.4rem;
       color: #5a3e1b;
       font-family: 'Merriweather', serif;
-      white-space: nowrap;
+    }
+
+    header p.slogan {
+      margin: 0;
+      font-size: 0.95rem;
+      color: #7a5a35;
+      font-style: italic;
+      font-family: 'Merriweather', serif;
     }
 
     .menu-toggle {
@@ -53,11 +61,15 @@
       border: none;
       color: #5a3e1b;
       cursor: pointer;
+      position: absolute;
+      right: 1rem;
+      top: 0.75rem;
     }
 
     nav.top-nav {
       display: flex;
       gap: 0.75rem;
+      margin-top: 0.5rem;
     }
 
     nav.top-nav a {
@@ -124,6 +136,10 @@
         font-size: 1.1rem;
       }
 
+      header p.slogan {
+        font-size: 0.85rem;
+      }
+
       .menu-toggle {
         display: block;
       }
@@ -155,6 +171,7 @@
 <body>
   <header>
     <h1>Shrimpy's Backwoods Workshop</h1>
+    <p class="slogan">Grain. Grit. Craftsmanship.</p>
     <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
     <nav class="top-nav">
       <a href="index.html">Home</a>
@@ -202,3 +219,5 @@
   </script>
 </body>
 </html>
+
+
