@@ -4,78 +4,259 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Gallery - Shrimpy's Backwoods Workshop</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    html {
+      scroll-padding-top: 150px;
+      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+    }
+    body {
+      font-family: 'Merriweather', serif;
+      margin: 0;
+      padding-top: 150px;
+      background: url('background.png') no-repeat center center fixed;
+      background-size: cover;
+      color: #333;
+    }
+
+    /* HEADER updated to match Services page */
+    header {
+      background: rgba(255, 255, 255, 0.95);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+      padding: 0.5rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .site-title {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #5a3e1b;
+      margin: 0.5rem 0 0 0;
+      text-align: center;
+    }
+
+    .site-subtitle {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #5a3e1b;
+      margin: 0;
+      text-align: center;
+    }
+
+    .menu-toggle {
+      display: none;
+      font-size: 1.8rem;
+      background: none;
+      border: none;
+      color: #5a3e1b;
+      cursor: pointer;
+      margin-top: 0.5rem;
+    }
+
+    nav.top-nav {
+      display: flex;
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    nav.top-nav a {
+      text-decoration: none;
+      color: #5a3e1b;
+      font-weight: 600;
+      transition: color 0.3s ease;
+    }
+
+    nav.top-nav a:hover { color: #a97c50; }
+    nav.top-nav a.active { color: #a97c50; text-decoration: underline; }
+
+    section.project {
+      background: rgba(255, 255, 255, 0.85);
+      margin: 2rem auto;
+      max-width: 900px;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+    }
+
+    .carousel-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255, 255, 255, 0.8);
+      border: none;
+      font-size: 1.5rem;
+      padding: 0.3rem 0.6rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    .carousel-button.prev { left: 5px; }
+    .carousel-button.next { right: 5px; }
+
+    .description { font-size: 1rem; color: #5a3e1b; margin-top: 0.5rem; }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+      color: #5a3e1b;
+    }
+
+    .footer-social {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .footer-social a svg, .footer-social a img {
+      width: 40px;
+      height: 40px;
+      transition: transform 0.2s;
+    }
+
+    .footer-social a:hover svg, .footer-social a:hover img { transform: scale(1.2); }
+
+    @media (max-width: 768px) {
+      .site-title { font-size: 1.6rem; }
+      .site-subtitle { font-size: 0.9rem; }
+      .menu-toggle { display: block; }
+      nav.top-nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 1rem;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        text-align: center;
+      }
+      nav.top-nav.show { display: flex; }
+      nav.top-nav a { padding: 0.75rem 0; display: block; }
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>Gallery</h1>
+    <h1 class="site-title">Shrimpy's Backwoods Workshop</h1>
+    <p class="site-subtitle">Grain. Grit. Craftsmanship.</p>
+    <button class="menu-toggle" aria-label="Toggle Menu">&#9776;</button>
+    <nav class="top-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="shop.html">Shop</a>
+      <a href="contact.html">Contact</a>
+    </nav>
   </header>
-  <main>
 
-    <!-- New Coasters Project -->
-    <section class="project">
-      <h2>Coasters</h2>
-      <div class="carousel-container" id="carousel-coasters">
-        <button class="carousel-button prev" onclick="prevSlide('coasters')">&#10094;</button>
-        <img src="images/bear_coaster_1.JPG" alt="Coaster" id="coasters-image" />
-        <button class="carousel-button next" onclick="nextSlide('coasters')">&#10095;</button>
-      </div>
-      <p class="description">Handcrafted wooden and engraved coasters — rustic, functional, and customizable for any occasion.</p>
-      <p class="description"><em>All coasters are customizable with any image, logo, QR code, and more.</em></p>
-    </section>
+  <!-- New Coasters Project -->
+  <section class="project">
+    <h2>Coasters</h2>
+    <div class="carousel-container" id="carousel-coasters">
+      <button class="carousel-button prev" onclick="prevSlide('coasters')">&#10094;</button>
+      <img src="images/bear_coaster_1.JPG" alt="Coaster" id="coasters-image" />
+      <button class="carousel-button next" onclick="nextSlide('coasters')">&#10095;</button>
+    </div>
+    <p class="description">Handcrafted wooden and engraved coasters — rustic, functional, and customizable for any occasion.</p>
+    <p class="description"><em>All coasters are customizable with any image, logo, QR code, and more.</em></p>
+  </section>
 
-    <!-- Existing Projects -->
-    <section class="project">
-      <h2>Rustic Birdhouse</h2>
-      <div class="carousel-container" id="carousel-birdhouse">
-        <button class="carousel-button prev" onclick="prevSlide('birdhouse')">&#10094;</button>
-        <img src="images/bird house_iso.jpg" alt="Birdhouse" id="birdhouse-image" />
-        <button class="carousel-button next" onclick="nextSlide('birdhouse')">&#10095;</button>
-      </div>
-      <p class="description">A rustic birdhouse made from reclaimed wood.</p>
-    </section>
+  <!-- Existing Projects -->
+  <section class="project">
+    <h2>Lighthouse Birdhouse</h2>
+    <div class="carousel-container" id="carousel-birdhouse">
+      <button class="carousel-button prev" onclick="prevSlide('birdhouse')">&#10094;</button>
+      <img src="images/bird house_iso.jpg" alt="Birdhouse" id="birdhouse-image" />
+      <button class="carousel-button next" onclick="nextSlide('birdhouse')">&#10095;</button>
+    </div>
+    <p class="description">A handcrafted birdhouse with precision details, perfect for outdoor décor and wildlife enthusiasts.</p>
+  </section>
 
-    <section class="project">
-      <h2>Custom Box</h2>
-      <div class="carousel-container" id="carousel-box">
-        <button class="carousel-button prev" onclick="prevSlide('box')">&#10094;</button>
-        <img src="images/box_iso.jpg" alt="Box" id="box-image" />
-        <button class="carousel-button next" onclick="nextSlide('box')">&#10095;</button>
-      </div>
-      <p class="description">A handcrafted storage box with a smooth finish.</p>
-    </section>
+  <section class="project">
+    <h2>Custom Box</h2>
+    <div class="carousel-container" id="carousel-box">
+      <button class="carousel-button prev" onclick="prevSlide('box')">&#10094;</button>
+      <img src="images/box_iso.jpg" alt="Box" id="box-image" />
+      <button class="carousel-button next" onclick="nextSlide('box')">&#10095;</button>
+    </div>
+    <p class="description">Custom wooden boxes made with quality pine, ideal for gifts or storage with a rustic touch.</p>
+  </section>
 
-    <section class="project">
-      <h2>Adirondack Lounge Chair</h2>
-      <div class="carousel-container" id="carousel-chair">
-        <button class="carousel-button prev" onclick="prevSlide('chair')">&#10094;</button>
-        <img src="images/chair_front.jpg" alt="Chair" id="chair-image" />
-        <button class="carousel-button next" onclick="nextSlide('chair')">&#10095;</button>
-      </div>
-      <p class="description">A classic Adirondack lounge chair built for comfort.</p>
-    </section>
+  <section class="project">
+    <h2>Adirondack Lounge Chair</h2>
+    <div class="carousel-container" id="carousel-chair">
+      <button class="carousel-button prev" onclick="prevSlide('chair')">&#10094;</button>
+      <img src="images/chair_front.jpg" alt="Adirondack Lounge Chair" id="chair-image" />
+      <button class="carousel-button next" onclick="nextSlide('chair')">&#10095;</button>
+    </div>
+    <p class="description">Classic Adirondack lounge chairs, handcrafted for comfort and outdoor elegance. *Painting not included*</p>
+  </section>
 
-    <section class="project">
-      <h2>Rocking Chair</h2>
-      <div class="carousel-container" id="carousel-rocker">
-        <button class="carousel-button prev" onclick="prevSlide('rocker')">&#10094;</button>
-        <img src="images/rocker_front.jpg" alt="Rocker" id="rocker-image" />
-        <button class="carousel-button next" onclick="nextSlide('rocker')">&#10095;</button>
-      </div>
-      <p class="description">A handcrafted wooden rocking chair.</p>
-    </section>
+  <section class="project">
+    <h2>Rocking Chair</h2>
+    <div class="carousel-container" id="carousel-rocker">
+      <button class="carousel-button prev" onclick="prevSlide('rocker')">&#10094;</button>
+      <img src="images/rocker_front.jpg" alt="Rocking Chair" id="rocker-image" />
+      <button class="carousel-button next" onclick="nextSlide('rocker')">&#10095;</button>
+    </div>
+    <p class="description">A beautiful wooden rocking chair, perfect for relaxing on the porch.</p>
+  </section>
 
-    <section class="project">
-      <h2>Classic Bench</h2>
-      <div class="carousel-container" id="carousel-bench">
-        <button class="carousel-button prev" onclick="prevSlide('bench')">&#10094;</button>
-        <img src="images/bench.jpg" alt="Bench" id="bench-image" />
-        <button class="carousel-button next" onclick="nextSlide('bench')">&#10095;</button>
-      </div>
-      <p class="description">A sturdy wooden bench with a rustic design.</p>
-    </section>
+  <section class="project">
+    <h2>Classic Bench</h2>
+    <div class="carousel-container" id="carousel-bench">
+      <button class="carousel-button prev" onclick="prevSlide('bench')">&#10094;</button>
+      <img src="images/bench.jpg" alt="Bench" id="bench-image" />
+      <button class="carousel-button next" onclick="nextSlide('bench')">&#10095;</button>
+    </div>
+    <p class="description">Sturdy and stylish benches made from quality pine, designed to complement any outdoor or indoor space.</p>
+  </section>
 
-  </main>
+  <footer>
+    <div class="footer-social">
+      <a href="https://www.facebook.com/profile.php?id=61580204308708" target="_blank" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="#3b5998" viewBox="0 0 24 24">
+          <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5a3.5 3.5 0 0 1 3.5-3.5h2v3h-2c-.3 0-.5.2-.5.5V12H17l-.5 3h-2v7A10 10 0 0 0 22 12z"/>
+        </svg>
+      </a>
+      <a href="https://www.etsy.com/your/shops/me/tools/listings?ref=seller-platform-mcnav" target="_blank" aria-label="Etsy">
+        <img src="images/etsy-logo.png" alt="Etsy">
+      </a>
+    </div>
+    <p>&copy; 2025 Shrimpy's Backwoods Workshop. All rights reserved.</p>
+  </footer>
 
   <script>
     const slides = {
@@ -101,20 +282,23 @@
 
     const indices = { coasters:0, birdhouse:0, box:0, chair:0, rocker:0, bench:0 };
 
-    function showSlide(project) {
-      const img = document.getElementById(project + "-image");
-      img.src = slides[project][indices[project]];
+    function nextSlide(project) {
+      indices[project] = (indices[project]+1) % slides[project].length;
+      document.getElementById(project+"-image").src = slides[project][indices[project]];
     }
 
     function prevSlide(project) {
-      indices[project] = (indices[project] - 1 + slides[project].length) % slides[project].length;
-      showSlide(project);
+      indices[project] = (indices[project]-1+slides[project].length) % slides[project].length;
+      document.getElementById(project+"-image").src = slides[project][indices[project]];
     }
 
-    function nextSlide(project) {
-      indices[project] = (indices[project] + 1) % slides[project].length;
-      showSlide(project);
-    }
+    document.addEventListener("DOMContentLoaded", function() {
+      const toggle = document.querySelector(".menu-toggle");
+      const nav = document.querySelector("nav.top-nav");
+      toggle.addEventListener("click", () => { nav.classList.toggle("show"); });
+    });
   </script>
 </body>
 </html>
+
+
