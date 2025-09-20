@@ -260,33 +260,18 @@
 
   <script>
     const slides = {
-      coasters: [
-        "images/bear_coaster_1.JPG",
-        "images/bear_coaster_2.JPG",
-        "images/bear_coaster_3.JPG",
-        "images/bear_coaster_4.JPG",
-        "images/charlie_1.JPG",
-        "images/charlie_2.JPG",
-        "images/circle_qr_1.JPG",
-        "images/logo_coaster1.JPG",
-        "images/logo_qr_1.JPG",
-        "images/picture_coaster1.JPG",
-        "images/heart_qr_code.JPG"
-      ],
+      coasters: ["images/bear_coaster_1.JPG","images/bear_coaster_2.JPG","images/bear_coaster_3.JPG","images/bear_coaster_4.JPG"],
       birdhouse: ["images/bird house_iso.jpg","images/birdhouse_left.jpg","images/birdhouse_right.jpg"],
       box: ["images/box_iso.jpg","images/box_top.jpg"],
       chair: ["images/chair_front.jpg","images/chair_foot.jpg","images/chair_back_down.jpg","images/chair_back.jpg"],
       rocker: ["images/rocker_front.jpg","images/rocker_iso.jpg"],
       bench: ["images/bench.jpg"]
     };
-
     const indices = { coasters:0, birdhouse:0, box:0, chair:0, rocker:0, bench:0 };
-
     function nextSlide(project) {
       indices[project] = (indices[project]+1) % slides[project].length;
       document.getElementById(project+"-image").src = slides[project][indices[project]];
     }
-
     function prevSlide(project) {
       indices[project] = (indices[project]-1+slides[project].length) % slides[project].length;
       document.getElementById(project+"-image").src = slides[project][indices[project]];
@@ -300,5 +285,4 @@
   </script>
 </body>
 </html>
-
 
