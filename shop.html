@@ -28,7 +28,6 @@
       color: #333;
     }
 
-    /* HEADER updated to match Services page */
     header {
       background: rgba(255, 255, 255, 0.95);
       position: fixed;
@@ -82,7 +81,6 @@
     nav.top-nav a:hover { color: #a97c50; }
     nav.top-nav a.active { color: #a97c50; text-decoration: underline; }
 
-    /* Section & PayPal styling unchanged */
     section {
       background: rgba(255, 255, 255, 0.85);
       margin: 2rem auto;
@@ -114,7 +112,8 @@
       vertical-align: middle;
     }
     #paypal-container-P5PBHAK9BME8Q,
-    #paypal-container-MUXEFNGCQ3U2Q {
+    #paypal-container-MUXEFNGCQ3U2Q,
+    #paypal-container-S7ENKRMEQFGJC {
       margin-top: 1.5rem;
       display: none; 
     }
@@ -185,20 +184,27 @@
       I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a>
     </label>
 
+    <!-- Existing PayPal buttons -->
     <div id="paypal-container-P5PBHAK9BME8Q"></div>
     <div id="paypal-container-MUXEFNGCQ3U2Q"></div>
+
+    <!-- New PayPal button for Custom Signs -->
+    <div id="paypal-container-S7ENKRMEQFGJC"></div>
 
     <script>
       const checkbox = document.getElementById('termsCheckbox');
       const paypalContainer1 = document.getElementById('paypal-container-P5PBHAK9BME8Q');
       const paypalContainer2 = document.getElementById('paypal-container-MUXEFNGCQ3U2Q');
+      const paypalContainer3 = document.getElementById('paypal-container-S7ENKRMEQFGJC');
       let button1Rendered = false;
       let button2Rendered = false;
+      let button3Rendered = false;
 
       checkbox.addEventListener('change', function() {
         if (checkbox.checked) {
           paypalContainer1.style.display = 'block';
           paypalContainer2.style.display = 'block';
+          paypalContainer3.style.display = 'block';
           if (!button1Rendered) {
             paypal.HostedButtons({ hostedButtonId: "P5PBHAK9BME8Q" }).render("#paypal-container-P5PBHAK9BME8Q");
             button1Rendered = true;
@@ -207,9 +213,14 @@
             paypal.HostedButtons({ hostedButtonId: "MUXEFNGCQ3U2Q" }).render("#paypal-container-MUXEFNGCQ3U2Q");
             button2Rendered = true;
           }
+          if (!button3Rendered) {
+            paypal.HostedButtons({ hostedButtonId: "S7ENKRMEQFGJC" }).render("#paypal-container-S7ENKRMEQFGJC");
+            button3Rendered = true;
+          }
         } else {
           paypalContainer1.style.display = 'none';
           paypalContainer2.style.display = 'none';
+          paypalContainer3.style.display = 'none';
         }
       });
 
