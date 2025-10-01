@@ -192,6 +192,17 @@
     <p class="description"><em>All coasters are customizable with any image, logo, QR code, and more.</em></p>
   </section>
 
+  <!-- New Table Project -->
+  <section class="project">
+    <h2>Table</h2>
+    <div class="carousel-container" id="carousel-table">
+      <button class="carousel-button prev" onclick="prevSlide('table')">&#10094;</button>
+      <img src="images/bench_table1.JPG" alt="Table" id="table-image" />
+      <button class="carousel-button next" onclick="nextSlide('table')">&#10095;</button>
+    </div>
+    <p class="description">Handcrafted wooden table, sturdy and stylish — built to last for any setting.</p>
+  </section>
+
   <!-- Existing projects unchanged -->
   <section class="project">
     <h2>Lighthouse Birdhouse</h2>
@@ -285,6 +296,7 @@
         "images/halloween4.JPG",
         "images/flag1.JPG"
       ],
+      table: ["images/bench_table1.JPG","images/bench_table2.JPG","images/bench_table3.JPG"],
       birdhouse: ["images/bird house_iso.jpg","images/birdhouse_left.jpg","images/birdhouse_right.jpg"],
       box: ["images/box_iso.jpg","images/box_top.jpg"],
       chair: ["images/chair_front.jpg","images/chair_foot.jpg","images/chair_back_down.jpg","images/chair_back.jpg"],
@@ -292,7 +304,7 @@
       bench: ["images/bench.jpg"]
     };
 
-    const indices = { coasters:0, birdhouse:0, box:0, chair:0, rocker:0, bench:0 };
+    const indices = { coasters:0, table:0, birdhouse:0, box:0, chair:0, rocker:0, bench:0 };
 
     function nextSlide(project) {
       indices[project] = (indices[project]+1) % slides[project].length;
