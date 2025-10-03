@@ -111,7 +111,8 @@
       transform: scale(1.2);
       vertical-align: middle;
     }
-    #paypal-container-ESJVEN3UNMPJE,
+    #paypal-container-KBTUK5QARWEV8,
+    #paypal-container-GHOSTNEWBTN,
     #paypal-container-P5PBHAK9BME8Q,
     #paypal-container-5H2VRJQS63BPL,
     #paypal-container-MUXEFNGCQ3U2Q,
@@ -186,25 +187,28 @@
       I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a>
     </label>
 
-    <!-- Halloween Coasters button moved to the very top -->
-    <div id="paypal-container-ESJVEN3UNMPJE"></div>
+    <!-- Halloween Coasters Button -->
+    <div id="paypal-container-KBTUK5QARWEV8"></div>
+    <!-- Ghost Coasters Button (new, under Halloween) -->
+    <div id="paypal-container-GHOSTNEWBTN"></div>
 
     <!-- Existing PayPal buttons -->
     <div id="paypal-container-P5PBHAK9BME8Q"></div>
     <div id="paypal-container-5H2VRJQS63BPL"></div>
     <div id="paypal-container-MUXEFNGCQ3U2Q"></div>
-
-    <!-- Custom Signs button -->
     <div id="paypal-container-S7ENKRMEQFGJC"></div>
 
     <script>
       const checkbox = document.getElementById('termsCheckbox');
-      const paypalContainerHalloween = document.getElementById('paypal-container-ESJVEN3UNMPJE');
+      const paypalHalloween = document.getElementById('paypal-container-KBTUK5QARWEV8');
+      const paypalGhost = document.getElementById('paypal-container-GHOSTNEWBTN');
       const paypalContainer1 = document.getElementById('paypal-container-P5PBHAK9BME8Q');
       const paypalContainerNew = document.getElementById('paypal-container-5H2VRJQS63BPL');
       const paypalContainer2 = document.getElementById('paypal-container-MUXEFNGCQ3U2Q');
       const paypalContainer3 = document.getElementById('paypal-container-S7ENKRMEQFGJC');
-      let buttonHalloweenRendered = false;
+
+      let halloweenRendered = false;
+      let ghostRendered = false;
       let button1Rendered = false;
       let buttonNewRendered = false;
       let button2Rendered = false;
@@ -212,14 +216,20 @@
 
       checkbox.addEventListener('change', function() {
         if (checkbox.checked) {
-          paypalContainerHalloween.style.display = 'block';
+          paypalHalloween.style.display = 'block';
+          paypalGhost.style.display = 'block';
           paypalContainer1.style.display = 'block';
           paypalContainerNew.style.display = 'block';
           paypalContainer2.style.display = 'block';
           paypalContainer3.style.display = 'block';
-          if (!buttonHalloweenRendered) {
-            paypal.HostedButtons({ hostedButtonId: "ESJVEN3UNMPJE" }).render("#paypal-container-ESJVEN3UNMPJE");
-            buttonHalloweenRendered = true;
+
+          if (!halloweenRendered) {
+            paypal.HostedButtons({ hostedButtonId: "KBTUK5QARWEV8" }).render("#paypal-container-KBTUK5QARWEV8");
+            halloweenRendered = true;
+          }
+          if (!ghostRendered) {
+            paypal.HostedButtons({ hostedButtonId: "GHOSTNEWBTN" }).render("#paypal-container-GHOSTNEWBTN");
+            ghostRendered = true;
           }
           if (!button1Rendered) {
             paypal.HostedButtons({ hostedButtonId: "P5PBHAK9BME8Q" }).render("#paypal-container-P5PBHAK9BME8Q");
@@ -238,7 +248,8 @@
             button3Rendered = true;
           }
         } else {
-          paypalContainerHalloween.style.display = 'none';
+          paypalHalloween.style.display = 'none';
+          paypalGhost.style.display = 'none';
           paypalContainer1.style.display = 'none';
           paypalContainerNew.style.display = 'none';
           paypalContainer2.style.display = 'none';
@@ -267,9 +278,6 @@
     </div>
     <p>&copy; 2025 Shrimpy's Backwoods Workshop. All rights reserved.</p>
   </footer>
-</body>
-</html>
-
 </body>
 </html>
 
