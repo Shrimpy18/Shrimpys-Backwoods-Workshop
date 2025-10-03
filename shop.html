@@ -112,6 +112,7 @@
       vertical-align: middle;
     }
     #paypal-container-P5PBHAK9BME8Q,
+    #paypal-container-ESJVEN3UNMPJE,
     #paypal-container-5H2VRJQS63BPL,
     #paypal-container-MUXEFNGCQ3U2Q,
     #paypal-container-S7ENKRMEQFGJC {
@@ -187,7 +188,11 @@
 
     <!-- Existing PayPal buttons -->
     <div id="paypal-container-P5PBHAK9BME8Q"></div>
-    <!-- New PayPal button under Bear Coasters -->
+
+    <!-- New PayPal button ABOVE Bear Coasters -->
+    <div id="paypal-container-ESJVEN3UNMPJE"></div>
+
+    <!-- Bear Coasters button -->
     <div id="paypal-container-5H2VRJQS63BPL"></div>
     <div id="paypal-container-MUXEFNGCQ3U2Q"></div>
 
@@ -197,10 +202,12 @@
     <script>
       const checkbox = document.getElementById('termsCheckbox');
       const paypalContainer1 = document.getElementById('paypal-container-P5PBHAK9BME8Q');
+      const paypalContainerHalloween = document.getElementById('paypal-container-ESJVEN3UNMPJE');
       const paypalContainerNew = document.getElementById('paypal-container-5H2VRJQS63BPL');
       const paypalContainer2 = document.getElementById('paypal-container-MUXEFNGCQ3U2Q');
       const paypalContainer3 = document.getElementById('paypal-container-S7ENKRMEQFGJC');
       let button1Rendered = false;
+      let buttonHalloweenRendered = false;
       let buttonNewRendered = false;
       let button2Rendered = false;
       let button3Rendered = false;
@@ -208,12 +215,17 @@
       checkbox.addEventListener('change', function() {
         if (checkbox.checked) {
           paypalContainer1.style.display = 'block';
+          paypalContainerHalloween.style.display = 'block';
           paypalContainerNew.style.display = 'block';
           paypalContainer2.style.display = 'block';
           paypalContainer3.style.display = 'block';
           if (!button1Rendered) {
             paypal.HostedButtons({ hostedButtonId: "P5PBHAK9BME8Q" }).render("#paypal-container-P5PBHAK9BME8Q");
             button1Rendered = true;
+          }
+          if (!buttonHalloweenRendered) {
+            paypal.HostedButtons({ hostedButtonId: "ESJVEN3UNMPJE" }).render("#paypal-container-ESJVEN3UNMPJE");
+            buttonHalloweenRendered = true;
           }
           if (!buttonNewRendered) {
             paypal.HostedButtons({ hostedButtonId: "5H2VRJQS63BPL" }).render("#paypal-container-5H2VRJQS63BPL");
@@ -229,6 +241,7 @@
           }
         } else {
           paypalContainer1.style.display = 'none';
+          paypalContainerHalloween.style.display = 'none';
           paypalContainerNew.style.display = 'none';
           paypalContainer2.style.display = 'none';
           paypalContainer3.style.display = 'none';
