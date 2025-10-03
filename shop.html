@@ -111,8 +111,8 @@
       transform: scale(1.2);
       vertical-align: middle;
     }
+    #paypal-container-ESJVEN3UNMPJE,
     #paypal-container-KBTUK5QARWEV8,
-    #paypal-container-GHOSTNEWBTN,
     #paypal-container-P5PBHAK9BME8Q,
     #paypal-container-5H2VRJQS63BPL,
     #paypal-container-MUXEFNGCQ3U2Q,
@@ -187,12 +187,12 @@
       I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a>
     </label>
 
-    <!-- Halloween Coasters Button -->
+    <!-- Halloween Coasters Button (old/original) -->
+    <div id="paypal-container-ESJVEN3UNMPJE"></div>
+    <!-- Ghost Coasters Button (new, directly under Halloween) -->
     <div id="paypal-container-KBTUK5QARWEV8"></div>
-    <!-- Ghost Coasters Button (new, under Halloween) -->
-    <div id="paypal-container-GHOSTNEWBTN"></div>
 
-    <!-- Existing PayPal buttons -->
+    <!-- Other PayPal buttons -->
     <div id="paypal-container-P5PBHAK9BME8Q"></div>
     <div id="paypal-container-5H2VRJQS63BPL"></div>
     <div id="paypal-container-MUXEFNGCQ3U2Q"></div>
@@ -200,8 +200,8 @@
 
     <script>
       const checkbox = document.getElementById('termsCheckbox');
-      const paypalHalloween = document.getElementById('paypal-container-KBTUK5QARWEV8');
-      const paypalGhost = document.getElementById('paypal-container-GHOSTNEWBTN');
+      const paypalHalloween = document.getElementById('paypal-container-ESJVEN3UNMPJE');
+      const paypalGhost = document.getElementById('paypal-container-KBTUK5QARWEV8');
       const paypalContainer1 = document.getElementById('paypal-container-P5PBHAK9BME8Q');
       const paypalContainerNew = document.getElementById('paypal-container-5H2VRJQS63BPL');
       const paypalContainer2 = document.getElementById('paypal-container-MUXEFNGCQ3U2Q');
@@ -224,11 +224,11 @@
           paypalContainer3.style.display = 'block';
 
           if (!halloweenRendered) {
-            paypal.HostedButtons({ hostedButtonId: "KBTUK5QARWEV8" }).render("#paypal-container-KBTUK5QARWEV8");
+            paypal.HostedButtons({ hostedButtonId: "ESJVEN3UNMPJE" }).render("#paypal-container-ESJVEN3UNMPJE");
             halloweenRendered = true;
           }
           if (!ghostRendered) {
-            paypal.HostedButtons({ hostedButtonId: "GHOSTNEWBTN" }).render("#paypal-container-GHOSTNEWBTN");
+            paypal.HostedButtons({ hostedButtonId: "KBTUK5QARWEV8" }).render("#paypal-container-KBTUK5QARWEV8");
             ghostRendered = true;
           }
           if (!button1Rendered) {
@@ -280,4 +280,3 @@
   </footer>
 </body>
 </html>
-
