@@ -115,6 +115,7 @@
     #paypal-container-KBTUK5QARWEV8,
     #paypal-container-YU9H28BGQZ2F4,
     #paypal-container-6GAQED2N22FCU,
+    #paypal-container-5MT92V9P9QDT2,
     #paypal-container-P5PBHAK9BME8Q,
     #paypal-container-5H2VRJQS63BPL,
     #paypal-container-MUXEFNGCQ3U2Q,
@@ -189,13 +190,15 @@
       I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a>
     </label>
 
-    <!-- Halloween Coasters Button (old/original) -->
+    <!-- Halloween Coasters Button -->
     <div id="paypal-container-ESJVEN3UNMPJE"></div>
-    <!-- Ghost Coasters Button (new, directly under Halloween) -->
+    <!-- Ghost Coasters Button -->
     <div id="paypal-container-KBTUK5QARWEV8"></div>
-    <!-- ✅ Deer Coaster Set PayPal Buttons -->
+    <!-- Deer Coaster Buttons -->
     <div id="paypal-container-YU9H28BGQZ2F4"></div>
     <div id="paypal-container-6GAQED2N22FCU"></div>
+    <!-- Wolf Coaster Set #1 Button -->
+    <div id="paypal-container-5MT92V9P9QDT2"></div>
 
     <!-- Other PayPal buttons -->
     <div id="paypal-container-P5PBHAK9BME8Q"></div>
@@ -209,6 +212,7 @@
       const paypalGhost = document.getElementById('paypal-container-KBTUK5QARWEV8');
       const paypalDeerOld = document.getElementById('paypal-container-YU9H28BGQZ2F4');
       const paypalDeerNew = document.getElementById('paypal-container-6GAQED2N22FCU');
+      const paypalWolf1 = document.getElementById('paypal-container-5MT92V9P9QDT2');
       const paypalContainer1 = document.getElementById('paypal-container-P5PBHAK9BME8Q');
       const paypalContainerNew = document.getElementById('paypal-container-5H2VRJQS63BPL');
       const paypalContainer2 = document.getElementById('paypal-container-MUXEFNGCQ3U2Q');
@@ -218,6 +222,7 @@
       let ghostRendered = false;
       let deerOldRendered = false;
       let deerNewRendered = false;
+      let wolf1Rendered = false;
       let button1Rendered = false;
       let buttonNewRendered = false;
       let button2Rendered = false;
@@ -229,48 +234,27 @@
           paypalGhost.style.display = 'block';
           paypalDeerOld.style.display = 'block';
           paypalDeerNew.style.display = 'block';
+          paypalWolf1.style.display = 'block';
           paypalContainer1.style.display = 'block';
           paypalContainerNew.style.display = 'block';
           paypalContainer2.style.display = 'block';
           paypalContainer3.style.display = 'block';
 
-          if (!halloweenRendered) {
-            paypal.HostedButtons({ hostedButtonId: "ESJVEN3UNMPJE" }).render("#paypal-container-ESJVEN3UNMPJE");
-            halloweenRendered = true;
-          }
-          if (!ghostRendered) {
-            paypal.HostedButtons({ hostedButtonId: "KBTUK5QARWEV8" }).render("#paypal-container-KBTUK5QARWEV8");
-            ghostRendered = true;
-          }
-          if (!deerOldRendered) {
-            paypal.HostedButtons({ hostedButtonId: "YU9H28BGQZ2F4" }).render("#paypal-container-YU9H28BGQZ2F4");
-            deerOldRendered = true;
-          }
-          if (!deerNewRendered) {
-            paypal.HostedButtons({ hostedButtonId: "6GAQED2N22FCU" }).render("#paypal-container-6GAQED2N22FCU");
-            deerNewRendered = true;
-          }
-          if (!button1Rendered) {
-            paypal.HostedButtons({ hostedButtonId: "P5PBHAK9BME8Q" }).render("#paypal-container-P5PBHAK9BME8Q");
-            button1Rendered = true;
-          }
-          if (!buttonNewRendered) {
-            paypal.HostedButtons({ hostedButtonId: "5H2VRJQS63BPL" }).render("#paypal-container-5H2VRJQS63BPL");
-            buttonNewRendered = true;
-          }
-          if (!button2Rendered) {
-            paypal.HostedButtons({ hostedButtonId: "MUXEFNGCQ3U2Q" }).render("#paypal-container-MUXEFNGCQ3U2Q");
-            button2Rendered = true;
-          }
-          if (!button3Rendered) {
-            paypal.HostedButtons({ hostedButtonId: "S7ENKRMEQFGJC" }).render("#paypal-container-S7ENKRMEQFGJC");
-            button3Rendered = true;
-          }
+          if (!halloweenRendered) { paypal.HostedButtons({ hostedButtonId: "ESJVEN3UNMPJE" }).render("#paypal-container-ESJVEN3UNMPJE"); halloweenRendered = true; }
+          if (!ghostRendered) { paypal.HostedButtons({ hostedButtonId: "KBTUK5QARWEV8" }).render("#paypal-container-KBTUK5QARWEV8"); ghostRendered = true; }
+          if (!deerOldRendered) { paypal.HostedButtons({ hostedButtonId: "YU9H28BGQZ2F4" }).render("#paypal-container-YU9H28BGQZ2F4"); deerOldRendered = true; }
+          if (!deerNewRendered) { paypal.HostedButtons({ hostedButtonId: "6GAQED2N22FCU" }).render("#paypal-container-6GAQED2N22FCU"); deerNewRendered = true; }
+          if (!wolf1Rendered) { paypal.HostedButtons({ hostedButtonId: "5MT92V9P9QDT2" }).render("#paypal-container-5MT92V9P9QDT2"); wolf1Rendered = true; }
+          if (!button1Rendered) { paypal.HostedButtons({ hostedButtonId: "P5PBHAK9BME8Q" }).render("#paypal-container-P5PBHAK9BME8Q"); button1Rendered = true; }
+          if (!buttonNewRendered) { paypal.HostedButtons({ hostedButtonId: "5H2VRJQS63BPL" }).render("#paypal-container-5H2VRJQS63BPL"); buttonNewRendered = true; }
+          if (!button2Rendered) { paypal.HostedButtons({ hostedButtonId: "MUXEFNGCQ3U2Q" }).render("#paypal-container-MUXEFNGCQ3U2Q"); button2Rendered = true; }
+          if (!button3Rendered) { paypal.HostedButtons({ hostedButtonId: "S7ENKRMEQFGJC" }).render("#paypal-container-S7ENKRMEQFGJC"); button3Rendered = true; }
         } else {
           paypalHalloween.style.display = 'none';
           paypalGhost.style.display = 'none';
           paypalDeerOld.style.display = 'none';
           paypalDeerNew.style.display = 'none';
+          paypalWolf1.style.display = 'none';
           paypalContainer1.style.display = 'none';
           paypalContainerNew.style.display = 'none';
           paypalContainer2.style.display = 'none';
@@ -301,5 +285,7 @@
   </footer>
 </body>
 </html>
+
+
 
 
