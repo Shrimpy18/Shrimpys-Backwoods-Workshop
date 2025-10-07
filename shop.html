@@ -114,6 +114,7 @@
     #paypal-container-ESJVEN3UNMPJE,
     #paypal-container-KBTUK5QARWEV8,
     #paypal-container-YU9H28BGQZ2F4,
+    #paypal-container-6GAQED2N22FCU,
     #paypal-container-P5PBHAK9BME8Q,
     #paypal-container-5H2VRJQS63BPL,
     #paypal-container-MUXEFNGCQ3U2Q,
@@ -192,8 +193,9 @@
     <div id="paypal-container-ESJVEN3UNMPJE"></div>
     <!-- Ghost Coasters Button (new, directly under Halloween) -->
     <div id="paypal-container-KBTUK5QARWEV8"></div>
-    <!-- ✅ Deer Coaster Set PayPal Button (added under Ghost Coasters) -->
+    <!-- ✅ Deer Coaster Set PayPal Buttons -->
     <div id="paypal-container-YU9H28BGQZ2F4"></div>
+    <div id="paypal-container-6GAQED2N22FCU"></div>
 
     <!-- Other PayPal buttons -->
     <div id="paypal-container-P5PBHAK9BME8Q"></div>
@@ -205,7 +207,8 @@
       const checkbox = document.getElementById('termsCheckbox');
       const paypalHalloween = document.getElementById('paypal-container-ESJVEN3UNMPJE');
       const paypalGhost = document.getElementById('paypal-container-KBTUK5QARWEV8');
-      const paypalDeer = document.getElementById('paypal-container-YU9H28BGQZ2F4');
+      const paypalDeerOld = document.getElementById('paypal-container-YU9H28BGQZ2F4');
+      const paypalDeerNew = document.getElementById('paypal-container-6GAQED2N22FCU');
       const paypalContainer1 = document.getElementById('paypal-container-P5PBHAK9BME8Q');
       const paypalContainerNew = document.getElementById('paypal-container-5H2VRJQS63BPL');
       const paypalContainer2 = document.getElementById('paypal-container-MUXEFNGCQ3U2Q');
@@ -213,7 +216,8 @@
 
       let halloweenRendered = false;
       let ghostRendered = false;
-      let deerRendered = false;
+      let deerOldRendered = false;
+      let deerNewRendered = false;
       let button1Rendered = false;
       let buttonNewRendered = false;
       let button2Rendered = false;
@@ -223,7 +227,8 @@
         if (checkbox.checked) {
           paypalHalloween.style.display = 'block';
           paypalGhost.style.display = 'block';
-          paypalDeer.style.display = 'block';
+          paypalDeerOld.style.display = 'block';
+          paypalDeerNew.style.display = 'block';
           paypalContainer1.style.display = 'block';
           paypalContainerNew.style.display = 'block';
           paypalContainer2.style.display = 'block';
@@ -237,9 +242,13 @@
             paypal.HostedButtons({ hostedButtonId: "KBTUK5QARWEV8" }).render("#paypal-container-KBTUK5QARWEV8");
             ghostRendered = true;
           }
-          if (!deerRendered) {
+          if (!deerOldRendered) {
             paypal.HostedButtons({ hostedButtonId: "YU9H28BGQZ2F4" }).render("#paypal-container-YU9H28BGQZ2F4");
-            deerRendered = true;
+            deerOldRendered = true;
+          }
+          if (!deerNewRendered) {
+            paypal.HostedButtons({ hostedButtonId: "6GAQED2N22FCU" }).render("#paypal-container-6GAQED2N22FCU");
+            deerNewRendered = true;
           }
           if (!button1Rendered) {
             paypal.HostedButtons({ hostedButtonId: "P5PBHAK9BME8Q" }).render("#paypal-container-P5PBHAK9BME8Q");
@@ -260,7 +269,8 @@
         } else {
           paypalHalloween.style.display = 'none';
           paypalGhost.style.display = 'none';
-          paypalDeer.style.display = 'none';
+          paypalDeerOld.style.display = 'none';
+          paypalDeerNew.style.display = 'none';
           paypalContainer1.style.display = 'none';
           paypalContainerNew.style.display = 'none';
           paypalContainer2.style.display = 'none';
@@ -291,3 +301,5 @@
   </footer>
 </body>
 </html>
+
+
