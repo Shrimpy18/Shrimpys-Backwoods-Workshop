@@ -6,7 +6,7 @@
   <title>Shop - Shrimpy's Backwoods Workshop</title>
   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
 
-  <!-- PayPal SDK (Part 1, only once per page) -->
+  <!-- PayPal SDK -->
   <script 
     src="https://www.paypal.com/sdk/js?client-id=BAAyrSaIOWI7n_0ASFBfFM8R0PIhPdVZgIudq92PipDGedwDTPf8VlX2Kq1QLKOPhX6fQBeY56g4Z4xoJY&components=hosted-buttons&enable-funding=venmo&currency=USD">
   </script>
@@ -27,7 +27,6 @@
       background-size: cover;
       color: #333;
     }
-
     header {
       background: rgba(255, 255, 255, 0.95);
       position: fixed;
@@ -39,22 +38,18 @@
       flex-direction: column;
       align-items: center;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      box-sizing: border-box;
       text-align: center;
     }
     .site-title {
       font-size: 2rem;
       font-weight: 700;
       color: #5a3e1b;
-      margin: 0.5rem 0 0 0;
-      text-align: center;
+      margin: 0.5rem 0 0;
     }
     .site-subtitle {
       font-size: 1rem;
-      font-weight: 500;
       color: #5a3e1b;
       margin: 0;
-      text-align: center;
     }
     .menu-toggle {
       display: none;
@@ -88,23 +83,15 @@
       padding: 2rem;
       border-radius: 8px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      font-family: 'Merriweather', serif;
-      font-size: 1.1rem;
-      line-height: 1.6;
-      box-sizing: border-box;
-      color: #333;
     }
     section h2 {
       color: #5a3e1b;
       border-bottom: 2px solid #a97c50;
       padding-bottom: 0.5rem;
       margin-bottom: 1rem;
-      font-family: 'Merriweather', serif;
     }
     .terms-container {
       margin-top: 1.5rem;
-      font-family: 'Merriweather', serif;
-      font-size: 1rem;
     }
     .terms-container input {
       margin-right: 0.5rem;
@@ -113,6 +100,7 @@
     }
     #paypal-container-ESJVEN3UNMPJE,
     #paypal-container-KBTUK5QARWEV8,
+    #paypal-container-HJW9KDDHDU484,
     #paypal-container-YU9H28BGQZ2F4,
     #paypal-container-6GAQED2N22FCU,
     #paypal-container-5MT92V9P9QDT2,
@@ -121,7 +109,7 @@
     #paypal-container-MUXEFNGCQ3U2Q,
     #paypal-container-S7ENKRMEQFGJC {
       margin-top: 1.5rem;
-      display: none; 
+      display: none;
     }
 
     footer {
@@ -129,8 +117,6 @@
       padding: 1rem;
       font-size: 0.9rem;
       color: #5a3e1b;
-      font-family: 'Merriweather', serif;
-      box-sizing: border-box;
     }
     .footer-social {
       display: flex;
@@ -159,7 +145,6 @@
         background: rgba(255, 255, 255, 0.95);
         padding: 1rem;
         box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        text-align: center;
       }
       nav.top-nav.show { display: flex; }
       nav.top-nav a { padding: 0.75rem 0; display: block; }
@@ -190,17 +175,24 @@
       I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a>
     </label>
 
-    <!-- Halloween Coasters Button -->
+    <!-- Halloween Coasters -->
     <div id="paypal-container-ESJVEN3UNMPJE"></div>
-    <!-- Ghost Coasters Button -->
+
+    <!-- Ghost Coasters -->
     <div id="paypal-container-KBTUK5QARWEV8"></div>
-    <!-- Deer Coaster Buttons -->
+
+    <!-- Fishing Coaster Set -->
+    <h3>Fishing Coaster Set</h3>
+    <div id="paypal-container-HJW9KDDHDU484"></div>
+
+    <!-- Deer Coasters -->
     <div id="paypal-container-YU9H28BGQZ2F4"></div>
     <div id="paypal-container-6GAQED2N22FCU"></div>
-    <!-- Wolf Coaster Set #1 Button -->
+
+    <!-- Wolf Coaster Set -->
     <div id="paypal-container-5MT92V9P9QDT2"></div>
 
-    <!-- Other PayPal buttons -->
+    <!-- Other Buttons -->
     <div id="paypal-container-P5PBHAK9BME8Q"></div>
     <div id="paypal-container-5H2VRJQS63BPL"></div>
     <div id="paypal-container-MUXEFNGCQ3U2Q"></div>
@@ -208,57 +200,33 @@
 
     <script>
       const checkbox = document.getElementById('termsCheckbox');
-      const paypalHalloween = document.getElementById('paypal-container-ESJVEN3UNMPJE');
-      const paypalGhost = document.getElementById('paypal-container-KBTUK5QARWEV8');
-      const paypalDeerOld = document.getElementById('paypal-container-YU9H28BGQZ2F4');
-      const paypalDeerNew = document.getElementById('paypal-container-6GAQED2N22FCU');
-      const paypalWolf1 = document.getElementById('paypal-container-5MT92V9P9QDT2');
-      const paypalContainer1 = document.getElementById('paypal-container-P5PBHAK9BME8Q');
-      const paypalContainerNew = document.getElementById('paypal-container-5H2VRJQS63BPL');
-      const paypalContainer2 = document.getElementById('paypal-container-MUXEFNGCQ3U2Q');
-      const paypalContainer3 = document.getElementById('paypal-container-S7ENKRMEQFGJC');
+      const buttons = {
+        halloween: 'ESJVEN3UNMPJE',
+        ghost: 'KBTUK5QARWEV8',
+        fishing: 'HJW9KDDHDU484',
+        deerOld: 'YU9H28BGQZ2F4',
+        deerNew: '6GAQED2N22FCU',
+        wolf: '5MT92V9P9QDT2',
+        other1: 'P5PBHAK9BME8Q',
+        other2: '5H2VRJQS63BPL',
+        other3: 'MUXEFNGCQ3U2Q',
+        other4: 'S7ENKRMEQFGJC'
+      };
 
-      let halloweenRendered = false;
-      let ghostRendered = false;
-      let deerOldRendered = false;
-      let deerNewRendered = false;
-      let wolf1Rendered = false;
-      let button1Rendered = false;
-      let buttonNewRendered = false;
-      let button2Rendered = false;
-      let button3Rendered = false;
+      const rendered = {};
 
       checkbox.addEventListener('change', function() {
-        if (checkbox.checked) {
-          paypalHalloween.style.display = 'block';
-          paypalGhost.style.display = 'block';
-          paypalDeerOld.style.display = 'block';
-          paypalDeerNew.style.display = 'block';
-          paypalWolf1.style.display = 'block';
-          paypalContainer1.style.display = 'block';
-          paypalContainerNew.style.display = 'block';
-          paypalContainer2.style.display = 'block';
-          paypalContainer3.style.display = 'block';
-
-          if (!halloweenRendered) { paypal.HostedButtons({ hostedButtonId: "ESJVEN3UNMPJE" }).render("#paypal-container-ESJVEN3UNMPJE"); halloweenRendered = true; }
-          if (!ghostRendered) { paypal.HostedButtons({ hostedButtonId: "KBTUK5QARWEV8" }).render("#paypal-container-KBTUK5QARWEV8"); ghostRendered = true; }
-          if (!deerOldRendered) { paypal.HostedButtons({ hostedButtonId: "YU9H28BGQZ2F4" }).render("#paypal-container-YU9H28BGQZ2F4"); deerOldRendered = true; }
-          if (!deerNewRendered) { paypal.HostedButtons({ hostedButtonId: "6GAQED2N22FCU" }).render("#paypal-container-6GAQED2N22FCU"); deerNewRendered = true; }
-          if (!wolf1Rendered) { paypal.HostedButtons({ hostedButtonId: "5MT92V9P9QDT2" }).render("#paypal-container-5MT92V9P9QDT2"); wolf1Rendered = true; }
-          if (!button1Rendered) { paypal.HostedButtons({ hostedButtonId: "P5PBHAK9BME8Q" }).render("#paypal-container-P5PBHAK9BME8Q"); button1Rendered = true; }
-          if (!buttonNewRendered) { paypal.HostedButtons({ hostedButtonId: "5H2VRJQS63BPL" }).render("#paypal-container-5H2VRJQS63BPL"); buttonNewRendered = true; }
-          if (!button2Rendered) { paypal.HostedButtons({ hostedButtonId: "MUXEFNGCQ3U2Q" }).render("#paypal-container-MUXEFNGCQ3U2Q"); button2Rendered = true; }
-          if (!button3Rendered) { paypal.HostedButtons({ hostedButtonId: "S7ENKRMEQFGJC" }).render("#paypal-container-S7ENKRMEQFGJC"); button3Rendered = true; }
-        } else {
-          paypalHalloween.style.display = 'none';
-          paypalGhost.style.display = 'none';
-          paypalDeerOld.style.display = 'none';
-          paypalDeerNew.style.display = 'none';
-          paypalWolf1.style.display = 'none';
-          paypalContainer1.style.display = 'none';
-          paypalContainerNew.style.display = 'none';
-          paypalContainer2.style.display = 'none';
-          paypalContainer3.style.display = 'none';
+        for (const [key, id] of Object.entries(buttons)) {
+          const container = document.getElementById(`paypal-container-${id}`);
+          if (checkbox.checked) {
+            container.style.display = 'block';
+            if (!rendered[id]) {
+              paypal.HostedButtons({ hostedButtonId: id }).render(`#paypal-container-${id}`);
+              rendered[id] = true;
+            }
+          } else {
+            container.style.display = 'none';
+          }
         }
       });
 
@@ -285,7 +253,3 @@
   </footer>
 </body>
 </html>
-
-
-
-
