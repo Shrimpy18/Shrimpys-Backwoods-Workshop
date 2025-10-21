@@ -192,6 +192,17 @@
     <p class="description"><em>All coasters are customizable with any image, logo, QR code, and more.</em></p>
   </section>
 
+  <!-- 3D Prints Project -->
+  <section class="project">
+    <h2>3D Prints</h2>
+    <div class="carousel-container" id="carousel-prints">
+      <button class="carousel-button prev" onclick="prevSlide('prints')">&#10094;</button>
+      <img src="images/pumpkin 1.JPG" alt="3D Print" id="prints-image" />
+      <button class="carousel-button next" onclick="nextSlide('prints')">&#10095;</button>
+    </div>
+    <p class="description">A growing collection of creative 3D printed designs — from pumpkins to infinity cubes and more, bringing imagination to life layer by layer.</p>
+  </section>
+
   <!-- New Table Project -->
   <section class="project">
     <h2>Table</h2>
@@ -271,52 +282,22 @@
   <script>
     const slides = {
       coasters: [
-        "images/deer 1.JPG",
-        "images/deer 2.JPG",
-        "images/deer 3.JPG",
-        "images/deer 4.JPG",
-        "images/deer 5.JPG",
-        "images/deer 6.JPG",
-        "images/wolf 1.JPG",
-        "images/wolf 2.JPG",
-        "images/wolf 3.JPG",
-        "images/wolf 4.JPG",
-        "images/wolf 5.JPG",
-        "images/wolf 6.JPG",
-        "images/wolf 7.JPG",
-        "images/wolf 8.JPG",
-        "images/bear_coaster_1.JPG",
-        "images/bear_coaster_2.JPG",
-        "images/bear_coaster_3.JPG",
-        "images/bear_coaster_4.JPG",
-        "images/charlie_1.JPG",
-        "images/charlie_2.JPG",
-        "images/circle_qr_1.JPG",
-        "images/logo_coaster1.JPG",
-        "images/logo_qr_1.JPG",
-        "images/picture_coaster1.JPG",
-        "images/heart_qr_code.JPG",
-        "images/bear5.JPG",
-        "images/bear6.JPG",
-        "images/bear7.JPG",
-        "images/bear8.JPG",
-        "images/ghost1.JPG",
-        "images/ghost2.JPG",
-        "images/ghost3.JPG",
-        "images/ghost4.JPG",
-        "images/halloween1.JPG",
-        "images/halloween2.JPG",
-        "images/halloween3.JPG",
-        "images/halloween4.JPG",
-        "images/flag1.JPG",
-        "images/fishing 1.JPG",
-        "images/fishing 2.JPG",
-        "images/fishing 3.JPG",
-        "images/fishing 4.JPG",
-        "images/fishing 5.JPG",
-        "images/jess 1.JPG",
-        "images/jess 2.JPG",
-        "images/jess 3.JPG"
+        "images/deer 1.JPG","images/deer 2.JPG","images/deer 3.JPG","images/deer 4.JPG","images/deer 5.JPG","images/deer 6.JPG",
+        "images/wolf 1.JPG","images/wolf 2.JPG","images/wolf 3.JPG","images/wolf 4.JPG","images/wolf 5.JPG","images/wolf 6.JPG",
+        "images/wolf 7.JPG","images/wolf 8.JPG","images/bear_coaster_1.JPG","images/bear_coaster_2.JPG","images/bear_coaster_3.JPG",
+        "images/bear_coaster_4.JPG","images/charlie_1.JPG","images/charlie_2.JPG","images/circle_qr_1.JPG","images/logo_coaster1.JPG",
+        "images/logo_qr_1.JPG","images/picture_coaster1.JPG","images/heart_qr_code.JPG","images/bear5.JPG","images/bear6.JPG",
+        "images/bear7.JPG","images/bear8.JPG","images/ghost1.JPG","images/ghost2.JPG","images/ghost3.JPG","images/ghost4.JPG",
+        "images/halloween1.JPG","images/halloween2.JPG","images/halloween3.JPG","images/halloween4.JPG","images/flag1.JPG",
+        "images/fishing 1.JPG","images/fishing 2.JPG","images/fishing 3.JPG","images/fishing 4.JPG","images/fishing 5.JPG",
+        "images/jess 1.JPG","images/jess 2.JPG","images/jess 3.JPG"
+      ],
+      prints: [
+        "images/pumpkin 1.JPG","images/pumpkin 2.JPG","images/pumpkin 3.JPG","images/pumpkin 4.JPG",
+        "images/infinity cube 2.JPG","images/infinity cube 1.JPG","images/infinity cube 3.JPG","images/infinity cube 5.JPG",
+        "images/white ghost 1.JPG","images/white ghost 2.JPG","images/sheet ghost 2.JPG",
+        "images/pencil holder 1.JPG","images/pencil holder 3.JPG",
+        "images/bidness card holder 3.JPG","images/bidness card holder 1.JPG"
       ],
       table: ["images/bench_table1.JPG","images/bench_table2.JPG","images/bench_table3.JPG"],
       birdhouse: ["images/bird house_iso.jpg","images/birdhouse_left.jpg","images/birdhouse_right.jpg"],
@@ -326,7 +307,7 @@
       bench: ["images/bench.jpg"]
     };
 
-    const indices = { coasters:0, table:0, birdhouse:0, box:0, chair:0, rocker:0, bench:0 };
+    const indices = { coasters:0, prints:0, table:0, birdhouse:0, box:0, chair:0, rocker:0, bench:0 };
 
     function nextSlide(project) {
       indices[project] = (indices[project]+1) % slides[project].length;
@@ -345,3 +326,4 @@
   </script>
 </body>
 </html>
+
