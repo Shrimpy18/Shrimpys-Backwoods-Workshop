@@ -292,7 +292,7 @@
         "images/jess 1.JPG","images/jess 2.JPG","images/jess 3.JPG"
       ],
       prints: [
-        "images/skull leaf 1.JPG","images/skull leaf 2.JPG"
+        "images/skull leaf 1.JPG","images/skull leaf 2.JPG",
         "images/pumpkin 1.JPG","images/pumpkin 2.JPG","images/pumpkin 3.JPG","images/pumpkin 4.JPG",
         "images/infinity cube 2.JPG","images/infinity cube 1.JPG","images/infinity cube 3.JPG","images/infinity cube 5.JPG",
         "images/white ghost 1.JPG","images/white ghost 2.JPG","images/sheet ghost 2.JPG",
@@ -300,8 +300,7 @@
         "images/bidness card holder 3.JPG","images/bidness card holder 1.JPG",
         "images/white sheet ghost 1.JPG","images/white sheet ghost 2.JPG","images/white sheet ghost 3.JPG",
         "images/stacked pumpkins 1.JPG","images/stacked pumpkins 2.JPG","images/stacked pumpkins 3.JPG",
-        "images/blue sheet ghost 1.JPG","images/sheet ghosts 1.JPG",
-    
+        "images/blue sheet ghost 1.JPG","images/sheet ghosts 1.JPG"
       ],
       table: ["images/bench_table1.JPG","images/bench_table2.JPG","images/bench_table3.JPG"],
       birdhouse: ["images/bird house_iso.jpg","images/birdhouse_left.jpg","images/birdhouse_right.jpg"],
@@ -314,18 +313,38 @@
     const indices = { coasters:0, prints:0, table:0, birdhouse:0, box:0, chair:0, rocker:0, bench:0 };
 
     function nextSlide(project) {
-      indices[project] = (indices[project]+1) % slides[project].length;
-      document.getElementById(project+"-image").src = slides[project][indices[project]];
+      // guard: if slides[project] is missing or empty do nothing
+      if (!slides[project] || slides[project].length === 0) return;
+      indices[project] = (indices[project] + 1) % slides[project].length;
+      const el = document.getElementById(project + "-image");
+      if (el) el.src = slides[project][indices[project]];
     }
     function prevSlide(project) {
-      indices[project] = (indices[project]-1+slides[project].length) % slides[project].length;
-      document.getElementById(project+"-image").src = slides[project][indices[project]];
+      if (!slides[project] || slides[project].length === 0) return;
+      indices[project] = (indices[project] - 1 + slides[project].length) % slides[project].length;
+      const el = document.getElementById(project + "-image");
+      if (el) el.src = slides[project][indices[project]];
     }
 
     document.addEventListener("DOMContentLoaded", function() {
       const toggle = document.querySelector(".menu-toggle");
       const nav = document.querySelector("nav.top-nav");
       toggle.addEventListener("click", () => { nav.classList.toggle("show"); });
+
+      // ensure the initial images are set from arrays (in case filenames changed)
+      Object.keys(slides).forEach(project => {
+        const el = document.getElementById(project + "-image");
+        if (el && slides[project] && slides[project].length > 0) {
+          // only set if current src doesn't match any slide (prevents overwriting intentional custom src)
+          const current = el.getAttribute('src') || '';
+          if (!slides[project].includes(current)) {
+            el.src = slides[project][0];
+            indices[project] = 0;
+          } else {
+            indices[project] = slides[project].indexOf(current);
+          }
+        }
+      });
     });
   </script>
 </body>
