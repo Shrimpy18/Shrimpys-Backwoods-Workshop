@@ -12,141 +12,37 @@
   </script>
 
   <style>
-    html {
-      scroll-padding-top: 150px;
-      scroll-behavior: smooth;
-      margin: 0;
-      padding: 0;
-      overflow-x: hidden;
-    }
-    body {
-      font-family: 'Merriweather', serif;
-      margin: 0;
-      padding-top: 150px;
-      background: url('background.png') no-repeat center center fixed;
-      background-size: cover;
-      color: #333;
-    }
-    header {
-      background: rgba(255, 255, 255, 0.95);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-      padding: 0.5rem 1rem;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    .site-title {
-      font-size: 2rem;
-      font-weight: 700;
-      color: #5a3e1b;
-      margin: 0.5rem 0 0;
-    }
-    .site-subtitle {
-      font-size: 1rem;
-      color: #5a3e1b;
-      margin: 0;
-    }
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      background: none;
-      border: none;
-      color: #5a3e1b;
-      cursor: pointer;
-      margin-top: 0.5rem;
-    }
-    nav.top-nav {
-      display: flex;
-      gap: 0.75rem;
-      margin-top: 0.5rem;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    nav.top-nav a {
-      text-decoration: none;
-      color: #5a3e1b;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
+    html { scroll-padding-top: 150px; scroll-behavior: smooth; margin: 0; padding: 0; overflow-x: hidden; }
+    body { font-family: 'Merriweather', serif; margin: 0; padding-top: 150px; background: url('background.png') no-repeat center center fixed; background-size: cover; color: #333; }
+    header { background: rgba(255, 255, 255, 0.95); position: fixed; top: 0; width: 100%; z-index: 1000; padding: 0.5rem 1rem; display: flex; flex-direction: column; align-items: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); text-align: center; }
+    .site-title { font-size: 2rem; font-weight: 700; color: #5a3e1b; margin: 0.5rem 0 0; }
+    .site-subtitle { font-size: 1rem; color: #5a3e1b; margin: 0; }
+    .menu-toggle { display: none; font-size: 1.8rem; background: none; border: none; color: #5a3e1b; cursor: pointer; margin-top: 0.5rem; }
+    nav.top-nav { display: flex; gap: 0.75rem; margin-top: 0.5rem; flex-wrap: wrap; justify-content: center; }
+    nav.top-nav a { text-decoration: none; color: #5a3e1b; font-weight: 600; transition: color 0.3s ease; }
     nav.top-nav a:hover { color: #a97c50; }
     nav.top-nav a.active { color: #a97c50; text-decoration: underline; }
-
-    section {
-      background: rgba(255, 255, 255, 0.85);
-      margin: 2rem auto;
-      max-width: 900px;
-      padding: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    }
-    section h2 {
-      color: #5a3e1b;
-      border-bottom: 2px solid #a97c50;
-      padding-bottom: 0.5rem;
-      margin-bottom: 1rem;
-    }
-    .terms-container {
-      margin-top: 1.5rem;
-    }
-    .terms-container input {
-      margin-right: 0.5rem;
-      transform: scale(1.2);
-      vertical-align: middle;
-    }
+    section { background: rgba(255, 255, 255, 0.85); margin: 2rem auto; max-width: 900px; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    section h2 { color: #5a3e1b; border-bottom: 2px solid #a97c50; padding-bottom: 0.5rem; margin-bottom: 1rem; }
+    .terms-container { margin-top: 1.5rem; }
+    .terms-container input { margin-right: 0.5rem; transform: scale(1.2); vertical-align: middle; }
     #paypal-container-ESJVEN3UNMPJE,
     #paypal-container-KBTUK5QARWEV8,
+    #paypal-container-EED9RWUUVMY48,
     #paypal-container-4TP52U4LFQYBS,
-    #paypal-container-HJW9KDDHDU484,
-    #paypal-container-YU9H28BGQZ2F4,
-    #paypal-container-6GAQED2N22FCU,
-    #paypal-container-5MT92V9P9QDT2,
-    #paypal-container-P5PBHAK9BME8Q,
-    #paypal-container-5H2VRJQS63BPL,
-    #paypal-container-MUXEFNGCQ3U2Q,
-    #paypal-container-S7ENKRMEQFGJC {
+    #paypal-container-5H2VRJQS63BPL {
       margin-top: 1.5rem;
       display: none;
     }
-
-    footer {
-      text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      color: #5a3e1b;
-    }
-    .footer-social {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-bottom: 0.5rem;
-    }
-    .footer-social a img, .footer-social a svg {
-      width: 40px;
-      height: 40px;
-      transition: transform 0.2s;
-    }
+    footer { text-align: center; padding: 1rem; font-size: 0.9rem; color: #5a3e1b; }
+    .footer-social { display: flex; justify-content: center; gap: 1rem; margin-bottom: 0.5rem; }
+    .footer-social a img, .footer-social a svg { width: 40px; height: 40px; transition: transform 0.2s; }
     .footer-social a:hover img, .footer-social a:hover svg { transform: scale(1.2); }
-
     @media (max-width: 768px) {
       .site-title { font-size: 1.6rem; }
       .site-subtitle { font-size: 0.9rem; }
       .menu-toggle { display: block; }
-      nav.top-nav {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: rgba(255, 255, 255, 0.95);
-        padding: 1rem;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      }
+      nav.top-nav { display: none; flex-direction: column; position: absolute; top: 100%; left: 0; width: 100%; background: rgba(255, 255, 255, 0.95); padding: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
       nav.top-nav.show { display: flex; }
       nav.top-nav a { padding: 0.75rem 0; display: block; }
     }
@@ -176,47 +72,26 @@
       I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a>
     </label>
 
-    <!-- Halloween Coasters -->
-    <div id="paypal-container-ESJVEN3UNMPJE"></div>
-
     <!-- Ghost Coasters -->
     <div id="paypal-container-KBTUK5QARWEV8"></div>
 
-    <!-- New Sheet Ghosts Button -->
+    <!-- Fallen / Skull Leaf -->
+    <div id="paypal-container-EED9RWUUVMY48"></div>
+
+    <!-- Stacked Pumpkins -->
     <div id="paypal-container-4TP52U4LFQYBS"></div>
 
-    <!-- Fishing Coaster Set (no title above) -->
-    <div id="paypal-container-HJW9KDDHDU484"></div>
-
-    <!-- Deer Coasters -->
-    <div id="paypal-container-YU9H28BGQZ2F4"></div>
-    <div id="paypal-container-6GAQED2N22FCU"></div>
-
-    <!-- Wolf Coaster Set -->
-    <div id="paypal-container-5MT92V9P9QDT2"></div>
-
-    <!-- Other Buttons -->
-    <div id="paypal-container-P5PBHAK9BME8Q"></div>
+    <!-- 3D Printed Sheet Ghosts -->
     <div id="paypal-container-5H2VRJQS63BPL"></div>
-    <div id="paypal-container-MUXEFNGCQ3U2Q"></div>
-    <div id="paypal-container-S7ENKRMEQFGJC"></div>
 
     <script>
       const checkbox = document.getElementById('termsCheckbox');
       const buttons = {
-        halloween: 'ESJVEN3UNMPJE',
         ghost: 'KBTUK5QARWEV8',
-        sheetGhost: '4TP52U4LFQYBS',
-        fishing: 'HJW9KDDHDU484',
-        deerOld: 'YU9H28BGQZ2F4',
-        deerNew: '6GAQED2N22FCU',
-        wolf: '5MT92V9P9QDT2',
-        other1: 'P5PBHAK9BME8Q',
-        other2: '5H2VRJQS63BPL',
-        other3: 'MUXEFNGCQ3U2Q',
-        other4: 'S7ENKRMEQFGJC'
+        leaf: 'EED9RWUUVMY48',
+        pumpkin: '4TP52U4LFQYBS',
+        sheetGhost: '5H2VRJQS63BPL'
       };
-
       const rendered = {};
 
       checkbox.addEventListener('change', function() {
@@ -257,4 +132,5 @@
   </footer>
 </body>
 </html>
+
 
