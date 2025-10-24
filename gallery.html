@@ -197,7 +197,7 @@
     <h2>3D Prints</h2>
     <div class="carousel-container" id="carousel-prints">
       <button class="carousel-button prev" onclick="prevSlide('prints')">&#10094;</button>
-      <img src="images/pumpkin 1.JPG" alt="3D Print" id="prints-image" />
+      <img src="images/skull leaf 1.JPG" alt="3D Print" id="prints-image" />
       <button class="carousel-button next" onclick="nextSlide('prints')">&#10095;</button>
     </div>
     <p class="description">A growing collection of creative 3D printed designs — from pumpkins to infinity cubes and more, bringing imagination to life layer by layer.</p>
@@ -313,7 +313,6 @@
     const indices = { coasters:0, prints:0, table:0, birdhouse:0, box:0, chair:0, rocker:0, bench:0 };
 
     function nextSlide(project) {
-      // guard: if slides[project] is missing or empty do nothing
       if (!slides[project] || slides[project].length === 0) return;
       indices[project] = (indices[project] + 1) % slides[project].length;
       const el = document.getElementById(project + "-image");
@@ -331,11 +330,9 @@
       const nav = document.querySelector("nav.top-nav");
       toggle.addEventListener("click", () => { nav.classList.toggle("show"); });
 
-      // ensure the initial images are set from arrays (in case filenames changed)
       Object.keys(slides).forEach(project => {
         const el = document.getElementById(project + "-image");
         if (el && slides[project] && slides[project].length > 0) {
-          // only set if current src doesn't match any slide (prevents overwriting intentional custom src)
           const current = el.getAttribute('src') || '';
           if (!slides[project].includes(current)) {
             el.src = slides[project][0];
@@ -349,4 +346,3 @@
   </script>
 </body>
 </html>
-
