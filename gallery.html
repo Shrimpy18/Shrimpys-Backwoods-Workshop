@@ -192,6 +192,17 @@
     <p class="description"><em>All coasters are customizable with any image, logo, QR code, and more.</em></p>
   </section>
 
+  <!-- Signs Project -->
+  <section class="project">
+    <h2>Signs</h2>
+    <div class="carousel-container" id="carousel-signs">
+      <button class="carousel-button prev" onclick="prevSlide('signs')">&#10094;</button>
+      <img src="images/Deluca sign 1.JPG" alt="Sign" id="signs-image" />
+      <button class="carousel-button next" onclick="nextSlide('signs')">&#10095;</button>
+    </div>
+    <p class="description">Custom laser-engraved signs — perfect for home décor, gifts, or business branding. Each piece is crafted with precision and personality.</p>
+  </section>
+
   <!-- 3D Prints Project -->
   <section class="project">
     <h2>3D Prints</h2>
@@ -291,6 +302,14 @@
         "images/fishing 1.JPG","images/fishing 2.JPG","images/fishing 3.JPG","images/fishing 4.JPG","images/fishing 5.JPG",
         "images/jess 1.JPG","images/jess 2.JPG","images/jess 3.JPG"
       ],
+      signs: [
+        "images/Deluca sign 1.JPG",
+        "images/hollister sign 1.JPG",
+        "images/hollister sign 2.JPG",
+        "images/halloween sign 2.JPG",
+        "images/halloween sign 1.JPG",
+        "images/Deluca sign 2.JPG"
+      ],
       prints: [
         "images/skull leaf 1.JPG","images/skull leaf 2.JPG",
         "images/pumpkin 1.JPG","images/pumpkin 2.JPG","images/pumpkin 3.JPG","images/pumpkin 4.JPG",
@@ -310,7 +329,7 @@
       bench: ["images/bench.jpg"]
     };
 
-    const indices = { coasters:0, prints:0, table:0, birdhouse:0, box:0, chair:0, rocker:0, bench:0 };
+    const indices = { coasters:0, signs:0, prints:0, table:0, birdhouse:0, box:0, chair:0, rocker:0, bench:0 };
 
     function nextSlide(project) {
       if (!slides[project] || slides[project].length === 0) return;
@@ -333,16 +352,6 @@
       Object.keys(slides).forEach(project => {
         const el = document.getElementById(project + "-image");
         if (el && slides[project] && slides[project].length > 0) {
-          const current = el.getAttribute('src') || '';
-          if (!slides[project].includes(current)) {
-            el.src = slides[project][0];
-            indices[project] = 0;
-          } else {
-            indices[project] = slides[project].indexOf(current);
-          }
-        }
-      });
-    });
-  </script>
-</body>
-</html>
+          const
+
+
