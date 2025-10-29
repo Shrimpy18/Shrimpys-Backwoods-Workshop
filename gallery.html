@@ -214,7 +214,7 @@
     <p class="description">A growing collection of creative 3D printed designs — from pumpkins to infinity cubes and more, bringing imagination to life layer by layer.</p>
   </section>
 
-  <!-- New Table Project -->
+  <!-- Table Project -->
   <section class="project">
     <h2>Table</h2>
     <div class="carousel-container" id="carousel-table">
@@ -352,6 +352,10 @@
       Object.keys(slides).forEach(project => {
         const el = document.getElementById(project + "-image");
         if (el && slides[project] && slides[project].length > 0) {
-          const
-
-
+          el.src = slides[project][0];
+        }
+      });
+    });
+  </script>
+</body>
+</html>
