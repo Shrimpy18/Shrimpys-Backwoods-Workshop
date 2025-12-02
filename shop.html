@@ -102,7 +102,6 @@
     #paypal-container-KBTUK5QARWEV8,
     #paypal-container-EED9RWUUVMY48,
     #paypal-container-4TP52U4LFQYBS,
-    #paypal-container-MFA6K46Q4DLH4,
     #paypal-container-HJW9KDDHDU484,
     #paypal-container-YU9H28BGQZ2F4,
     #paypal-container-6GAQED2N22FCU,
@@ -111,7 +110,8 @@
     #paypal-container-5H2VRJQS63BPL,
     #paypal-container-MUXEFNGCQ3U2Q,
     #paypal-container-S7ENKRMEQFGJC,
-    #paypal-container-EYQHD3N6YJDQ2 {
+    #paypal-container-EYQHD3N6YJDQ2,
+    #paypal-container-F9BVCVVSSSNQG {
       margin-top: 1.5rem;
       display: none;
     }
@@ -179,8 +179,21 @@
       I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a>
     </label>
 
-    <!-- Christmas Coasters Button (NEW) -->
+    <!-- Christmas Coasters Button (Set #1) -->
     <div id="paypal-container-EYQHD3N6YJDQ2"></div>
+    <script>
+      paypal.HostedButtons({
+        hostedButtonId: "EYQHD3N6YJDQ2",
+      }).render("#paypal-container-EYQHD3N6YJDQ2")
+    </script>
+
+    <!-- Christmas Coasters Button (Set #2) -->
+    <div id="paypal-container-F9BVCVVSSSNQG"></div>
+    <script>
+      paypal.HostedButtons({
+        hostedButtonId: "F9BVCVVSSSNQG",
+      }).render("#paypal-container-F9BVCVVSSSNQG")
+    </script>
 
     <!-- Halloween Coasters -->
     <div id="paypal-container-ESJVEN3UNMPJE"></div>
@@ -197,7 +210,7 @@
     <!-- 3D Printed Sheet Ghosts Button -->
     <div id="paypal-container-MFA6K46Q4DLH4"></div>
 
-    <!-- Fishing Coaster Set -->
+    <!-- Fishing Coaster Set (no title above) -->
     <div id="paypal-container-HJW9KDDHDU484"></div>
 
     <!-- Deer Coasters -->
@@ -216,7 +229,8 @@
     <script>
       const checkbox = document.getElementById('termsCheckbox');
       const buttons = {
-        christmas: 'EYQHD3N6YJDQ2',
+        christmas1: 'EYQHD3N6YJDQ2',
+        christmas2: 'F9BVCVVSSSNQG',
         halloween: 'ESJVEN3UNMPJE',
         ghost: 'KBTUK5QARWEV8',
         leaf: 'EED9RWUUVMY48',
@@ -272,3 +286,5 @@
   </footer>
 </body>
 </html>
+
+
