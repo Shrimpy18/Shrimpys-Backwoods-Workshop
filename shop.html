@@ -98,6 +98,8 @@
       transform: scale(1.2);
       vertical-align: middle;
     }
+
+    /* All PayPal containers hidden by default */
     #paypal-container-ESJVEN3UNMPJE,
     #paypal-container-KBTUK5QARWEV8,
     #paypal-container-EED9RWUUVMY48,
@@ -111,7 +113,8 @@
     #paypal-container-MUXEFNGCQ3U2Q,
     #paypal-container-S7ENKRMEQFGJC,
     #paypal-container-EYQHD3N6YJDQ2,
-    #paypal-container-F9BVCVVSSSNQG {
+    #paypal-container-F9BVCVVSSSNQG,
+    #paypal-container-L3CPZK7UMQETU {
       margin-top: 1.5rem;
       display: none;
     }
@@ -181,27 +184,12 @@
 
     <!-- Christmas Coasters Button (Set #1) -->
     <div id="paypal-container-EYQHD3N6YJDQ2"></div>
-    <script>
-      paypal.HostedButtons({
-        hostedButtonId: "EYQHD3N6YJDQ2",
-      }).render("#paypal-container-EYQHD3N6YJDQ2")
-    </script>
 
     <!-- Christmas Coasters Button (Set #2) -->
     <div id="paypal-container-F9BVCVVSSSNQG"></div>
-    <script>
-      paypal.HostedButtons({
-        hostedButtonId: "F9BVCVVSSSNQG",
-      }).render("#paypal-container-F9BVCVVSSSNQG")
-    </script>
 
-    <!-- NEW BUTTON BELOW SET #2 -->
+    <!-- NEW BUTTON (inserted here) -->
     <div id="paypal-container-L3CPZK7UMQETU"></div>
-    <script>
-      paypal.HostedButtons({
-        hostedButtonId: "L3CPZK7UMQETU",
-      }).render("#paypal-container-L3CPZK7UMQETU")
-    </script>
 
     <!-- Halloween Coasters -->
     <div id="paypal-container-ESJVEN3UNMPJE"></div>
@@ -218,7 +206,7 @@
     <!-- 3D Printed Sheet Ghosts Button -->
     <div id="paypal-container-MFA6K46Q4DLH4"></div>
 
-    <!-- Fishing Coaster Set (no title above) -->
+    <!-- Fishing Coaster Set -->
     <div id="paypal-container-HJW9KDDHDU484"></div>
 
     <!-- Deer Coasters -->
@@ -239,7 +227,7 @@
       const buttons = {
         christmas1: 'EYQHD3N6YJDQ2',
         christmas2: 'F9BVCVVSSSNQG',
-        newChristmasAddon: 'L3CPZK7UMQETU',
+        newButton: 'L3CPZK7UMQETU',
         halloween: 'ESJVEN3UNMPJE',
         ghost: 'KBTUK5QARWEV8',
         leaf: 'EED9RWUUVMY48',
