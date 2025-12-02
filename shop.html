@@ -98,11 +98,13 @@
       transform: scale(1.2);
       vertical-align: middle;
     }
+    /* PayPal containers */
     #paypal-container-CHRISTMAS123,
     #paypal-container-ESJVEN3UNMPJE,
     #paypal-container-KBTUK5QARWEV8,
     #paypal-container-EED9RWUUVMY48,
     #paypal-container-4TP52U4LFQYBS,
+    #paypal-container-MFA6K46Q4DLH4,
     #paypal-container-HJW9KDDHDU484,
     #paypal-container-YU9H28BGQZ2F4,
     #paypal-container-6GAQED2N22FCU,
@@ -110,8 +112,7 @@
     #paypal-container-P5PBHAK9BME8Q,
     #paypal-container-5H2VRJQS63BPL,
     #paypal-container-MUXEFNGCQ3U2Q,
-    #paypal-container-S7ENKRMEQFGJC,
-    #paypal-container-MFA6K46Q4DLH4 {
+    #paypal-container-S7ENKRMEQFGJC {
       margin-top: 1.5rem;
       display: none;
     }
@@ -181,11 +182,6 @@
 
     <!-- Christmas Coaster Set -->
     <div id="paypal-container-CHRISTMAS123"></div>
-    <script>
-      paypal.HostedButtons({
-        hostedButtonId: "CHRISTMAS123"
-      }).render("#paypal-container-CHRISTMAS123");
-    </script>
 
     <!-- Halloween Coasters -->
     <div id="paypal-container-ESJVEN3UNMPJE"></div>
@@ -221,7 +217,7 @@
     <script>
       const checkbox = document.getElementById('termsCheckbox');
       const buttons = {
-        christmas: 'CHRISTMAS123',
+        christmas: 'CHRISTMAS123', // NEW BUTTON
         halloween: 'ESJVEN3UNMPJE',
         ghost: 'KBTUK5QARWEV8',
         leaf: 'EED9RWUUVMY48',
@@ -277,3 +273,4 @@
   </footer>
 </body>
 </html>
+
