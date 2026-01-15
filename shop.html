@@ -114,7 +114,9 @@
     #paypal-container-S7ENKRMEQFGJC,
     #paypal-container-EYQHD3N6YJDQ2,
     #paypal-container-F9BVCVVSSSNQG,
-    #paypal-container-L3CPZK7UMQETU {
+    #paypal-container-L3CPZK7UMQETU,
+    #paypal-container-57ETS2RM3M7R4,
+    #paypal-container-MFA6K46Q4DLH4 {
       margin-top: 1.5rem;
       display: none;
     }
@@ -182,13 +184,21 @@
       I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a>
     </label>
 
+    <!-- NEW BUTTON: Added above Christmas Coaster Set #1 -->
+    <div id="paypal-container-57ETS2RM3M7R4"></div>
+    <script>
+      paypal.HostedButtons({
+        hostedButtonId: "57ETS2RM3M7R4",
+      }).render("#paypal-container-57ETS2RM3M7R4")
+    </script>
+
     <!-- Christmas Coasters Button (Set #1) -->
     <div id="paypal-container-EYQHD3N6YJDQ2"></div>
 
     <!-- Christmas Coasters Button (Set #2) -->
     <div id="paypal-container-F9BVCVVSSSNQG"></div>
 
-    <!-- NEW BUTTON (inserted here) -->
+    <!-- NEW BUTTON (previously existing one) -->
     <div id="paypal-container-L3CPZK7UMQETU"></div>
 
     <!-- Halloween Coasters -->
@@ -225,6 +235,7 @@
     <script>
       const checkbox = document.getElementById('termsCheckbox');
       const buttons = {
+        newAboveChristmas: '57ETS2RM3M7R4',
         christmas1: 'EYQHD3N6YJDQ2',
         christmas2: 'F9BVCVVSSSNQG',
         newButton: 'L3CPZK7UMQETU',
