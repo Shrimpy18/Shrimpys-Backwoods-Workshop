@@ -96,7 +96,7 @@ footer{text-align:center;padding:1rem;font-size:.9rem;color:#5a3e1b;}
 
 <div class="gallery-card" onclick="openGallery('box')">
 <img src="images/box_iso.jpg" loading="lazy">
-<h2>Box</h2>
+<h2>Customized Box</h2>
 </div>
 
 </section>
@@ -117,7 +117,6 @@ document.querySelector(".menu-toggle").addEventListener("click",()=>{
   document.querySelector("nav.top-nav").classList.toggle("show")
 })
 
-// Galleries with all images
 const galleries = {
   coasters:[
     "images/live edgewood 1.jpg","images/live edgewood 2.jpg","images/live edgewood 3.jpg",
@@ -168,7 +167,7 @@ const galleries = {
     "images/chair 1.jpeg","images/chair 2.jpeg","images/chair 3.jpeg","images/chair 4.jpeg","images/chair 5.jpeg","images/chair 6.jpeg"
   ],
   recliningChair:[
-    "images/chair_front.jpg","images/chair_back.jpg","images/chair_back_down.jpg","images/chair_foot.jpg"
+    "images/chair_front.jpg","images/chair_foot.jpg","images/chair_back_down.jpg","images/chair_back.jpg"
   ],
   table:[
     "images/bench_table1.JPG","images/bench_table2.JPG","images/bench_table3.JPG"
@@ -190,7 +189,7 @@ let currentIndex = 0;
 function openGallery(name){
   if(!galleries[name]) return;
   currentGallery = galleries[name];
-  currentIndex = 0; // always start at first image
+  currentIndex = 0;
   document.getElementById("lightbox").style.display="flex";
   showImage();
 }
@@ -213,7 +212,6 @@ function prevImage(){
   showImage();
 }
 
-// Keyboard navigation
 document.addEventListener("keydown", e => {
   if(document.getElementById("lightbox").style.display === "flex"){
     if(e.key === "ArrowRight") nextImage();
