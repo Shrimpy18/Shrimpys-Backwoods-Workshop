@@ -10,8 +10,6 @@
 
 <style>
 
-/* ---------- GLOBAL ---------- */
-
 html{
 scroll-padding-top:150px;
 scroll-behavior:smooth;
@@ -28,8 +26,6 @@ background:url('background.png') no-repeat center center fixed;
 background-size:cover;
 color:#333;
 }
-
-/* ---------- HEADER ---------- */
 
 header{
 background:rgba(255,255,255,.95);
@@ -92,7 +88,7 @@ color:#a97c50;
 text-decoration:underline;
 }
 
-/* ---------- GALLERY GRID ---------- */
+/* GALLERY GRID */
 
 .gallery-grid{
 display:grid;
@@ -126,7 +122,7 @@ padding:1rem;
 color:#5a3e1b;
 }
 
-/* ---------- LIGHTBOX ---------- */
+/* LIGHTBOX */
 
 #lightbox{
 display:none;
@@ -158,7 +154,7 @@ cursor:pointer;
 
 .lb-prev{left:30px;}
 .lb-next{right:30px;}
-.lb-close{top:20px;right:30px;font-size:2rem;}
+.lb-close{top:20px;right:30px;}
 
 footer{
 text-align:center;
@@ -167,12 +163,7 @@ font-size:.9rem;
 color:#5a3e1b;
 }
 
-/* ---------- MOBILE ---------- */
-
 @media(max-width:768px){
-
-.site-title{font-size:1.6rem;}
-.site-subtitle{font-size:.9rem;}
 
 .menu-toggle{display:block;}
 
@@ -212,8 +203,6 @@ nav.top-nav.show{display:flex;}
 <a href="contact.html">Contact</a>
 </nav>
 </header>
-
-<!-- ---------- GALLERY GRID ---------- -->
 
 <section class="gallery-grid">
 
@@ -259,8 +248,6 @@ nav.top-nav.show{display:flex;}
 
 </section>
 
-<!-- ---------- LIGHTBOX ---------- -->
-
 <div id="lightbox">
 <button class="lb-close" onclick="closeGallery()">✕</button>
 <button class="lb-prev" onclick="prevImage()">❮</button>
@@ -274,37 +261,40 @@ nav.top-nav.show{display:flex;}
 
 <script>
 
-/* ---------- MOBILE MENU ---------- */
-
 document.querySelector(".menu-toggle").addEventListener("click",()=>{
 document.querySelector("nav.top-nav").classList.toggle("show")
 })
 
-/* ---------- IMAGE GALLERIES ---------- */
-
 const galleries={
 
 coasters:[
-"images/live edgewood 3.jpg",
-"images/live edgewood 2.jpg",
 "images/live edgewood 1.jpg",
-"images/xmas 1.jpg",
-"images/xmas 2.jpg",
-"images/xmas 3.jpg",
-"images/xmas 4.jpg",
-"images/xmas 5.jpg",
-"images/xmas 6.jpg",
-"images/xmas 7.jpg",
-"images/xmas 8.jpg",
-"images/xmas 9.jpg"
+"images/live edgewood 2.jpg",
+"images/live edgewood 3.jpg",
+"images/xmas 1.jpg","images/xmas 2.jpg","images/xmas 3.jpg","images/xmas 4.jpg","images/xmas 5.jpg","images/xmas 6.jpg","images/xmas 7.jpg","images/xmas 8.jpg","images/xmas 9.jpg",
+"images/deer 1.JPG","images/deer 2.JPG","images/deer 3.JPG","images/deer 4.JPG","images/deer 5.JPG","images/deer 6.JPG",
+"images/wolf 1.JPG","images/wolf 2.JPG","images/wolf 3.JPG","images/wolf 4.JPG","images/wolf 5.JPG","images/wolf 6.JPG","images/wolf 7.JPG","images/wolf 8.JPG",
+"images/bear_coaster_1.JPG","images/bear_coaster_2.JPG","images/bear_coaster_3.JPG","images/bear_coaster_4.JPG",
+"images/bear5.JPG","images/bear6.JPG","images/bear7.JPG","images/bear8.JPG",
+"images/charlie_1.JPG","images/charlie_2.JPG",
+"images/circle_qr_1.JPG",
+"images/logo_coaster1.JPG",
+"images/logo_qr_1.JPG",
+"images/picture_coaster1.JPG",
+"images/heart_qr_code.JPG",
+"images/ghost1.JPG","images/ghost2.JPG","images/ghost3.JPG","images/ghost4.JPG",
+"images/halloween1.JPG","images/halloween2.JPG","images/halloween3.JPG","images/halloween4.JPG",
+"images/flag1.JPG",
+"images/fishing 1.JPG","images/fishing 2.JPG","images/fishing 3.JPG","images/fishing 4.JPG","images/fishing 5.JPG",
+"images/jess 1.JPG","images/jess 2.JPG","images/jess 3.JPG"
 ],
 
 signs:[
 "images/Deluca sign 1.JPG",
 "images/hollister sign 1.JPG",
 "images/hollister sign 2.JPG",
-"images/halloween sign 2.JPG",
 "images/halloween sign 1.JPG",
+"images/halloween sign 2.JPG",
 "images/gone fishin sign.jpg",
 "images/xmas sign.jpg",
 "images/pumpkin sign 1.JPG",
@@ -313,45 +303,38 @@ signs:[
 
 prints:[
 "images/spiral tree.jpg",
-"images/spinning star 1.jpg",
-"images/spinning star 2.jpg",
-"images/spinning star 3.jpg",
-"images/infinity cube 1.JPG",
-"images/infinity cube 2.JPG",
-"images/infinity cube 3.JPG",
-"images/infinity cube 4.JPG",
-"images/infinity cube 5.JPG"
+"images/spinning star 1.jpg","images/spinning star 2.jpg","images/spinning star 3.jpg",
+"images/skull leaf 1.JPG","images/skull leaf 2.JPG",
+"images/pumpkin 1.JPG","images/pumpkin 2.JPG","images/pumpkin 3.JPG","images/pumpkin 4.JPG",
+"images/infinity cube 1.JPG","images/infinity cube 2.JPG","images/infinity cube 3.JPG","images/infinity cube 4.JPG","images/infinity cube 5.JPG",
+"images/pencil holder 1.JPG","images/pencil holder 2.JPG","images/pencil holder 3.JPG",
+"images/bidness card holder 1.JPG","images/bidness card holder 3.JPG",
+"images/white ghost 1.JPG","images/white ghost 2.JPG","images/white ghost 3.JPG","images/white ghost 4.JPG",
+"images/sheet ghost 1.JPG","images/sheet ghost 2.JPG","images/sheet ghost 3.JPG",
+"images/sheet ghosts 1.JPG",
+"images/white sheet ghost 1.JPG","images/white sheet ghost 2.JPG","images/white sheet ghost 3.JPG",
+"images/stacked pumpkins 1.JPG","images/stacked pumpkins 2.JPG","images/stacked pumpkins 3.JPG",
+"images/blue sheet ghost 1.JPG"
 ],
 
 chair:[
-"images/chair 1.jpeg",
-"images/chair 2.jpeg",
-"images/chair 3.jpeg",
-"images/chair 4.jpeg",
-"images/chair 5.jpeg",
-"images/chair 6.jpeg"
+"images/chair 1.jpeg","images/chair 2.jpeg","images/chair 3.jpeg","images/chair 4.jpeg","images/chair 5.jpeg","images/chair 6.jpeg"
 ],
 
 bench:[
-"images/bench_table1.JPG",
-"images/bench_table2.JPG",
-"images/bench_table3.JPG"
+"images/bench_table1.JPG","images/bench_table2.JPG","images/bench_table3.JPG"
 ],
 
 rocker:[
-"images/rocker_iso.jpg",
-"images/rocker_front.jpg"
+"images/rocker_iso.jpg","images/rocker_front.jpg"
 ],
 
 birdhouse:[
-"images/bird house_iso.jpg",
-"images/birdhouse_left.jpg",
-"images/birdhouse_right.jpg"
+"images/bird house_iso.jpg","images/birdhouse_left.jpg","images/birdhouse_right.jpg"
 ],
 
 box:[
-"images/box_iso.jpg",
-"images/box_top.jpg"
+"images/box_iso.jpg","images/box_top.jpg"
 ]
 
 }
