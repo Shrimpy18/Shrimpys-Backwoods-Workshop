@@ -116,7 +116,9 @@
     #paypal-container-F9BVCVVSSSNQG,
     #paypal-container-L3CPZK7UMQETU,
     #paypal-container-57ETS2RM3M7R4,
-    #paypal-container-MFA6K46Q4DLH4 {
+    #paypal-container-MFA6K46Q4DLH4,
+    /* NEW PORTABLE LOUNGE CHAIR */
+    #paypal-container-ZK52AD77YWBL2 {
       margin-top: 1.5rem;
       display: none;
     }
@@ -160,6 +162,7 @@
     }
   </style>
 </head>
+
 <body>
   <header>
     <h1 class="site-title">Shrimpy's Backwoods Workshop</h1>
@@ -184,49 +187,25 @@
       I agree to the <a href="terms.html" target="_blank">Terms & Conditions</a>
     </label>
 
-    <!-- NEW BUTTON: Added above Christmas Coaster Set #1 -->
+    <!-- NEW: Portable Lounge Chair (TOP) -->
+    <div id="paypal-container-ZK52AD77YWBL2"></div>
+
+    <!-- Existing Products -->
     <div id="paypal-container-57ETS2RM3M7R4"></div>
-    <script>
-      paypal.HostedButtons({
-        hostedButtonId: "57ETS2RM3M7R4",
-      }).render("#paypal-container-57ETS2RM3M7R4")
-    </script>
 
-    <!-- Christmas Coasters Button (Set #1) -->
     <div id="paypal-container-EYQHD3N6YJDQ2"></div>
-
-    <!-- Christmas Coasters Button (Set #2) -->
     <div id="paypal-container-F9BVCVVSSSNQG"></div>
-
-    <!-- NEW BUTTON (previously existing one) -->
     <div id="paypal-container-L3CPZK7UMQETU"></div>
 
-    <!-- Halloween Coasters -->
     <div id="paypal-container-ESJVEN3UNMPJE"></div>
-
-    <!-- Ghost Coasters -->
     <div id="paypal-container-KBTUK5QARWEV8"></div>
-
-    <!-- Fallen Leaf Button -->
     <div id="paypal-container-EED9RWUUVMY48"></div>
-
-    <!-- Stacked Pumpkins Button -->
     <div id="paypal-container-4TP52U4LFQYBS"></div>
-
-    <!-- 3D Printed Sheet Ghosts Button -->
     <div id="paypal-container-MFA6K46Q4DLH4"></div>
-
-    <!-- Fishing Coaster Set -->
     <div id="paypal-container-HJW9KDDHDU484"></div>
-
-    <!-- Deer Coasters -->
     <div id="paypal-container-YU9H28BGQZ2F4"></div>
     <div id="paypal-container-6GAQED2N22FCU"></div>
-
-    <!-- Wolf Coaster Set -->
     <div id="paypal-container-5MT92V9P9QDT2"></div>
-
-    <!-- Other Buttons -->
     <div id="paypal-container-P5PBHAK9BME8Q"></div>
     <div id="paypal-container-5H2VRJQS63BPL"></div>
     <div id="paypal-container-MUXEFNGCQ3U2Q"></div>
@@ -235,6 +214,7 @@
     <script>
       const checkbox = document.getElementById('termsCheckbox');
       const buttons = {
+        loungeChair: 'ZK52AD77YWBL2',   // NEW TOP ITEM
         newAboveChristmas: '57ETS2RM3M7R4',
         christmas1: 'EYQHD3N6YJDQ2',
         christmas2: 'F9BVCVVSSSNQG',
@@ -256,13 +236,16 @@
 
       const rendered = {};
 
-      checkbox.addEventListener('change', function() {
-        for (const [key, id] of Object.entries(buttons)) {
+      checkbox.addEventListener('change', function () {
+        for (const id of Object.values(buttons)) {
           const container = document.getElementById(`paypal-container-${id}`);
+
           if (checkbox.checked) {
             container.style.display = 'block';
+
             if (!rendered[id]) {
-              paypal.HostedButtons({ hostedButtonId: id }).render(`#paypal-container-${id}`);
+              paypal.HostedButtons({ hostedButtonId: id })
+                .render(`#paypal-container-${id}`);
               rendered[id] = true;
             }
           } else {
@@ -271,22 +254,24 @@
         }
       });
 
-      document.addEventListener("DOMContentLoaded", function() {
+      document.addEventListener("DOMContentLoaded", function () {
         const toggle = document.querySelector(".menu-toggle");
         const nav = document.querySelector("nav.top-nav");
-        toggle.addEventListener("click", () => { nav.classList.toggle("show"); });
+        toggle.addEventListener("click", () => {
+          nav.classList.toggle("show");
+        });
       });
     </script>
   </section>
 
   <footer>
     <div class="footer-social">
-      <a href="https://www.facebook.com/profile.php?id=61580204308708" target="_blank" aria-label="Facebook">
+      <a href="https://www.facebook.com/profile.php?id=61580204308708" target="_blank">
         <svg xmlns="http://www.w3.org/2000/svg" fill="#3b5998" viewBox="0 0 24 24">
           <path d="M22 12a10 10 0 1 0-11.5 9.9v-7H8v-3h2.5V9.5a3.5 3.5 0 0 1 3.5-3.5h2v3h-2c-.3 0-.5.2-.5.5V12H17l-.5 3h-2v7A10 10 0 0 0 22 12z"/>
         </svg>
       </a>
-      <a href="https://www.etsy.com/your/shops/me/tools/listings?ref=seller-platform-mcnav" target="_blank" aria-label="Etsy">
+      <a href="https://www.etsy.com/your/shops/me/tools/listings?ref=seller-platform-mcnav" target="_blank">
         <img src="images/etsy-logo.png" alt="Etsy" />
       </a>
     </div>
